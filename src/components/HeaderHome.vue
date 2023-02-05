@@ -9,8 +9,8 @@
     <HeaderMenuNavbar buttonTitle="Support" />
     </div>
     <div class="button-login">
-      <ButtonLogin class="header-login" buttonLogin="Log in"/>
-      <ButtonLogin class="header-sign-up" buttonLogin="Sign up"/>
+      <ButtonLogin buttonLogin="Log in"/>
+      <ButtonLogin style="background-color: #ffff; border: solid 1px;" buttonLogin="Sign up"/>
     </div>
   </div>
 </template>
@@ -45,7 +45,6 @@ export default {
 }
 
 .button-login {
-  width: 120px;
   display: flex;
   justify-content: space-around;
 }
