@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import HeaderMenuNavbar from './layouts/HeaderMenuNavbar.vue';
-import FooterItems from './layouts/FooterItems.vue';
+import HeaderMenuNavbar from '@/components/layouts/navbar/MainNavBar.vue';
+import FooterItems from './FooterItems.vue';
 
 export default {
   name: 'FooterHome',
