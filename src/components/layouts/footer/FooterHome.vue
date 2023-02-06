@@ -89,6 +89,7 @@ export default {
 .footer-final {
     margin-left: 55px;
     text-align:justify;
+    border-top: solid 1px rgb(177, 177, 245);
 }
 .footer-items-icons {
     display: flex;
