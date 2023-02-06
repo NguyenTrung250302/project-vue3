@@ -27,6 +27,7 @@ specifiers:
   eslint-plugin-import: ^2.25.3
   eslint-plugin-vue: ^8.0.3
   eslint-plugin-vuejs-accessibility: ^1.1.0
+  husky: ^8.0.3
   jest: ^27.0.5
   lint-staged: ^11.1.2
   register-service-worker: ^1.7.2
@@ -73,6 +74,7 @@ devDependencies:
   eslint-plugin-import: 2.27.5_i35iul5rhorb6bo22nznvrlqjq
   eslint-plugin-vue: 8.7.1_eslint@7.32.0
   eslint-plugin-vuejs-accessibility: 1.2.0_eslint@7.32.0
+  husky: 8.0.3
   jest: 27.5.1
   lint-staged: 11.2.6
   sass: 1.58.0
@@ -6136,6 +6138,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /iconv-lite/0.4.24:
