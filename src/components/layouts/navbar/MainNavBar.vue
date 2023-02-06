@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-navbar">
     <p>{{buttonTitle}}</p>
     <font-awesome-icon icon="fa-solid fa-chevron-down" />
   </div>
@@ -14,4 +14,7 @@ export default {
 </script>
 
 <style>
+.main-navbar {
+  display: flex;
+}
 </style>

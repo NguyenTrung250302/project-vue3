@@ -2,11 +2,11 @@
   <div class="header-home">
     <h3>BUILDTAP</h3>
     <div class="navbar-header">
-      <HeaderMenuNavbar buttonTitle="Solution" />
-      <HeaderMenuNavbar buttonTitle="Service" />
-      <HeaderMenuNavbar buttonTitle="Resources" />
-      <HeaderMenuNavbar buttonTitle="About Us" />
-      <HeaderMenuNavbar buttonTitle="Support" />
+      <MainNavBar buttonTitle="Solution" />
+      <MainNavBar buttonTitle="Service" />
+      <MainNavBar buttonTitle="Resources" />
+      <OtherNavBar otherNavbar="About us" />
+      <OtherNavBar otherNavbar="Support" />
     </div>
     <div class="button-login">
       <ButtonLogin buttonLogin="Log in" />
@@ -16,14 +16,16 @@
 </template>
 
 <script lang="ts">
-import HeaderMenuNavbar from '@/components/layouts/navbar/MainNavBar.vue';
-import ButtonLogin from './ButtonLogin.vue';
+import MainNavBar from '@/components/layouts/navbar/MainNavBar.vue';
+import ButtonLogin from '@/components/layouts/navbar/ButtonLogin.vue';
+import OtherNavBar from '@/components/layouts/navbar/OtherNavBar.vue';
 
 export default {
   name: 'HeaderHome',
   components: {
-    HeaderMenuNavbar,
     ButtonLogin,
+    MainNavBar,
+    OtherNavBar,
   },
 };
 </script>

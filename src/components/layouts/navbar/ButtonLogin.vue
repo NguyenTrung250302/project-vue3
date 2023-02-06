@@ -16,9 +16,9 @@ export default {
   background-color: transparent;
   border: none;
   outline: none;
-  border-radius: 40%;
-  width: 85px;
-  height: 30px;
+  border-radius: 35%;
+  width: 80px;
+  height: 22px;
   background-color: rgb(127, 129, 255);
 }
 </style>

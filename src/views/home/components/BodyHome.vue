@@ -1,19 +1,27 @@
 <template>
   <div class="body-home">
-    <h1>this is body page</h1>
+    <body-home-1 />
+    <body-home-2 />
   </div>
 </template>
 
 <script>
-export default {
+import BodyHome1 from '@/views/home/components/BodyHome1.vue';
+import BodyHome2 from '@/views/home/components/BodyHome2.vue';
 
+export default {
+  name: 'BodyHome',
+  components: {
+    BodyHome1,
+    BodyHome2,
+  },
 };
 </script>
 
 <style>
 .body-home {
-    height: 900px;
+    height: 1200px;
     max-width: auto;
-    background-color: aquamarine;
+    background-color: #ffff;
 }
 </style>
