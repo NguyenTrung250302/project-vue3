@@ -27,20 +27,7 @@
             <FooterItems footerItems="Digital twin" />
         </div>
         <div>
-            <h1>BUILDTAP</h1>
-        </div>
-    </div>
-    <div class="footer-final">
-        <HeaderMenuNavbar  buttonTitle="Contact us" />
-        <div class="footer-items icons">
-            <p>Copyright© 2022 MaintainX. All rights reserved</p>
-            <div class="footer-items-icon">
-                <font-awesome-icon icon="fa-brands fa-facebook" />
-                <font-awesome-icon icon="fa-brands fa-twitter" />
-                <font-awesome-icon icon="fa-brands fa-linkedin" />
-                <font-awesome-icon icon="fa-brands fa-instagram" />
-                <font-awesome-icon icon="fa-brands fa-youtube" />
-            </div>
+            <h1 class="footer-title">BUILDTAP</h1>
         </div>
     </div>
 </div>
@@ -66,32 +53,18 @@ export default {
     background-color: rgb(234, 240, 240);
 }
 .nav-footer {
+    top: 30px;
     width: 800px;
     display: flex;
     justify-content: space-around;
     margin-left: 30px;
     margin-bottom: 50px;
 }
-
-.footer-items {
-    display: flex;
-}
-
 .footer-items-contends {
     text-align:justify;
 }
-
-.icons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-final {
-    margin-left: 55px;
-    text-align:justify;
-    border-top: solid 1px rgb(177, 177, 245);
-}
-.footer-items-icons {
-    display: flex;
+.footer-title {
+  position: relative;
+  left: 250px;
 }
 </style>

@@ -8,24 +8,24 @@
       <OtherNavBar otherNavbar="About us" />
       <OtherNavBar otherNavbar="Support" />
     </div>
-    <div class="button-login">
-      <ButtonLogin buttonLogin="Log in" />
-      <ButtonLogin style="background-color: #ffff; border: solid 1px" buttonLogin="Sign up" />
-    </div>
+    <button-login />
+    <button-sign-up />
   </div>
 </template>
 
 <script lang="ts">
 import MainNavBar from '@/components/layouts/navbar/MainNavBar.vue';
-import ButtonLogin from '@/components/layouts/navbar/ButtonLogin.vue';
 import OtherNavBar from '@/components/layouts/navbar/OtherNavBar.vue';
+import ButtonLogin from '@/components/layouts/button/ButtonLogin.vue';
+import ButtonSignUp from '@/components/layouts/button/ButtonSignUp.vue';
 
 export default {
   name: 'HeaderHome',
   components: {
-    ButtonLogin,
     MainNavBar,
     OtherNavBar,
+    ButtonLogin,
+    ButtonSignUp,
   },
 };
 </script>
@@ -45,9 +45,7 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-
-.button-login {
+.header-home {
   display: flex;
-  justify-content: space-around;
 }
 </style>
