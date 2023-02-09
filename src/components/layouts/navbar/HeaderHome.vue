@@ -8,8 +8,10 @@
       <OtherNavBar otherNavbar="About us" />
       <OtherNavBar otherNavbar="Support" />
     </div>
-    <button-login />
-    <button-sign-up />
+    <div class="btn-header">
+      <button-login class="btn-login"/>
+      <button-sign-up />
+    </div>
   </div>
 </template>
 
@@ -39,7 +41,6 @@ export default {
   justify-content: space-between;
   margin: 0 25px 0 25px;
 }
-
 .navbar-header {
   width: 600px;
   display: flex;
@@ -47,5 +48,13 @@ export default {
 }
 .header-home {
   display: flex;
+}
+.btn-header {
+  max-width: auto;
+  display: flex;
+  flex-direction:row;
+}
+.btn-login {
+  margin-right: 20px;
 }
 </style>

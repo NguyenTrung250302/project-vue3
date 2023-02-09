@@ -12,18 +12,18 @@ export default {
 
 <style>
 .button-signup {
-    margin-top: 5px;
+  margin-top: 5px;
   align-items: center;
   appearance: none;
   background-color: #f3f6f8;
   /* background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%); */
-  background-size: calc(100% + 20px) calc(100% + 20px);
+  background-size: calc(100% + 10px) calc(100% + 10px);
   border-radius: 100px;
   border-width: 0;
   box-shadow: none;
   box-sizing: border-box;
   color: #030303;
-  border: solid 1px blue;
+  border: solid 2px blue;
   cursor: pointer;
   display: inline-flex;
   font-family: CircularStd,sans-serif;
@@ -31,7 +31,7 @@ export default {
   height: auto;
   justify-content: flex-end;
   line-height: 1.5;
-  padding: 6px 20px;
+  padding: 4px 15px;
   position: relative;
   text-align: center;
   text-decoration: none;

@@ -17,7 +17,7 @@ export default {
   appearance: none;
   background-color: #f3f6f8;
   background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
-  background-size: calc(100% + 20px) calc(100% + 20px);
+  background-size: calc(100% + 10px) calc(100% + 10px);
   border-radius: 100px;
   border-width: 0;
   box-shadow: none;
@@ -30,7 +30,7 @@ export default {
   height: auto;
   justify-content: flex-end;
   line-height: 1.5;
-  padding: 6px 20px;
+  padding: 6px 15px;
   position: relative;
   text-align: center;
   text-decoration: none;
