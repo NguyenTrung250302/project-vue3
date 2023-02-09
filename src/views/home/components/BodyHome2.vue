@@ -30,7 +30,7 @@ export default {
 <style>
 .body2 {
     display: flex;
-    margin-left: 55px;
+    margin-left: 105px;
     color: #bebcbc;
 }
 .text-black {

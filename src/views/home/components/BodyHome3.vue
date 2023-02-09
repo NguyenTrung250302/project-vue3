@@ -31,7 +31,7 @@
         <describe-view describe="Hệ thống họp online"/>
       </div>
     </div>
-    <div class="boards boards-final">
+    <div class="boards boards-final" style="margin-top: 40px;">
       <field-view  titleField="Addin"/>
       <describe-view describe="Cầu nối giúp các lập trình viên chuyển addin
       của họ đang chạy local thành chạy cloud"/>

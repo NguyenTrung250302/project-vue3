@@ -1,6 +1,6 @@
 <template>
   <div class="body1">
-    <h1>SOLUTION</h1>
+    <h1 class="text-title">SOLUTION</h1>
   </div>
 </template>
 
@@ -12,13 +12,14 @@ export default {
 
 <style>
 .body1 {
-    height: 80px;
+    height: 90px;
     background-color: rgb(51, 49, 167);
     color: aliceblue;
-    text-align:justify;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
 }
-h1 {
-    margin-left: 55px;
-    display: inline-block;
+.text-title {
+  margin-left: 105px;
 }
 </style>

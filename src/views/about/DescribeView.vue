@@ -1,7 +1,7 @@
-<!--mô tả tinh nang-->
 <template>
   <div class="describe">
     <p>{{ describe }}</p>
+    <!--mô tả tinh nang-->
   </div>
 </template>
 
