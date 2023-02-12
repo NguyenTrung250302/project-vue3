@@ -5,15 +5,18 @@
 </template>
 
 <script>
-export default {
 
+export default {
+  components: {
+  },
 };
 </script>
 
 <style>
 .body1 {
     height: 90px;
-    background-color: rgb(51, 49, 167);
+    max-width: auto;
+    background-image: url(@/assets/background5.png);
     color: aliceblue;
     display: flex;
     flex-direction: column-reverse;
@@ -21,5 +24,6 @@ export default {
 }
 .text-title {
   margin-left: 105px;
+  color: #fff;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h3>{{ titleField }}</h3>
+    <h3 class="field">{{ titleField }}</h3>
     <!-- tiêu đề lĩnh vực -->
   </div>
 </template>
@@ -12,5 +12,7 @@ export default {
 </script>
 
 <style>
+.field {
 
+}
 </style>

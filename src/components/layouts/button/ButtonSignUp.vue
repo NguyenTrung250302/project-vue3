@@ -15,7 +15,7 @@ export default {
   margin-top: 5px;
   align-items: center;
   appearance: none;
-  background-color: #f3f6f8;
+  background-color: #ffff;
   /* background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%); */
   background-size: calc(100% + 10px) calc(100% + 10px);
   border-radius: 100px;

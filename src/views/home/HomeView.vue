@@ -1,3 +1,9 @@
+<template>
+  <HeaderHome />
+  <BodyHome />
+  <FooterHome />
+</template>
+
 <script lang="ts">
 import HeaderHome from '@/components/layouts/navbar/HeaderHome.vue';
 import BodyHome from '@/views/home/components/BodyHome.vue';
@@ -12,9 +18,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <HeaderHome />
-  <BodyHome />
-  <FooterHome />
-</template>

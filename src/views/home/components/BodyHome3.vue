@@ -2,16 +2,19 @@
   <div class="body3">
     <div class="row">
       <div class="boards boards-row1">
+        <font-awesome-icon icon="fa-solid fa-list-check" />
         <field-view  titleField="Facility Management"/>
         <describe-view class="blur-1" describe="Lĩnh vực quản lý - bảo trì - vận hành tài sản"/>
       </div>
       <div class="boards">
+        <font-awesome-icon icon="fa-solid fa-eye" />
         <field-view  titleField="Viewer"/>
         <describe-view describe=
         "Cho phép xem một bản vẽ 3D, 2D bất kì bằng
         trình duyệt online và share trong 7 ngày"/>
       </div>
       <div class="boards">
+        <font-awesome-icon icon="fa-solid fa-file-circle-plus" />
         <field-view  titleField="Docs"/>
         <describe-view describe="Hệ thống Data Management"/>
       </div>
@@ -19,19 +22,23 @@
 
     <div class="row">
       <div class="boards">
+        <font-awesome-icon icon="fa-solid fa-brain" />
         <field-view  titleField="Camera AI"/>
         <describe-view describe="Hệ thống giám sát có AI hỗ trợ"/>
       </div>
       <div class="boards">
+        <font-awesome-icon icon="fa-solid fa-hammer" />
         <field-view  titleField="Design Automation"/>
         <describe-view describe="Hệ thống thiết kế tự động"/>
       </div>
       <div class="boards">
+        <font-awesome-icon icon="fa-solid fa-globe" />
         <field-view  titleField="Online Meeting"/>
         <describe-view describe="Hệ thống họp online"/>
       </div>
     </div>
-    <div class="boards boards-final" style="margin-top: 40px;">
+    <div class="boards boards-final">
+      <font-awesome-icon icon="fa-solid fa-code" />
       <field-view  titleField="Addin"/>
       <describe-view describe="Cầu nối giúp các lập trình viên chuyển addin
       của họ đang chạy local thành chạy cloud"/>
@@ -60,13 +67,13 @@ export default {
   background-color: #fff;
 }
 .boards {
-  width: 320px;
+  width: 310px;
   height: 240px;
   background-color: #fff;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 3px 3px 3px 3px rgb(231, 225, 216);
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .row {
   display: flex;
@@ -83,5 +90,6 @@ export default {
 }
 .boards-final {
   margin-left: 110px;
+  margin-top: 40px;
 }
 </style>
