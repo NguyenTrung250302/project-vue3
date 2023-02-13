@@ -10,12 +10,12 @@ export default {
 
 <style>
 .textarea {
-  width: 450px;
+  width: 420px;
   height: 140px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: 5x;
   background-color: #FFFFFF80;
   font-size: 16px;
   resize: none;

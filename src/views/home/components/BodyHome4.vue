@@ -68,9 +68,10 @@ export default {
 <style>
 .body4 {
     width: auto;
-    height: 470px;
+    height: 460px;
     background-image: url(@/assets/background5.png);
     color: #fff;
+    margin-bottom: 80px;
 }
 .information {
     display: flex;
@@ -78,7 +79,7 @@ export default {
 }
 .body4-row {
     display: flex;
-    margin-left: -20px;
+    margin-left: -10px;
     margin-bottom: 15px;
 }
 .body4-icons {
@@ -91,6 +92,7 @@ export default {
     margin: 0 0 0 0;
 }
 .infor-a {
+    margin-left: 20px;
     text-align: justify;
 }
 </style>
