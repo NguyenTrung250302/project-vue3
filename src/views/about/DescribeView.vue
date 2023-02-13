@@ -15,5 +15,6 @@ export default {
 .describe {
   font-size: 12px;
   color: #858383;
+  margin: 0 0 0 20px;
 }
 </style>

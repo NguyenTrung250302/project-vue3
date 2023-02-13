@@ -7,18 +7,21 @@ import {
   faChevronDown,
   faChevronRight,
   faCode,
+  faEnvelope,
   faEye,
   faFileCirclePlus,
   faGlobe,
   faHammer,
   faListCheck,
   faMinus,
+  faPhone,
   faUserSecret,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
   faInstagram,
   faLinkedin,
+  faTelegram,
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
@@ -48,6 +51,9 @@ library.add(
   faGlobe,
   faCode,
   faEye,
+  faPhone,
+  faTelegram,
+  faEnvelope,
 );
 
 createApp(App)

@@ -25,7 +25,6 @@ export default {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-flex;
-  /* font-family: CircularStd,sans-serif; */
   font-size: 1rem;
   height: auto;
   justify-content: flex-end;

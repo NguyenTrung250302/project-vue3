@@ -8,7 +8,7 @@
     <OtherNavBar class="text-black" otherNavbar="Solution" />
   </div>
   <h1>Solution - Giải Pháp</h1>
-  <font-awesome-icon icon="fa-solid fa-minus"  style="margin-right: 10px;"/>
+  <font-awesome-icon icon="fa-solid fa-minus"  style="margin-right: 20px;"/>
   <p class="text-motto">
   Phần mềm chỉ là khởi đầu cho một giải pháp. Sự khác biệt tại OneCAD chính
   là cách chúng tôi cùng quý khách hàng tìm kiếm cách thức ứng dụng công nghệ

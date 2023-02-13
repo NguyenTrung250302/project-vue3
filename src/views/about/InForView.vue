@@ -1,11 +1,10 @@
 <template>
-    <div>
-
-    </div>
+  <span>{{Information}}</span>
 </template>
 
 <script>
 export default {
+  props: ['Information'],
 };
 </script>
 
