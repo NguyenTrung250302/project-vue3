@@ -9,7 +9,7 @@
       <OtherNavBar otherNavbar="Support" />
     </div>
     <div class="btn-header">
-      <button-login class="btn-login"/>
+      <button-login class="btn-login" />
       <button-sign-up />
     </div>
   </div>
@@ -52,7 +52,7 @@ export default {
 .btn-header {
   max-width: auto;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 .btn-login {
   margin-right: 20px;

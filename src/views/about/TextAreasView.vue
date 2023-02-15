@@ -16,7 +16,7 @@ export default {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 5x;
-  background-color: #FFFFFF80;
+  background-color: #ffffff80;
   font-size: 16px;
   resize: none;
   color: #ffff;

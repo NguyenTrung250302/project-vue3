@@ -1,16 +1,14 @@
 <template>
-    <div>
-        <button class="button-create-account">
-            Create a Free Account
-            <font-awesome-icon icon="fa-solid fa-chevron-right" />
-        </button>
-    </div>
+  <div>
+    <button class="button-create-account">
+      Create a Free Account
+      <font-awesome-icon icon="fa-solid fa-chevron-right" />
+    </button>
+  </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style>
@@ -18,12 +16,12 @@ export default {
   margin-right: 365px;
   width: 220px;
   background-color: #f3f6f8;
-  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+  background-image: linear-gradient(1deg, #4f58fd, #149bf3 99%);
   border-radius: 100px;
   border-width: 0;
   box-shadow: none;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   font-size: 1rem;
   height: auto;

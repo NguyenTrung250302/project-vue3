@@ -1,7 +1,7 @@
 <template>
   <div class="footer-text">
     <p>{{ footertext }}</p>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -12,9 +12,9 @@ export default {
 
 <style>
 .footer-text {
-    font-size: 14px;
-    color: #202020;
-    margin: 30px 0 ;
-    max-width: 170px;
+  font-size: 14px;
+  color: #202020;
+  margin: 30px 0;
+  max-width: 170px;
 }
 </style>

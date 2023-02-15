@@ -1,5 +1,5 @@
 <template>
-  <span>{{Information}}</span>
+  <span>{{ Information }}</span>
 </template>
 
 <script>
@@ -8,6 +8,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

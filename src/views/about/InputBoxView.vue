@@ -1,9 +1,8 @@
 <template>
- <div class="input">{{ inbutbox }}</div>
+  <div class="input">{{ inbutbox }}</div>
 </template>
 
 <script>
-
 export default {
   props: ['inbutbox'],
 };
@@ -17,7 +16,7 @@ export default {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 7px;
-  background-color: #FFFFFF80;
+  background-color: #ffffff80;
   font-size: 16px;
   resize: none;
   text-align: justify;

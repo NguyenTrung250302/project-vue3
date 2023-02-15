@@ -13,6 +13,6 @@ export default {
 
 <style>
 .field {
-margin: 0 0 0 20px;
+  margin: 0 0 0 20px;
 }
 </style>

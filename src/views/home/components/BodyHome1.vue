@@ -5,22 +5,20 @@
 </template>
 
 <script>
-
 export default {
-  components: {
-  },
+  components: {},
 };
 </script>
 
 <style>
 .body1 {
-    height: 90px;
-    max-width: auto;
-    background-image: url(@/assets/background5.png);
-    color: aliceblue;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
+  height: 90px;
+  max-width: auto;
+  background-image: url(@/assets/background5.png);
+  color: aliceblue;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 .text-title {
   margin-left: 105px;

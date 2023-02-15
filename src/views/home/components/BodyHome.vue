@@ -1,6 +1,6 @@
 <template>
   <div class="body-home">
-    <body-home-1  class="body-home1"/>
+    <body-home-1 class="body-home1" />
     <body-home-2 />
     <body-home-3 />
     <body-home-4 />
@@ -26,9 +26,9 @@ export default {
 
 <style>
 .body-home {
-    height: 1200px;
-    max-width: auto;
-    background-color: #ffff;
+  height: 1200px;
+  max-width: auto;
+  background-color: #ffff;
 }
 .body-home1 {
   text-align: justify;

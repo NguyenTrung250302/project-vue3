@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style>
@@ -26,7 +24,7 @@ export default {
   border: solid 2px blue;
   cursor: pointer;
   display: inline-flex;
-  font-family: CircularStd,sans-serif;
+  font-family: CircularStd, sans-serif;
   font-size: 1rem;
   height: auto;
   justify-content: flex-end;
@@ -35,7 +33,7 @@ export default {
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: background-color .2s,background-position .2s;
+  transition: background-color 0.2s, background-position 0.2s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
