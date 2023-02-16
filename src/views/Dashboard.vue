@@ -1,413 +1,357 @@
 <template>
   <div>
-    <WidgetsStatsA />
-    <CRow>
-      <CCol :md="12">
-        <CCard class="mb-4">
-          <CCardBody>
-            <CRow>
-              <CCol :sm="5">
-                <h4 id="traffic" class="card-title mb-0">Traffic</h4>
-                <div class="small text-medium-emphasis">January 2021</div>
-              </CCol>
-              <CCol :sm="7" class="d-none d-md-block">
-                <CButton color="primary" class="float-end">
-                  <CIcon icon="cil-cloud-download" />
-                </CButton>
-                <CButtonGroup
-                  class="float-end me-3"
-                  role="group"
-                  aria-label="Basic outlined example"
+    <Breadcrumb breadcrumb="" />
+    <!--Banner get you to github repo-->
+    <Banner />
+    <div class="mt-4">
+      <div class="flex flex-wrap -mx-6">
+        <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
+          <div
+            class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm"
+          >
+            <div class="p-3 bg-indigo-600 bg-opacity-75 rounded-full">
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 28 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.2 9.08889C18.2 11.5373 16.3196 13.5222 14 13.5222C11.6804 13.5222 9.79999 11.5373 9.79999 9.08889C9.79999 6.64043 11.6804 4.65556 14 4.65556C16.3196 4.65556 18.2 6.64043 18.2 9.08889Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M25.2 12.0444C25.2 13.6768 23.9464 15 22.4 15C20.8536 15 19.6 13.6768 19.6 12.0444C19.6 10.4121 20.8536 9.08889 22.4 9.08889C23.9464 9.08889 25.2 10.4121 25.2 12.0444Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M19.6 22.3889C19.6 19.1243 17.0927 16.4778 14 16.4778C10.9072 16.4778 8.39999 19.1243 8.39999 22.3889V26.8222H19.6V22.3889Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M8.39999 12.0444C8.39999 13.6768 7.14639 15 5.59999 15C4.05359 15 2.79999 13.6768 2.79999 12.0444C2.79999 10.4121 4.05359 9.08889 5.59999 9.08889C7.14639 9.08889 8.39999 10.4121 8.39999 12.0444Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M22.4 26.8222V22.3889C22.4 20.8312 22.0195 19.3671 21.351 18.0949C21.6863 18.0039 22.0378 17.9556 22.4 17.9556C24.7197 17.9556 26.6 19.9404 26.6 22.3889V26.8222H22.4Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M6.64896 18.0949C5.98058 19.3671 5.59999 20.8312 5.59999 22.3889V26.8222H1.39999V22.3889C1.39999 19.9404 3.2804 17.9556 5.59999 17.9556C5.96219 17.9556 6.31367 18.0039 6.64896 18.0949Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+
+            <div class="mx-5">
+              <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
+              <div class="text-gray-500">New Users</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
+          <div
+            class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm"
+          >
+            <div class="p-3 bg-blue-600 bg-opacity-75 rounded-full">
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.19999 1.4C3.4268 1.4 2.79999 2.02681 2.79999 2.8C2.79999 3.57319 3.4268 4.2 4.19999 4.2H5.9069L6.33468 5.91114C6.33917 5.93092 6.34409 5.95055 6.34941 5.97001L8.24953 13.5705L6.99992 14.8201C5.23602 16.584 6.48528 19.6 8.97981 19.6H21C21.7731 19.6 22.4 18.9732 22.4 18.2C22.4 17.4268 21.7731 16.8 21 16.8H8.97983L10.3798 15.4H19.6C20.1303 15.4 20.615 15.1004 20.8521 14.6261L25.0521 6.22609C25.2691 5.79212 25.246 5.27673 24.991 4.86398C24.7357 4.45123 24.2852 4.2 23.8 4.2H8.79308L8.35818 2.46044C8.20238 1.83722 7.64241 1.4 6.99999 1.4H4.19999Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M22.4 23.1C22.4 24.2598 21.4598 25.2 20.3 25.2C19.1403 25.2 18.2 24.2598 18.2 23.1C18.2 21.9402 19.1403 21 20.3 21C21.4598 21 22.4 21.9402 22.4 23.1Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M9.1 25.2C10.2598 25.2 11.2 24.2598 11.2 23.1C11.2 21.9402 10.2598 21 9.1 21C7.9402 21 7 21.9402 7 23.1C7 24.2598 7.9402 25.2 9.1 25.2Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+
+            <div class="mx-5">
+              <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
+              <div class="text-gray-500">Total Orders</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
+          <div
+            class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm"
+          >
+            <div class="p-3 bg-pink-600 bg-opacity-75 rounded-full">
+              <svg
+                class="w-8 h-8 text-white"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.79999 8.4C9.79999 6.08041 11.6804 4.2 14 4.2C16.3196 4.2 18.2 6.08041 18.2 8.4V12.6C18.2 14.9197 16.3196 16.8 14 16.8C11.6804 16.8 9.79999 14.9197 9.79999 12.6V8.4Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <div class="mx-5">
+              <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
+              <div class="text-gray-500">Available Products</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8"></div>
+
+    <div class="flex flex-col mt-8">
+      <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <div
+          class="
+            inline-block
+            min-w-full
+            overflow-hidden
+            align-middle
+            border-b border-gray-200
+            shadow
+            sm:rounded-lg
+          "
+        >
+          <table class="min-w-full">
+            <thead>
+              <tr>
+                <th
+                  class="
+                    px-6
+                    py-3
+                    text-xs
+                    font-medium
+                    leading-4
+                    tracking-wider
+                    text-left text-gray-500
+                    uppercase
+                    border-b border-gray-200
+                    bg-gray-50
+                  "
                 >
-                  <CButton color="secondary" variant="outline">Day</CButton>
-                  <CButton color="secondary" variant="outline" active
-                    >Month</CButton
-                  >
-                  <CButton color="secondary" variant="outline">Year</CButton>
-                </CButtonGroup>
-              </CCol>
-            </CRow>
-            <CRow>
-              <MainChartExample
-                style="height: 300px; max-height: 300px; margin-top: 40px"
-              />
-            </CRow>
-          </CCardBody>
-          <CCardFooter>
-            <CRow :xs="{ cols: 1 }" :md="{ cols: 5 }" class="text-center">
-              <CCol class="mb-sm-2 mb-0">
-                <div class="text-medium-emphasis">Visits</div>
-                <strong>29.703 Users (40%)</strong>
-                <CProgress
-                  class="mt-2"
-                  color="success"
-                  thin
-                  :precision="1"
-                  :value="40"
-                />
-              </CCol>
-              <CCol class="mb-sm-2 mb-0 d-md-down-none">
-                <div class="text-medium-emphasis">Unique</div>
-                <strong>24.093 Users (20%)</strong>
-                <CProgress
-                  class="mt-2"
-                  color="info"
-                  thin
-                  :precision="1"
-                  :value="20"
-                />
-              </CCol>
-              <CCol class="mb-sm-2 mb-0">
-                <div class="text-medium-emphasis">Pageviews</div>
-                <strong>78.706 Views (60%)</strong>
-                <CProgress
-                  class="mt-2"
-                  color="warning"
-                  thin
-                  :precision="1"
-                  :value="60"
-                />
-              </CCol>
-              <CCol class="mb-sm-2 mb-0">
-                <div class="text-medium-emphasis">New Users</div>
-                <strong>22.123 Users (80%)</strong>
-                <CProgress
-                  class="mt-2"
-                  color="danger"
-                  thin
-                  :precision="1"
-                  :value="80"
-                />
-              </CCol>
-              <CCol class="mb-sm-2 mb-0 d-md-down-none">
-                <div class="text-medium-emphasis">Bounce Rate</div>
-                <strong>Average Rate (40.15%)</strong>
-                <CProgress class="mt-2" :value="40" thin :precision="1" />
-              </CCol>
-            </CRow>
-          </CCardFooter>
-        </CCard>
-      </CCol>
-    </CRow>
-    <WidgetsStatsD />
-    <CRow>
-      <CCol :md="12">
-        <CCard class="mb-4">
-          <CCardHeader> Traffic &amp; Sales </CCardHeader>
-          <CCardBody>
-            <CRow>
-              <CCol :sm="12" :lg="6">
-                <CRow>
-                  <CCol :sm="6">
-                    <div
-                      class="border-start border-start-4 border-start-info py-1 px-3 mb-3"
-                    >
-                      <div class="text-medium-emphasis small">New Clients</div>
-                      <div class="fs-5 fw-semibold">9,123</div>
+                  Name
+                </th>
+                <th
+                  class="
+                    px-6
+                    py-3
+                    text-xs
+                    font-medium
+                    leading-4
+                    tracking-wider
+                    text-left text-gray-500
+                    uppercase
+                    border-b border-gray-200
+                    bg-gray-50
+                  "
+                >
+                  Title
+                </th>
+                <th
+                  class="
+                    px-6
+                    py-3
+                    text-xs
+                    font-medium
+                    leading-4
+                    tracking-wider
+                    text-left text-gray-500
+                    uppercase
+                    border-b border-gray-200
+                    bg-gray-50
+                  "
+                >
+                  Status
+                </th>
+                <th
+                  class="
+                    px-6
+                    py-3
+                    text-xs
+                    font-medium
+                    leading-4
+                    tracking-wider
+                    text-left text-gray-500
+                    uppercase
+                    border-b border-gray-200
+                    bg-gray-50
+                  "
+                >
+                  Role
+                </th>
+                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+              </tr>
+            </thead>
+
+            <tbody class="bg-white">
+              <tr v-for="(u, index) in users" :key="index">
+                <td
+                  class="px-6 py-4 border-b border-gray-200 whitespace-nowrap"
+                >
+                  <div class="flex items-center">
+                    <div class="flex-shrink-0 w-10 h-10">
+                      <img
+                        class="w-10 h-10 rounded-full"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                      />
                     </div>
-                  </CCol>
-                  <CCol :sm="6">
-                    <div
-                      class="border-start border-start-4 border-start-danger py-1 px-3 mb-3"
-                    >
-                      <div class="text-medium-emphasis small">
-                        Recurring Clients
+
+                    <div class="ml-4">
+                      <div class="text-sm font-medium leading-5 text-gray-900">
+                        {{ u.name }}
                       </div>
-                      <div class="fs-5 fw-semibold">22,643</div>
+                      <div class="text-sm leading-5 text-gray-500">
+                        {{ u.email }}
+                      </div>
                     </div>
-                  </CCol>
-                </CRow>
-                <hr class="mt-0" />
-                <div
-                  v-for="item in progressGroupExample1"
-                  :key="item.title"
-                  class="progress-group mb-4"
-                >
-                  <div class="progress-group-prepend">
-                    <span class="text-medium-emphasis small">{{
-                      item.title
-                    }}</span>
                   </div>
-                  <div class="progress-group-bars">
-                    <CProgress thin color="info" :value="item.value1" />
-                    <CProgress thin color="danger" :value="item.value2" />
-                  </div>
-                </div>
-              </CCol>
-              <CCol :sm="12" :lg="6">
-                <CRow>
-                  <CCol :sm="6">
-                    <div
-                      class="border-start border-start-4 border-start-warning py-1 px-3 mb-3"
-                    >
-                      <div class="text-medium-emphasis small">Pageviews</div>
-                      <div class="fs-5 fw-semibold">78,623</div>
-                    </div>
-                  </CCol>
-                  <CCol :sm="6">
-                    <div
-                      class="border-start border-start-4 border-start-success py-1 px-3 mb-3"
-                    >
-                      <div class="text-medium-emphasis small">Organic</div>
-                      <div class="fs-5 fw-semibold">49,123</div>
-                    </div>
-                  </CCol>
-                </CRow>
-                <hr class="mt-0" />
-                <div
-                  v-for="item in progressGroupExample2"
-                  :key="item.title"
-                  class="progress-group"
-                >
-                  <div class="progress-group-header">
-                    <CIcon :icon="item.icon" class="me-2" size="lg" />
-                    <span class="title">{{ item.title }}</span>
-                    <span class="ms-auto fw-semibold">{{ item.value }}%</span>
-                  </div>
-                  <div class="progress-group-bars">
-                    <CProgress thin :value="item.value" color="warning" />
-                  </div>
-                </div>
+                </td>
 
-                <div class="mb-5"></div>
-
-                <div
-                  v-for="item in progressGroupExample3"
-                  :key="item.title"
-                  class="progress-group"
+                <td
+                  class="px-6 py-4 border-b border-gray-200 whitespace-nowrap"
                 >
-                  <div class="progress-group-header">
-                    <CIcon :icon="item.icon" class="me-2" size="lg" />
-                    <span class="title">Organic Search</span>
-                    <span class="ms-auto fw-semibold">
-                      {{ item.value }}
-                      <span class="text-medium-emphasis small"
-                        >({{ item.percent }}%)</span
-                      >
+                  <div class="text-sm leading-5 text-gray-900">
+                    {{ u.title }}
+                  </div>
+                  <div class="text-sm leading-5 text-gray-500">
+                    {{ u.title2 }}
+                  </div>
+                </td>
+
+                <td
+                  class="px-6 py-4 border-b border-gray-200 whitespace-nowrap"
+                >
+                  <span
+                    class="
+                      inline-flex
+                      px-2
+                      text-xs
+                      font-semibold
+                      leading-5
+                      text-green-800
+                      bg-green-100
+                      rounded-full
+                    "
+                    >{{ u.status }}</span
+                  >
+                </td>
+
+                <td
+                  class="
+                    px-6
+                    py-4
+                    text-sm
+                    leading-5
+                    text-gray-500
+                    border-b border-gray-200
+                    whitespace-nowrap
+                  "
+                >
+                  {{ u.role }}
+                </td>
+
+                <td
+                  class="
+                    px-6
+                    py-4
+                    text-sm
+                    font-medium
+                    leading-5
+                    text-right
+                    border-b border-gray-200
+                    whitespace-nowrap
+                  "
+                >
+                  <div class="flex justify-around">
+                    <span class="text-yellow-500 flex justify-center">
+                      <a href="#" class="mx-2 px-2 rounded-md"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5 text-green-700"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                      <form method="POST">
+                        <button class="mx-2 px-2 rounded-md">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 text-red-700"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                      </form>
                     </span>
                   </div>
-                  <div class="progress-group-bars">
-                    <CProgress thin :value="item.percent" color="success" />
-                  </div>
-                </div>
-              </CCol>
-            </CRow>
-            <br />
-            <CTable align="middle" class="mb-0 border" hover responsive>
-              <CTableHead color="light">
-                <CTableRow>
-                  <CTableHeaderCell class="text-center">
-                    <CIcon name="cil-people" />
-                  </CTableHeaderCell>
-                  <CTableHeaderCell>User</CTableHeaderCell>
-                  <CTableHeaderCell class="text-center"
-                    >Country</CTableHeaderCell
-                  >
-                  <CTableHeaderCell>Usage</CTableHeaderCell>
-                  <CTableHeaderCell class="text-center"
-                    >Payment Method</CTableHeaderCell
-                  >
-                  <CTableHeaderCell>Activity</CTableHeaderCell>
-                </CTableRow>
-              </CTableHead>
-              <CTableBody>
-                <CTableRow v-for="item in tableExample" :key="item.name">
-                  <CTableDataCell class="text-center">
-                    <CAvatar
-                      size="md"
-                      :src="item.avatar.src"
-                      :status="item.avatar.status"
-                    />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <div>{{ item.user.name }}</div>
-                    <div class="small text-medium-emphasis">
-                      <span>{{ item.user.new ? 'New' : 'Recurring' }}</span> |
-                      {{ item.user.registered }}
-                    </div>
-                  </CTableDataCell>
-                  <CTableDataCell class="text-center">
-                    <CIcon
-                      size="xl"
-                      :name="item.country.flag"
-                      :title="item.country.name"
-                    />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <div class="clearfix">
-                      <div class="float-start">
-                        <strong>{{ item.usage.value }}%</strong>
-                      </div>
-                      <div class="float-end">
-                        <small class="text-medium-emphasis">
-                          {{ item.usage.period }}
-                        </small>
-                      </div>
-                    </div>
-                    <CProgress
-                      thin
-                      :color="item.usage.color"
-                      :value="item.usage.value"
-                    />
-                  </CTableDataCell>
-                  <CTableDataCell class="text-center">
-                    <CIcon size="xl" :name="item.payment.icon" />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <div class="small text-medium-emphasis">Last login</div>
-                    <strong>{{ item.activity }}</strong>
-                  </CTableDataCell>
-                </CTableRow>
-                <CTableRow> </CTableRow>
-              </CTableBody>
-            </CTable>
-          </CCardBody>
-        </CCard>
-      </CCol>
-    </CRow>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-import avatar1 from '@/assets/images/avatars/1.jpg'
-import avatar2 from '@/assets/images/avatars/2.jpg'
-import avatar3 from '@/assets/images/avatars/3.jpg'
-import avatar4 from '@/assets/images/avatars/4.jpg'
-import avatar5 from '@/assets/images/avatars/5.jpg'
-import avatar6 from '@/assets/images/avatars/6.jpg'
-import MainChartExample from './charts/MainChartExample'
-import WidgetsStatsA from './widgets/WidgetsStatsTypeA.vue'
-import WidgetsStatsD from './widgets/WidgetsStatsTypeD.vue'
-
-export default {
-  name: 'Dashboard',
-  components: {
-    MainChartExample,
-    WidgetsStatsA,
-    WidgetsStatsD,
-  },
-  setup() {
-    const progressGroupExample1 = [
-      { title: 'Monday', value1: 34, value2: 78 },
-      { title: 'Tuesday', value1: 56, value2: 94 },
-      { title: 'Wednesday', value1: 12, value2: 67 },
-      { title: 'Thursday', value1: 43, value2: 91 },
-      { title: 'Friday', value1: 22, value2: 73 },
-      { title: 'Saturday', value1: 53, value2: 82 },
-      { title: 'Sunday', value1: 9, value2: 69 },
-    ]
-    const progressGroupExample2 = [
-      { title: 'Male', icon: 'cil-user', value: 53 },
-      { title: 'Female', icon: 'cil-user-female', value: 43 },
-    ]
-    const progressGroupExample3 = [
-      {
-        title: 'Organic Search',
-        icon: 'cib-google',
-        percent: 56,
-        value: '191,235',
-      },
-      { title: 'Facebook', icon: 'cib-facebook', percent: 15, value: '51,223' },
-      { title: 'Twitter', icon: 'cib-twitter', percent: 11, value: '37,564' },
-      { title: 'LinkedIn', icon: 'cib-linkedin', percent: 8, value: '27,319' },
-    ]
-    const tableExample = [
-      {
-        avatar: { src: avatar1, status: 'success' },
-        user: {
-          name: 'Yiorgos Avraamu',
-          new: true,
-          registered: 'Jan 1, 2021',
-        },
-        country: { name: 'USA', flag: 'cif-us' },
-        usage: {
-          value: 50,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'success',
-        },
-        payment: { name: 'Mastercard', icon: 'cib-cc-mastercard' },
-        activity: '10 sec ago',
-      },
-      {
-        avatar: { src: avatar2, status: 'danger' },
-        user: {
-          name: 'Avram Tarasios',
-          new: false,
-          registered: 'Jan 1, 2021',
-        },
-        country: { name: 'Brazil', flag: 'cif-br' },
-        usage: {
-          value: 22,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'info',
-        },
-        payment: { name: 'Visa', icon: 'cib-cc-visa' },
-        activity: '5 minutes ago',
-      },
-      {
-        avatar: { src: avatar3, status: 'warning' },
-        user: { name: 'Quintin Ed', new: true, registered: 'Jan 1, 2021' },
-        country: { name: 'India', flag: 'cif-in' },
-        usage: {
-          value: 74,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'warning',
-        },
-        payment: { name: 'Stripe', icon: 'cib-cc-stripe' },
-        activity: '1 hour ago',
-      },
-      {
-        avatar: { src: avatar4, status: 'secondary' },
-        user: { name: 'Enéas Kwadwo', new: true, registered: 'Jan 1, 2021' },
-        country: { name: 'France', flag: 'cif-fr' },
-        usage: {
-          value: 98,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'danger',
-        },
-        payment: { name: 'PayPal', icon: 'cib-cc-paypal' },
-        activity: 'Last month',
-      },
-      {
-        avatar: { src: avatar5, status: 'success' },
-        user: {
-          name: 'Agapetus Tadeáš',
-          new: true,
-          registered: 'Jan 1, 2021',
-        },
-        country: { name: 'Spain', flag: 'cif-es' },
-        usage: {
-          value: 22,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'primary',
-        },
-        payment: { name: 'Google Wallet', icon: 'cib-cc-apple-pay' },
-        activity: 'Last week',
-      },
-      {
-        avatar: { src: avatar6, status: 'danger' },
-        user: {
-          name: 'Friderik Dávid',
-          new: true,
-          registered: 'Jan 1, 2021',
-        },
-        country: { name: 'Poland', flag: 'cif-pl' },
-        usage: {
-          value: 43,
-          period: 'Jun 11, 2021 - Jul 10, 2021',
-          color: 'success',
-        },
-        payment: { name: 'Amex', icon: 'cib-cc-amex' },
-        activity: 'Last week',
-      },
-    ]
-
-    return {
-      tableExample,
-      progressGroupExample1,
-      progressGroupExample2,
-      progressGroupExample3,
-    }
-  },
+<script setup lang="ts">
+import { ref } from "vue";
+import Banner from "../partials/Banner.vue";
+import Breadcrumb from "../partials/Breadcrumb.vue";
+interface User {
+  name: string;
+  email: string;
+  title: string;
+  title2: string;
+  status: string;
+  role: string;
 }
+
+const testUser: User = {
+  name: "John Doe",
+  email: "john@example.com",
+  title: "Software Engineer",
+  title2: "Web dev",
+  status: "Active",
+  role: "Owner",
+};
+
+const users = ref<User[]>([...Array(10).keys()].map(() => testUser));
 </script>
