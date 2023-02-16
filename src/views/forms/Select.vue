@@ -31,7 +31,8 @@
             <CFormSelect
               size="lg"
               class="mb-3"
-              aria-label="Large select example">
+              aria-label="Large select example"
+            >
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -40,7 +41,8 @@
             <CFormSelect
               size="sm"
               class="mb-3"
-              aria-label="Small select example">
+              aria-label="Small select example"
+            >
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -54,7 +56,8 @@
             <CFormSelect
               size="lg"
               multiple
-              aria-label="Multiple select example">
+              aria-label="Multiple select example"
+            >
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -68,7 +71,8 @@
             <CFormSelect
               size="lg"
               multiple
-              aria-label="Multiple select example">
+              aria-label="Multiple select example"
+            >
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -105,5 +109,5 @@
 <script>
 export default {
   name: 'Select',
-};
+}
 </script>

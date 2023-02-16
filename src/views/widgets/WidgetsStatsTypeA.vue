@@ -14,7 +14,8 @@
             <CDropdownToggle
               color="transparent"
               class="p-0 text-white"
-              :caret="false">
+              :caret="false"
+            >
               <CIcon icon="cil-options" class="text-high-emphasis-inverse" />
             </CDropdownToggle>
             <CDropdownMenu>
@@ -89,7 +90,8 @@
                   hoverRadius: 4,
                 },
               },
-            }" />
+            }"
+          />
         </template>
       </CWidgetStatsA>
     </CCol>
@@ -107,7 +109,8 @@
             <CDropdownToggle
               color="transparent"
               class="p-0 text-white"
-              :caret="false">
+              :caret="false"
+            >
               <CIcon icon="cil-options" class="text-high-emphasis-inverse" />
             </CDropdownToggle>
             <CDropdownMenu>
@@ -181,7 +184,8 @@
                   hoverRadius: 4,
                 },
               },
-            }" />
+            }"
+          />
         </template>
       </CWidgetStatsA>
     </CCol>
@@ -199,7 +203,8 @@
             <CDropdownToggle
               color="transparent"
               class="p-0 text-white"
-              :caret="false">
+              :caret="false"
+            >
               <CIcon icon="cil-options" class="text-high-emphasis-inverse" />
             </CDropdownToggle>
             <CDropdownMenu>
@@ -260,7 +265,8 @@
                   hoverRadius: 4,
                 },
               },
-            }" />
+            }"
+          />
         </template>
       </CWidgetStatsA>
     </CCol>
@@ -278,7 +284,8 @@
             <CDropdownToggle
               color="transparent"
               class="p-0 text-white"
-              :caret="false">
+              :caret="false"
+            >
               <CIcon icon="cil-options" class="text-high-emphasis-inverse" />
             </CDropdownToggle>
             <CDropdownMenu>
@@ -353,7 +360,8 @@
                   },
                 },
               },
-            }" />
+            }"
+          />
         </template>
       </CWidgetStatsA>
     </CCol>
@@ -361,12 +369,11 @@
 </template>
 
 <script>
-import { CChart } from '@coreui/vue-chartjs';
-
+import { CChart } from '@coreui/vue-chartjs'
 export default {
   name: 'WidgetsStatsA',
   components: {
     CChart,
   },
-};
+}
 </script>

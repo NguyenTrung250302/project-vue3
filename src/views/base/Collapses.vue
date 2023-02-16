@@ -82,10 +82,11 @@
               color="primary"
               @click="
                 () => {
-                  visibleA = !visibleA;
-                  visibleB = !visibleB;
+                  visibleA = !visibleA
+                  visibleB = !visibleB
                 }
-              ">
+              "
+            >
               Toggle both elements
             </CButton>
             <CRow>
@@ -122,20 +123,20 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from 'vue'
 export default {
   name: 'Collapse',
   setup() {
-    const visible = ref(false);
-    const visibleA = ref(false);
-    const visibleB = ref(false);
-    const visibleHorizontal = ref(false);
+    const visible = ref(false)
+    const visibleA = ref(false)
+    const visibleB = ref(false)
+    const visibleHorizontal = ref(false)
     return {
       visible,
       visibleA,
       visibleB,
       visibleHorizontal,
-    };
+    }
   },
-};
+}
 </script>

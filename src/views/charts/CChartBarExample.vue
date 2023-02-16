@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { CChartBar } from '@coreui/vue-chartjs';
+import { CChartBar } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartBarExample',
   components: { CChartBar },
@@ -31,8 +31,8 @@ export default {
             data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 12],
           },
         ],
-      };
+      }
     },
   },
-};
+}
 </script>

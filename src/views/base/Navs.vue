@@ -267,7 +267,8 @@
             <CNav
               component="nav"
               variant="pills"
-              class="flex-column flex-sm-row">
+              class="flex-column flex-sm-row"
+            >
               <CNavLink href="#" active> Active </CNavLink>
               <CNavLink href="#">Link</CNavLink>
               <CNavLink href="#">Link</CNavLink>
@@ -347,5 +348,5 @@
 <script>
 export default {
   name: 'Navs',
-};
+}
 </script>

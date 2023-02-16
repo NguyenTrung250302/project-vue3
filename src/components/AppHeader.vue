@@ -9,7 +9,7 @@
       </CHeaderBrand>
       <CHeaderNav class="d-none d-md-flex me-auto">
         <CNavItem>
-          <CNavLink href="/dashboard"> Dashboard</CNavLink>
+          <CNavLink href="/dashboard"> Dashboard </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#">Users</CNavLink>
@@ -45,10 +45,9 @@
 </template>
 
 <script>
-import AppBreadcrumb from './AppBreadcrumb';
-import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt';
-import { logo } from '@/assets/brand/logo';
-
+import AppBreadcrumb from './AppBreadcrumb'
+import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt'
+import { logo } from '@/assets/brand/logo'
 export default {
   name: 'AppHeader',
   components: {
@@ -58,7 +57,7 @@ export default {
   setup() {
     return {
       logo,
-    };
+    }
   },
-};
+}
 </script>

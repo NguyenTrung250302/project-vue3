@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { CChartLine } from '@coreui/vue-chartjs';
+import { CChartLine } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartLineExample',
   components: { CChartLine },
@@ -23,8 +23,8 @@ export default {
             data: [39, 80, 40, 35, 40, 20, 45],
           },
         ],
-      };
+      }
     },
   },
-};
+}
 </script>

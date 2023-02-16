@@ -989,5 +989,5 @@
 <script>
 export default {
   name: 'Tables',
-};
+}
 </script>

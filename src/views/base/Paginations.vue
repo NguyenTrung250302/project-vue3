@@ -83,7 +83,8 @@
             functionality.
           </p>
           <DocsExample
-            href="components/pagination.html#disabled-and-active-states">
+            href="components/pagination.html#disabled-and-active-states"
+          >
             <CPagination aria-label="Page navigation example">
               <CPaginationItem aria-label="Previous" disabled>
                 <span aria-hidden="true">&laquo;</span>
@@ -146,7 +147,8 @@
           <DocsExample href="components/pagination.html#aligment">
             <CPagination
               class="justify-content-center"
-              aria-label="Page navigation example">
+              aria-label="Page navigation example"
+            >
               <CPaginationItem disabled>Previous</CPaginationItem>
               <CPaginationItem>1</CPaginationItem>
               <CPaginationItem>2</CPaginationItem>
@@ -157,7 +159,8 @@
           <DocsExample href="components/pagination.html#aligment">
             <CPagination
               class="justify-content-end"
-              aria-label="Page navigation example">
+              aria-label="Page navigation example"
+            >
               <CPaginationItem disabled>Previous</CPaginationItem>
               <CPaginationItem>1</CPaginationItem>
               <CPaginationItem>2</CPaginationItem>
@@ -174,5 +177,5 @@
 <script>
 export default {
   name: 'Paginations',
-};
+}
 </script>

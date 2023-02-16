@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import { CChartPie } from '@coreui/vue-chartjs';
-
+import { CChartPie } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartPieExample',
   components: { CChartPie },
@@ -18,8 +17,8 @@ export default {
             data: [40, 20, 80, 10],
           },
         ],
-      };
+      }
     },
   },
-};
+}
 </script>

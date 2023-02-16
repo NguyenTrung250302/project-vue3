@@ -294,4 +294,4 @@ export default [
   //   _class: 'bg-danger text-white',
   //   target: '_blank'
   // }
-];
+]

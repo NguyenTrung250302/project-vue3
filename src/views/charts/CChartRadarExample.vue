@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import { CChartRadar } from '@coreui/vue-chartjs';
-
+import { CChartRadar } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartRadarExample',
   components: { CChartRadar },
@@ -47,8 +46,8 @@ export default {
         options: {
           aspectRatio: 1.5,
         },
-      };
+      }
     },
   },
-};
+}
 </script>

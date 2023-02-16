@@ -153,7 +153,8 @@
           <DocsExample href="components/list-group.html#flush">
             <template
               v-for="item in ['', '-sm', '-md', '-lg', '-xl', '-xxl']"
-              :key="item">
+              :key="item"
+            >
               <CListGroup class="mb-2" :layout="'horizontal' + item">
                 <CListGroupItem>Cras justo odio</CListGroupItem>
                 <CListGroupItem>Dapibus ac facilisis in</CListGroupItem>
@@ -241,17 +242,20 @@
           <DocsExample href="components/list-group.html#with-badges">
             <CListGroup>
               <CListGroupItem
-                class="d-flex justify-content-between align-items-center">
+                class="d-flex justify-content-between align-items-center"
+              >
                 Cras justo odio
                 <CBadge color="primary" shape="rounded-pill"> 14 </CBadge>
               </CListGroupItem>
               <CListGroupItem
-                class="d-flex justify-content-between align-items-center">
+                class="d-flex justify-content-between align-items-center"
+              >
                 Dapibus ac facilisis in
                 <CBadge color="primary" shape="rounded-pill"> 2 </CBadge>
               </CListGroupItem>
               <CListGroupItem
-                class="d-flex justify-content-between align-items-center">
+                class="d-flex justify-content-between align-items-center"
+              >
                 Morbi leo risus
                 <CBadge color="primary" shape="rounded-pill"> 1 </CBadge>
               </CListGroupItem>
@@ -355,5 +359,5 @@
 <script>
 export default {
   name: 'ListGroups',
-};
+}
 </script>

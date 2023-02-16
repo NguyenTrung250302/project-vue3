@@ -69,7 +69,8 @@
                 <CFormLabel for="inputAddress2">Address 2</CFormLabel>
                 <CFormInput
                   id="inputAddress2"
-                  placeholder="Apartment, studio, or floor" />
+                  placeholder="Apartment, studio, or floor"
+                />
               </CCol>
               <CCol :md="6">
                 <CFormLabel for="inputCity">City</CFormLabel>
@@ -90,7 +91,8 @@
                 <CFormCheck
                   id="gridCheck"
                   type="checkbox"
-                  label="Check me out" />
+                  label="Check me out"
+                />
               </CCol>
               <CCol :xs="12">
                 <CButton type="submit" color="primary">Sign in</CButton>
@@ -133,7 +135,8 @@
               <CRow class="mb-3">
                 <CFormLabel
                   for="inputPassword3"
-                  class="col-sm-2 col-form-label">
+                  class="col-sm-2 col-form-label"
+                >
                   Password
                 </CFormLabel>
                 <CCol :sm="10">
@@ -149,20 +152,23 @@
                     name="gridRadios"
                     value="option1"
                     label="First radio"
-                    checked />
+                    checked
+                  />
                   <CFormCheck
                     id="gridRadios2"
                     type="radio"
                     name="gridRadios"
                     value="option2"
-                    label="Second radio" />
+                    label="Second radio"
+                  />
                   <CFormCheck
                     id="gridRadios3"
                     type="radio"
                     name="gridRadios"
                     value="option3"
                     label="Third disabled radio"
-                    disabled />
+                    disabled
+                  />
                 </CCol>
               </fieldset>
               <CRow class="mb-3">
@@ -170,7 +176,8 @@
                   <CFormCheck
                     id="gridCheck1"
                     type="checkbox"
-                    label="Example checkbox" />
+                    label="Example checkbox"
+                  />
                 </div>
               </CRow>
               <CButton type="submit" color="primary">Sign in</CButton>
@@ -196,7 +203,8 @@
             <CRow class="mb-3">
               <CFormLabel
                 for="colFormLabelSm"
-                class="col-sm-2 col-form-label col-form-label-sm">
+                class="col-sm-2 col-form-label col-form-label-sm"
+              >
                 Email
               </CFormLabel>
               <CCol :sm="10">
@@ -204,7 +212,8 @@
                   id="colFormLabelSm"
                   type="email"
                   class="form-control form-control-sm"
-                  placeholder="col-form-label-sm" />
+                  placeholder="col-form-label-sm"
+                />
               </CCol>
             </CRow>
             <CRow class="mb-3">
@@ -215,13 +224,15 @@
                 <CFormInput
                   id="colFormLabel"
                   type="email"
-                  placeholder="col-form-label" />
+                  placeholder="col-form-label"
+                />
               </CCol>
             </CRow>
             <CRow>
               <CFormLabel
                 for="colFormLabelLg"
-                class="col-sm-2 col-form-label col-form-label-lg">
+                class="col-sm-2 col-form-label col-form-label-lg"
+              >
                 Email
               </CFormLabel>
               <CCol :sm="10">
@@ -229,7 +240,8 @@
                   id="colFormLabelLg"
                   type="email"
                   class="form-control form-control-lg"
-                  placeholder="col-form-label-lg" />
+                  placeholder="col-form-label-lg"
+                />
               </CCol>
             </CRow>
           </DocsExample>
@@ -298,7 +310,8 @@
                   <CInputGroupText>@</CInputGroupText>
                   <CFormInput
                     id="autoSizingInputGroup"
-                    placeholder="Username" />
+                    placeholder="Username"
+                  />
                 </CInputGroup>
               </CCol>
               <CCol xs="auto">
@@ -316,7 +329,8 @@
                 <CFormCheck
                   id="autoSizingCheck"
                   type="checkbox"
-                  label="Remember me" />
+                  label="Remember me"
+                />
               </CCol>
               <CCol xs="auto">
                 <CButton type="submit" color="primary">Submit</CButton>
@@ -338,14 +352,16 @@
               <CCol :sm="3">
                 <CFormLabel
                   class="visually-hidden"
-                  for="specificSizeInputGroupUsername">
+                  for="specificSizeInputGroupUsername"
+                >
                   Username
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
                   <CFormInput
                     id="specificSizeInputGroupUsername"
-                    placeholder="Username" />
+                    placeholder="Username"
+                  />
                 </CInputGroup>
               </CCol>
               <CCol :sm="3">
@@ -363,7 +379,8 @@
                 <CFormCheck
                   id="autoSizingCheck2"
                   type="checkbox"
-                  label="Remember me" />
+                  label="Remember me"
+                />
               </CCol>
               <CCol xs="auto">
                 <CButton type="submit" color="primary">Submit</CButton>
@@ -393,14 +410,16 @@
               <CCol :xs="12">
                 <CFormLabel
                   class="visually-hidden"
-                  for="inlineFormInputGroupUsername">
+                  for="inlineFormInputGroupUsername"
+                >
                   Username
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
                   <CFormInput
                     id="inlineFormInputGroupUsername"
-                    placeholder="Username" />
+                    placeholder="Username"
+                  />
                 </CInputGroup>
               </CCol>
               <CCol :xs="12">
@@ -418,7 +437,8 @@
                 <CFormCheck
                   id="inlineFormCheck"
                   type="checkbox"
-                  label="Remember me" />
+                  label="Remember me"
+                />
               </CCol>
               <CCol :xs="12">
                 <CButton type="submit" color="primary">Submit</CButton>
@@ -434,5 +454,5 @@
 <script>
 export default {
   name: 'Layout',
-};
+}
 </script>

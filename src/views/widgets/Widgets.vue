@@ -14,7 +14,8 @@
               <CCol :xs="3">
                 <CWidgetStatsB
                   class="mb-3"
-                  :progress="{ color: 'success', value: 75 }">
+                  :progress="{ color: 'success', value: 75 }"
+                >
                   <template #text>Widget helper text</template>
                   <template #title>Widget title</template>
                   <template #value>89.9%</template>
@@ -26,7 +27,8 @@
                   :progress="{ color: 'info', value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="12.124" />
+                  value="12.124"
+                />
               </CCol>
               <CCol :xs="3">
                 <CWidgetStatsB
@@ -34,7 +36,8 @@
                   :progress="{ color: 'warning', value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="$98.111,00" />
+                  value="$98.111,00"
+                />
               </CCol>
               <CCol :xs="3">
                 <CWidgetStatsB
@@ -42,7 +45,8 @@
                   :progress="{ color: 'primary', value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="2TB" />
+                  value="2TB"
+                />
               </CCol>
             </CRow>
           </DocsExample>
@@ -53,7 +57,8 @@
                   class="mb-3"
                   color="success"
                   inverse
-                  :progress="{ value: 75 }">
+                  :progress="{ value: 75 }"
+                >
                   <template #text>Widget helper text</template>
                   <template #title>Widget title</template>
                   <template #value>89.9%</template>
@@ -67,7 +72,8 @@
                   :progress="{ value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="12.124" />
+                  value="12.124"
+                />
               </CCol>
               <CCol :xs="3">
                 <CWidgetStatsB
@@ -77,7 +83,8 @@
                   :progress="{ value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="$98.111,00" />
+                  value="$98.111,00"
+                />
               </CCol>
               <CCol :xs="3">
                 <CWidgetStatsB
@@ -87,7 +94,8 @@
                   :progress="{ value: 75 }"
                   text="Widget helper text"
                   title="Widget title"
-                  value="2TB" />
+                  value="2TB"
+                />
               </CCol>
             </CRow>
           </DocsExample>
@@ -114,7 +122,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsBar" />
+                    :options="widgetStatsE.optionsBar"
+                  />
                 </CWidgetStatsE>
               </CCol>
               <CCol :xs="2">
@@ -137,7 +146,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsBar" />
+                    :options="widgetStatsE.optionsBar"
+                  />
                 </CWidgetStatsE>
               </CCol>
               <CCol :xs="2">
@@ -160,7 +170,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsBar" />
+                    :options="widgetStatsE.optionsBar"
+                  />
                 </CWidgetStatsE>
               </CCol>
               <CCol :xs="2">
@@ -183,7 +194,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsLine" />
+                    :options="widgetStatsE.optionsLine"
+                  />
                 </CWidgetStatsE>
               </CCol>
               <CCol :xs="2">
@@ -206,7 +218,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsLine" />
+                    :options="widgetStatsE.optionsLine"
+                  />
                 </CWidgetStatsE>
               </CCol>
               <CCol :xs="2">
@@ -229,7 +242,8 @@
                         },
                       ],
                     }"
-                    :options="widgetStatsE.optionsLine" />
+                    :options="widgetStatsE.optionsLine"
+                  />
                 </CWidgetStatsE>
               </CCol>
             </CRow>
@@ -278,12 +292,14 @@
                       class="fw-semibold font-xs text-medium-emphasis"
                       href="https://coreui.io/"
                       rel="noopener norefferer"
-                      target="_blank">
+                      target="_blank"
+                    >
                       View more
                       <CIcon
                         icon="cil-arrow-right"
                         class="ms-auto"
-                        width="16" />
+                        width="16"
+                      />
                     </CLink>
                   </template>
                 </CWidgetStatsF>
@@ -298,12 +314,14 @@
                       class="fw-semibold font-xs text-medium-emphasis"
                       href="https://coreui.io/"
                       rel="noopener norefferer"
-                      target="_blank">
+                      target="_blank"
+                    >
                       View more
                       <CIcon
                         icon="cil-arrow-right"
                         class="ms-auto"
-                        width="16" />
+                        width="16"
+                      />
                     </CLink>
                   </template>
                 </CWidgetStatsF>
@@ -318,12 +336,14 @@
                       class="fw-semibold font-xs text-medium-emphasis"
                       href="https://coreui.io/"
                       rel="noopener norefferer"
-                      target="_blank">
+                      target="_blank"
+                    >
                       View more
                       <CIcon
                         icon="cil-arrow-right"
                         class="ms-auto"
-                        width="16" />
+                        width="16"
+                      />
                     </CLink>
                   </template>
                 </CWidgetStatsF>
@@ -338,12 +358,14 @@
                       class="fw-semibold font-xs text-medium-emphasis"
                       href="https://coreui.io/"
                       rel="noopener norefferer"
-                      target="_blank">
+                      target="_blank"
+                    >
                       View more
                       <CIcon
                         icon="cil-arrow-right"
                         class="ms-auto"
-                        width="16" />
+                        width="16"
+                      />
                     </CLink>
                   </template>
                 </CWidgetStatsF>
@@ -357,7 +379,8 @@
                   color="primary"
                   :padding="false"
                   title="Title"
-                  value="$1.999,50">
+                  value="$1.999,50"
+                >
                   <template #icon>
                     <CIcon icon="cil-settings" size="xl" />
                   </template>
@@ -368,7 +391,8 @@
                   color="info"
                   :padding="false"
                   title="Title"
-                  value="$1.999,50">
+                  value="$1.999,50"
+                >
                   <template #icon>
                     <CIcon icon="cil-user" size="xl" />
                   </template>
@@ -379,7 +403,8 @@
                   color="warning"
                   :padding="false"
                   title="Title"
-                  value="$1.999,50">
+                  value="$1.999,50"
+                >
                   <template #icon>
                     <CIcon icon="cil-moon" size="xl" />
                   </template>
@@ -390,7 +415,8 @@
                   color="danger"
                   :padding="false"
                   title="Title"
-                  value="$1.999,50">
+                  value="$1.999,50"
+                >
                   <template #icon>
                     <CIcon icon="cil-bell" size="xl" />
                   </template>
@@ -407,46 +433,51 @@
                 class="mb-3"
                 :progress="{ color: 'info', value: 75 }"
                 title="Visitors"
-                value="87.500">
-                <template #icon>
-                  <CIcon icon="cil-people" height="36" />
-                </template>
+                value="87.500"
+              >
+                <template #icon
+                  ><CIcon icon="cil-people" height="36"
+                /></template>
               </CWidgetStatsC>
               <CWidgetStatsC
                 class="mb-3"
                 :progress="{ color: 'success', value: 75 }"
                 title="New Clients"
-                value="385">
-                <template #icon>
-                  <CIcon icon="cil-user-follow" height="36" />
-                </template>
+                value="385"
+              >
+                <template #icon
+                  ><CIcon icon="cil-user-follow" height="36"
+                /></template>
               </CWidgetStatsC>
               <CWidgetStatsC
                 class="mb-3"
                 :progress="{ color: 'warning', value: 75 }"
                 title="Products sold"
-                value="1238">
-                <template #icon>
-                  <CIcon icon="cil-basket" height="36" />
-                </template>
+                value="1238"
+              >
+                <template #icon
+                  ><CIcon icon="cil-basket" height="36"
+                /></template>
               </CWidgetStatsC>
               <CWidgetStatsC
                 class="mb-3"
                 :progress="{ color: 'primary', value: 75 }"
                 title="Returning Visitors"
-                value="28%">
-                <template #icon>
-                  <CIcon icon="cil-chart-pie" height="36" />
-                </template>
+                value="28%"
+              >
+                <template #icon
+                  ><CIcon icon="cil-chart-pie" height="36"
+                /></template>
               </CWidgetStatsC>
               <CWidgetStatsC
                 class="mb-3"
                 :progress="{ color: 'danger', value: 75 }"
                 title="Avg. Time"
-                value="5:34:11">
-                <template #icon>
-                  <CIcon icon="cil-speedometer" height="36" />
-                </template>
+                value="5:34:11"
+              >
+                <template #icon
+                  ><CIcon icon="cil-speedometer" height="36"
+                /></template>
               </CWidgetStatsC>
             </CCardGroup>
           </DocsExample>
@@ -457,10 +488,11 @@
                   class="mb-3"
                   :progress="{ color: 'info', value: 75 }"
                   title="Visitors"
-                  value="87.500">
-                  <template #icon>
-                    <CIcon icon="cil-people" height="36" />
-                  </template>
+                  value="87.500"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-people" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -468,10 +500,11 @@
                   class="mb-3"
                   :progress="{ color: 'success', value: 75 }"
                   title="New Clients"
-                  value="385">
-                  <template #icon>
-                    <CIcon icon="cil-user-follow" height="36" />
-                  </template>
+                  value="385"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-user-follow" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -479,10 +512,11 @@
                   class="mb-3"
                   :progress="{ color: 'warning', value: 75 }"
                   title="Products sold"
-                  value="1238">
-                  <template #icon>
-                    <CIcon icon="cil-basket" height="36" />
-                  </template>
+                  value="1238"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-basket" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -490,10 +524,11 @@
                   class="mb-3"
                   :progress="{ color: 'primary', value: 75 }"
                   title="Returning Visitors"
-                  value="28%">
-                  <template #icon>
-                    <CIcon icon="cil-chart-pie" height="36" />
-                  </template>
+                  value="28%"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-chart-pie" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -501,10 +536,11 @@
                   class="mb-3"
                   :progress="{ color: 'danger', value: 75 }"
                   title="Avg. Time"
-                  value="5:34:11">
-                  <template #icon>
-                    <CIcon icon="cil-speedometer" height="36" />
-                  </template>
+                  value="5:34:11"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-speedometer" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -512,10 +548,11 @@
                   class="mb-3"
                   :progress="{ color: 'info', value: 75 }"
                   title="Comments"
-                  value="972">
-                  <template #icon>
-                    <CIcon icon="cil-speech" height="36" />
-                  </template>
+                  value="972"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-speech" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
             </CRow>
@@ -529,10 +566,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="Visitors"
-                  value="87.500">
-                  <template #icon>
-                    <CIcon icon="cil-people" height="36" />
-                  </template>
+                  value="87.500"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-people" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -542,10 +580,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="New Clients"
-                  value="385">
-                  <template #icon>
-                    <CIcon icon="cil-user-follow" height="36" />
-                  </template>
+                  value="385"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-user-follow" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -555,10 +594,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="Products sold"
-                  value="1238">
-                  <template #icon>
-                    <CIcon icon="cil-basket" height="36" />
-                  </template>
+                  value="1238"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-basket" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -568,10 +608,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="Returning Visitors"
-                  value="28%">
-                  <template #icon>
-                    <CIcon icon="cil-chart-pie" height="36" />
-                  </template>
+                  value="28%"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-chart-pie" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -581,10 +622,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="Avg. Time"
-                  value="5:34:11">
-                  <template #icon>
-                    <CIcon icon="cil-speedometer" height="36" />
-                  </template>
+                  value="5:34:11"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-speedometer" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
               <CCol :xs="2">
@@ -594,10 +636,11 @@
                   inverse
                   :progress="{ value: 75 }"
                   title="Comments"
-                  value="972">
-                  <template #icon>
-                    <CIcon icon="cil-speech" height="36" />
-                  </template>
+                  value="972"
+                >
+                  <template #icon
+                    ><CIcon icon="cil-speech" height="36"
+                  /></template>
                 </CWidgetStatsC>
               </CCol>
             </CRow>
@@ -609,11 +652,10 @@
 </template>
 
 <script>
-import { getStyle } from '@coreui/utils';
-import { CChart } from '@coreui/vue-chartjs';
-import WidgetsStatsA from './WidgetsStatsTypeA.vue';
-import WidgetsStatsD from './WidgetsStatsTypeD.vue';
-
+import { getStyle } from '@coreui/utils'
+import { CChart } from '@coreui/vue-chartjs'
+import WidgetsStatsA from './WidgetsStatsTypeA.vue'
+import WidgetsStatsD from './WidgetsStatsTypeD.vue'
 export default {
   name: 'Widgets',
   components: {
@@ -680,7 +722,7 @@ export default {
           },
         },
       },
-    };
+    }
 
     return {
       getStyle,
@@ -692,7 +734,7 @@ export default {
         { color: 'info', icon: 'cil-drop' },
         { color: 'secondary', icon: 'cil-pencil' },
       ],
-    };
+    }
   },
-};
+}
 </script>

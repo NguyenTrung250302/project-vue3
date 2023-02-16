@@ -26,16 +26,17 @@
               class="row g-3 needs-validation"
               novalidate
               :validated="validatedCustom01"
-              @submit="handleSubmitCustom01">
+              @submit="handleSubmitCustom01"
+            >
               <CCol :md="4">
                 <CFormLabel for="validationCustom01">Email</CFormLabel>
                 <CFormInput id="validationCustom01" value="Mark" required />
-                <CFormFeedback valid> Looks good!</CFormFeedback>
+                <CFormFeedback valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4">
                 <CFormLabel for="validationCustom02">Email</CFormLabel>
                 <CFormInput id="validationCustom02" value="Otto" required />
-                <CFormFeedback valid> Looks good!</CFormFeedback>
+                <CFormFeedback valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4">
                 <CFormLabel for="validationCustomUsername">Username</CFormLabel>
@@ -45,7 +46,8 @@
                     id="validationCustomUsername"
                     value=""
                     aria-describedby="inputGroupPrepend"
-                    required />
+                    required
+                  />
                   <CFormFeedback invalid>
                     Please choose a username.
                   </CFormFeedback>
@@ -80,7 +82,8 @@
                   id="invalidCheck"
                   type="checkbox"
                   label="Agree to terms and conditions"
-                  required />
+                  required
+                />
                 <CFormFeedback invalid>
                   You must agree before submitting.
                 </CFormFeedback>
@@ -114,28 +117,30 @@
             <CForm
               class="row g-3 needs-validation"
               :validated="validatedDefault01"
-              @submit="handleSubmitDefault01">
+              @submit="handleSubmitDefault01"
+            >
               <CCol :md="4">
                 <CFormLabel for="validationDefault01">Email</CFormLabel>
                 <CFormInput id="validationDefault01" value="Mark" required />
-                <CFormFeedback valid> Looks good!</CFormFeedback>
+                <CFormFeedback valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4">
                 <CFormLabel for="validationDefault02">Email</CFormLabel>
                 <CFormInput id="validationDefault02" value="Otto" required />
-                <CFormFeedback valid> Looks good!</CFormFeedback>
+                <CFormFeedback valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4">
                 <CFormLabel for="validationDefaultUsername"
-                  >Username
-                </CFormLabel>
+                  >Username</CFormLabel
+                >
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend02">@</CInputGroupText>
                   <CFormInput
                     id="validationDefaultUsername"
                     value=""
                     aria-describedby="inputGroupPrepend02"
-                    required />
+                    required
+                  />
                   <CFormFeedback invalid>
                     Please choose a username.
                   </CFormFeedback>
@@ -170,7 +175,8 @@
                   id="invalidCheck"
                   type="checkbox"
                   label="Agree to terms and conditions"
-                  required />
+                  required
+                />
                 <CFormFeedback invalid>
                   You must agree before submitting.
                 </CFormFeedback>
@@ -211,7 +217,8 @@
                   type="text"
                   value="Mark"
                   valid
-                  required />
+                  required
+                />
                 <CFormFeedback valid>Looks good!</CFormFeedback>
               </CCol>
               <CCol ::md="4">
@@ -221,7 +228,8 @@
                   type="text"
                   value="Otto"
                   valid
-                  required />
+                  required
+                />
                 <CFormFeedback valid>Looks good!</CFormFeedback>
               </CCol>
               <CCol ::md="4">
@@ -234,10 +242,11 @@
                     value=""
                     aria-describedby="inputGroupPrepend03"
                     invalid
-                    required />
+                    required
+                  />
                   <CFormFeedback invalid
-                    >Please choose a username.
-                  </CFormFeedback>
+                    >Please choose a username.</CFormFeedback
+                  >
                 </CInputGroup>
               </CCol>
               <CCol :md="6">
@@ -246,10 +255,11 @@
                   id="validationServer03"
                   type="text"
                   invalid
-                  required />
+                  required
+                />
                 <CFormFeedback invalid
-                  >Please provide a valid city.
-                </CFormFeedback>
+                  >Please provide a valid city.</CFormFeedback
+                >
               </CCol>
               <CCol :md="3">
                 <CFormLabel for="validationServer04">City</CFormLabel>
@@ -258,8 +268,8 @@
                   <option>...</option>
                 </CFormSelect>
                 <CFormFeedback invalid
-                  >Please provide a valid city.
-                </CFormFeedback>
+                  >Please provide a valid city.</CFormFeedback
+                >
               </CCol>
               <CCol :md="3">
                 <CFormLabel for="validationServer05">City</CFormLabel>
@@ -267,10 +277,11 @@
                   id="validationServer05"
                   type="text"
                   invalid
-                  required />
+                  required
+                />
                 <CFormFeedback invalid
-                  >Please provide a valid zip.
-                </CFormFeedback>
+                  >Please provide a valid zip.</CFormFeedback
+                >
               </CCol>
               <CCol :xs="12">
                 <CFormCheck
@@ -278,13 +289,14 @@
                   type="checkbox"
                   label="Agree to terms and conditions"
                   invalid
-                  required />
+                  required
+                />
                 <CFormFeedback invalid
-                  >You must agree before submitting.
-                </CFormFeedback>
+                  >You must agree before submitting.</CFormFeedback
+                >
               </CCol>
               <CCol :xs="12">
-                <CButton color="primary" type="submit"> Submit form</CButton>
+                <CButton color="primary" type="submit"> Submit form </CButton>
               </CCol>
             </CForm>
           </DocsExample>
@@ -310,13 +322,14 @@
             <CForm :validated="true">
               <div class="mb-3">
                 <CFormLabel for="validationTextarea" class="form-label"
-                  >Textarea
-                </CFormLabel>
+                  >Textarea</CFormLabel
+                >
                 <CFormTextarea
                   id="validationTextarea"
                   placeholder="Required example textarea"
                   invalid
-                  required></CFormTextarea>
+                  required
+                ></CFormTextarea>
                 <CFormFeedback invalid>
                   Please enter a message in the textarea.
                 </CFormFeedback>
@@ -325,26 +338,29 @@
                 id="validationFormCheck1"
                 class="mb-3"
                 label="Check this checkbox"
-                required />
+                required
+              />
               <CFormFeedback invalid
-                >Example invalid feedback text
-              </CFormFeedback>
+                >Example invalid feedback text</CFormFeedback
+              >
               <CFormCheck
                 id="validationFormCheck2"
                 type="radio"
                 name="radio-stacked"
                 label="Check this checkbox"
-                required />
+                required
+              />
               <CFormCheck
                 id="validationFormCheck3"
                 class="mb-3"
                 type="radio"
                 name="radio-stacked"
                 label="Or toggle this other radio"
-                required />
+                required
+              />
               <CFormFeedback invalid
-                >More example invalid feedback text
-              </CFormFeedback>
+                >More example invalid feedback text</CFormFeedback
+              >
               <div class="mb-3">
                 <CFormSelect required aria-label="select example">
                   <option>Open this select menu</option>
@@ -353,23 +369,24 @@
                   <option value="3">Three</option>
                 </CFormSelect>
                 <CFormFeedback invalid
-                  >Example invalid select feedback
-                </CFormFeedback>
+                  >Example invalid select feedback</CFormFeedback
+                >
               </div>
               <div class="mb-3">
                 <CFormInput
                   id="validationTextarea"
                   type="file"
                   aria-label="file example"
-                  required />
+                  required
+                />
                 <CFormFeedback invalid
-                  >Example invalid form file feedback
-                </CFormFeedback>
+                  >Example invalid form file feedback</CFormFeedback
+                >
               </div>
               <div class="mb-3">
                 <CButton type="submit" color="primary" disabled
-                  >Submit form
-                </CButton>
+                  >Submit form</CButton
+                >
               </div>
             </CForm>
           </DocsExample>
@@ -395,28 +412,30 @@
               class="row g-3 needs-validation"
               novalidate
               :validated="validatedTooltip01"
-              @submit="handleSubmitTooltip01">
+              @submit="handleSubmitTooltip01"
+            >
               <CCol :md="4" class="position-relative">
                 <CFormLabel for="validationTooltip01">Email</CFormLabel>
                 <CFormInput id="validationTooltip01" value="Mark" required />
-                <CFormFeedback tooltip valid> Looks good!</CFormFeedback>
+                <CFormFeedback tooltip valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4" class="position-relative">
                 <CFormLabel for="validationTooltip02">Email</CFormLabel>
                 <CFormInput id="validationTooltip02" value="Otto" required />
-                <CFormFeedback tooltip valid> Looks good!</CFormFeedback>
+                <CFormFeedback tooltip valid> Looks good! </CFormFeedback>
               </CCol>
               <CCol :md="4" class="position-relative">
                 <CFormLabel for="validationTooltipUsername"
-                  >Username
-                </CFormLabel>
+                  >Username</CFormLabel
+                >
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend">@</CInputGroupText>
                   <CFormInput
                     id="validationTooltipUsername"
                     value=""
                     aria-describedby="inputGroupPrepend"
-                    required />
+                    required
+                  />
                   <CFormFeedback tooltip invalid>
                     Please choose a username.
                   </CFormFeedback>
@@ -465,33 +484,33 @@ export default {
       validatedCustom01: null,
       validatedDefault01: null,
       validatedTooltip01: null,
-    };
+    }
   },
   methods: {
     handleSubmitCustom01(event) {
-      const form = event.currentTarget;
+      const form = event.currentTarget
       if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
       }
-      this.validatedCustom01 = true;
+      this.validatedCustom01 = true
     },
     handleSubmitDefault01(event) {
-      const form = event.currentTarget;
+      const form = event.currentTarget
       if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
       }
-      this.validatedDefault01 = true;
+      this.validatedDefault01 = true
     },
     handleSubmitTooltip01(event) {
-      const form = event.currentTarget;
+      const form = event.currentTarget
       if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
       }
-      this.validatedTooltip01 = true;
+      this.validatedTooltip01 = true
     },
   },
-};
+}
 </script>

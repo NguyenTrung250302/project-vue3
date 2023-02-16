@@ -5,15 +5,16 @@
     :options="options"
     @get-dataset-at-event="aa"
     @get-element-at-event="aa"
-    @get-elements-at-event="aa" />
+    @get-elements-at-event="aa"
+  />
 </template>
 
 <script>
-import { CChart } from '@coreui/vue-chartjs';
-import { getStyle, hexToRgba } from '@coreui/utils/src';
+import { CChart } from '@coreui/vue-chartjs'
+import { getStyle, hexToRgba } from '@coreui/utils/src'
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 export default {
@@ -68,7 +69,7 @@ export default {
           data: [65, 65, 65, 65, 65, 65, 65],
         },
       ],
-    };
+    }
 
     const options = {
       maintainAspectRatio: false,
@@ -103,18 +104,18 @@ export default {
           hoverBorderWidth: 3,
         },
       },
-    };
+    }
 
     return {
       data,
       options,
-    };
+    }
   },
   methods: {
     aa(value, value2) {
-      console.log(value);
-      console.log(value2);
+      console.log(value)
+      console.log(value2)
     },
   },
-};
+}
 </script>

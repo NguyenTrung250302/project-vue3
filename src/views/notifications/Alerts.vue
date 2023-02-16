@@ -12,25 +12,26 @@
             <strong>required</strong> contextual <code>color</code> props (e.g.,
             <code>primary</code>). For inline dismissal, use the
             <a
-              href="https://coreui.io/vue/docs/4.0/components/alert.html#dismissing">
+              href="https://coreui.io/vue/docs/4.0/components/alert.html#dismissing"
+            >
               dismissing prop
             </a>
             .
           </p>
           <DocsExample href="components/alert.html">
             <CAlert color="primary"
-              >A simple primary alert—check it out!
-            </CAlert>
+              >A simple primary alert—check it out!</CAlert
+            >
             <CAlert color="secondary"
-              >A simple secondary alert—check it out!
-            </CAlert>
+              >A simple secondary alert—check it out!</CAlert
+            >
             <CAlert color="success"
-              >A simple success alert—check it out!
-            </CAlert>
+              >A simple success alert—check it out!</CAlert
+            >
             <CAlert color="danger">A simple danger alert—check it out!</CAlert>
             <CAlert color="warning"
-              >A simple warning alert—check it out!
-            </CAlert>
+              >A simple warning alert—check it out!</CAlert
+            >
             <CAlert color="info">A simple info alert—check it out!</CAlert>
             <CAlert color="light">A simple light alert—check it out!</CAlert>
             <CAlert color="dark">A simple dark alert—check it out!</CAlert>
@@ -51,43 +52,43 @@
           <DocsExample href="components/alert.html#link-color">
             <CAlert color="primary">
               A simple primary alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="secondary">
               A simple secondary alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="success">
               A simple success alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="danger">
               A simple danger alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="warning">
               A simple warning alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="info">
               A simple info alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="light">
               A simple light alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
             <CAlert color="dark">
               A simple dark alert with
-              <CAlertLink href="#">an example link</CAlertLink>
-              . Give it a click if you like.
+              <CAlertLink href="#">an example link</CAlertLink>. Give it a click
+              if you like.
             </CAlert>
           </DocsExample>
         </CCardBody>
@@ -148,8 +149,8 @@ export default {
   name: 'Alerts',
   methods: {
     alert: function () {
-      alert('👋 Well, hi there! Thanks for dismissing me.');
+      alert('👋 Well, hi there! Thanks for dismissing me.')
     },
   },
-};
+}
 </script>

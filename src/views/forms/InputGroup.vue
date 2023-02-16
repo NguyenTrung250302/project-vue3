@@ -17,13 +17,15 @@
               <CFormInput
                 placeholder="Username"
                 aria-label="Username"
-                aria-describedby="basic-addon1" />
+                aria-describedby="basic-addon1"
+              />
             </CInputGroup>
             <CInputGroup class="mb-3">
               <CFormInput
                 placeholder="Recipient&#39;s username"
                 aria-label="Recipient&#39;s username"
-                aria-describedby="basic-addon2" />
+                aria-describedby="basic-addon2"
+              />
               <CInputGroupText id="basic-addon2">@example.com</CInputGroupText>
             </CInputGroup>
             <CFormLabel for="basic-url">Your vanity URL</CFormLabel>
@@ -68,7 +70,8 @@
               <CFormInput
                 placeholder="Username"
                 aria-label="Username"
-                aria-describedby="addon-wrapping" />
+                aria-describedby="addon-wrapping"
+              />
             </CInputGroup>
           </DocsExample>
         </CCardBody>
@@ -97,7 +100,8 @@
               <CInputGroupText id="inputGroup-sizing-sm">Small</CInputGroupText>
               <CFormInput
                 aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm" />
+                aria-describedby="inputGroup-sizing-sm"
+              />
             </CInputGroup>
             <CInputGroup class="mb-3">
               <CInputGroupText id="inputGroup-sizing-default"
@@ -105,13 +109,15 @@
               >
               <CFormInput
                 aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default" />
+                aria-describedby="inputGroup-sizing-default"
+              />
             </CInputGroup>
             <CInputGroup size="lg">
               <CInputGroupText id="inputGroup-sizing-lg">Large</CInputGroupText>
               <CFormInput
                 aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-lg" />
+                aria-describedby="inputGroup-sizing-lg"
+              />
             </CInputGroup>
           </DocsExample>
         </CCardBody>
@@ -133,7 +139,8 @@
                 <CFormCheck
                   type="checkbox"
                   value=""
-                  aria-label="Checkbox for following text input" />
+                  aria-label="Checkbox for following text input"
+                />
               </CInputGroupText>
               <CFormInput aria-label="Text input with checkbox" />
             </CInputGroup>
@@ -142,7 +149,8 @@
                 <CFormCheck
                   type="radio"
                   value=""
-                  aria-label="Radio button for following text input" />
+                  aria-label="Radio button for following text input"
+                />
               </CInputGroupText>
               <CFormInput aria-label="Text input with radio button" />
             </CInputGroup>
@@ -186,11 +194,13 @@
               <CInputGroupText>$</CInputGroupText>
               <CInputGroupText>0.00</CInputGroupText>
               <CFormInput
-                aria-label="Dollar amount (with dot and two decimal places)" />
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
             </CInputGroup>
             <CInputGroup>
               <CFormInput
-                aria-label="Dollar amount (with dot and two decimal places)" />
+                aria-label="Dollar amount (with dot and two decimal places)"
+              />
               <CInputGroupText>$</CInputGroupText>
               <CInputGroupText>0.00</CInputGroupText>
             </CInputGroup>
@@ -214,24 +224,28 @@
                 id="button-addon1"
                 type="button"
                 color="secondary"
-                variant="outline">
+                variant="outline"
+              >
                 Button
               </CButton>
               <CFormInput
                 placeholder=""
                 aria-label="Example text with button addon"
-                aria-describedby="button-addon1" />
+                aria-describedby="button-addon1"
+              />
             </CInputGroup>
             <CInputGroup class="mb-3">
               <CFormInput
                 placeholder="Recipient's username"
                 aria-label="Recipient's username"
-                aria-describedby="button-addon2" />
+                aria-describedby="button-addon2"
+              />
               <CButton
                 id="button-addon2"
                 type="button"
                 color="secondary"
-                variant="outline">
+                variant="outline"
+              >
                 Button
               </CButton>
             </CInputGroup>
@@ -244,12 +258,14 @@
               </CButton>
               <CFormInput
                 placeholder=""
-                aria-label="Example text with two button addons" />
+                aria-label="Example text with two button addons"
+              />
             </CInputGroup>
             <CInputGroup>
               <CFormInput
                 placeholder="Recipient's username"
-                aria-label="Recipient's username with two button addons" />
+                aria-label="Recipient's username with two button addons"
+              />
               <CButton type="button" color="secondary" variant="outline">
                 Button
               </CButton>
@@ -351,11 +367,13 @@
                 </CDropdownMenu>
               </CDropdown>
               <CFormInput
-                aria-label="Text input with segmented dropdown button" />
+                aria-label="Text input with segmented dropdown button"
+              />
             </CInputGroup>
             <CInputGroup>
               <CFormInput
-                aria-label="Text input with segmented dropdown button" />
+                aria-label="Text input with segmented dropdown button"
+              />
               <CDropdown alignment="end" variant="input-group">
                 <CButton type="button" color="secondary" variant="outline">
                   Action
@@ -409,7 +427,8 @@
               </CButton>
               <CFormSelect
                 id="inputGroupSelect03"
-                aria-label="Example select with button addon">
+                aria-label="Example select with button addon"
+              >
                 <option>Choose...</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -419,7 +438,8 @@
             <CInputGroup>
               <CFormSelect
                 id="inputGroupSelect04"
-                aria-label="Example select with button addon">
+                aria-label="Example select with button addon"
+              >
                 <option>Choose...</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -457,26 +477,30 @@
                 id="inputGroupFileAddon03"
                 type="button"
                 color="secondary"
-                variant="outline">
+                variant="outline"
+              >
                 Button
               </CButton>
               <CFormInput
                 id="inputGroupFile03"
                 type="file"
                 aria-describedby="inputGroupFileAddon03"
-                aria-label="Upload" />
+                aria-label="Upload"
+              />
             </CInputGroup>
             <CInputGroup>
               <CFormInput
                 id="inputGroupFile04"
                 type="file"
                 aria-describedby="inputGroupFileAddon04"
-                aria-label="Upload" />
+                aria-label="Upload"
+              />
               <CButton
                 id="inputGroupFileAddon04"
                 type="button"
                 color="secondary"
-                variant="outline">
+                variant="outline"
+              >
                 Button
               </CButton>
             </CInputGroup>
@@ -490,5 +514,5 @@
 <script>
 export default {
   name: 'InputGroup',
-};
+}
 </script>

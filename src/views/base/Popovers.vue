@@ -15,7 +15,8 @@
                 placement: 'right',
               }"
               color="danger"
-              size="lg">
+              size="lg"
+            >
               Click to toggle popover
             </CButton>
           </DocsExample>
@@ -79,5 +80,5 @@
 <script>
 export default {
   name: 'Popovers',
-};
+}
 </script>

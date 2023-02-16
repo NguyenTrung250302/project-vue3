@@ -21,14 +21,16 @@
               <CFormInput
                 id="floatingInput"
                 type="email"
-                placeholder="name@example.com" />
+                placeholder="name@example.com"
+              />
               <CFormLabel for="floatingInput">Email address</CFormLabel>
             </CFormFloating>
             <CFormFloating>
               <CFormInput
                 id="floatingPassword"
                 type="password"
-                placeholder="Password" />
+                placeholder="Password"
+              />
               <CFormLabel for="floatingPassword">Password</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -43,7 +45,8 @@
                 id="floatingInputValue"
                 type="email"
                 placeholder="name@example.com"
-                value="test@example.com" />
+                value="test@example.com"
+              />
               <CFormLabel for="floatingInputValue">Input with value</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -64,7 +67,8 @@
             <CFormFloating>
               <CFormTextarea
                 id="floatingTextarea"
-                placeholder="Leave a comment here"></CFormTextarea>
+                placeholder="Leave a comment here"
+              ></CFormTextarea>
               <CFormLabel for="floatingTextarea">Comments</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -78,7 +82,8 @@
               <CFormTextarea
                 id="floatingTextarea2"
                 placeholder="Leave a comment here"
-                style="height: 100px"></CFormTextarea>
+                style="height: 100px"
+              ></CFormTextarea>
               <CFormLabel for="floatingTextarea2">Comments</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -106,7 +111,8 @@
             <CFormFloating>
               <CFormSelect
                 id="floatingSelect"
-                aria-label="Floating label select example">
+                aria-label="Floating label select example"
+              >
                 <option>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -136,7 +142,8 @@
                     id="floatingInputGrid"
                     type="email"
                     placeholder="name@example.com"
-                    value="email@example.com" />
+                    value="email@example.com"
+                  />
                   <CFormLabel for="floatingInputGrid">Email address</CFormLabel>
                 </CFormFloating>
               </CCol>
@@ -144,7 +151,8 @@
                 <CFormFloating>
                   <CFormSelect
                     id="floatingSelectGrid"
-                    aria-label="Floating label select example">
+                    aria-label="Floating label select example"
+                  >
                     <option>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -166,5 +174,5 @@
 <script>
 export default {
   name: 'FloatingLabels',
-};
+}
 </script>

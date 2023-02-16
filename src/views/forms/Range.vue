@@ -71,7 +71,8 @@
               :min="0"
               :max="5"
               :step="0.5"
-              value="3" />
+              value="3"
+            />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -82,5 +83,5 @@
 <script>
 export default {
   name: 'Range',
-};
+}
 </script>

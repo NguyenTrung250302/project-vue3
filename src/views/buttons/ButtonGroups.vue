@@ -76,53 +76,63 @@
             seamless looking button group.
           </p>
           <DocsExample
-            href="components/button-group.html#checkbox-and-radio-button-groups">
+            href="components/button-group.html#checkbox-and-radio-button-groups"
+          >
             <CButtonGroup
               role="group"
-              aria-label="Basic checkbox toggle button group">
+              aria-label="Basic checkbox toggle button group"
+            >
               <CFormCheck
                 id="btncheck1"
                 :button="{ color: 'primary', variant: 'outline' }"
                 autocomplete="off"
-                label="Checkbox 1" />
+                label="Checkbox 1"
+              />
               <CFormCheck
                 id="btncheck2"
                 :button="{ color: 'primary', variant: 'outline' }"
                 autocomplete="off"
-                label="Checkbox 2" />
+                label="Checkbox 2"
+              />
               <CFormCheck
                 id="btncheck3"
                 :button="{ color: 'primary', variant: 'outline' }"
                 autocomplete="off"
-                label="Checkbox 3" />
+                label="Checkbox 3"
+              />
             </CButtonGroup>
           </DocsExample>
           <DocsExample
-            href="components/button-group.html#checkbox-and-radio-button-groups">
+            href="components/button-group.html#checkbox-and-radio-button-groups"
+          >
             <CButtonGroup
               role="group"
-              aria-label="Basic checkbox toggle button group">
+              aria-label="Basic checkbox toggle button group"
+            >
               <CFormCheck
                 id="btnradio1"
                 type="radio"
                 :button="{ color: 'primary', variant: 'outline' }"
                 name="btnradio"
                 autocomplete="off"
-                label="Radio 1" />
+                label="Radio 1"
+              />
               <CFormCheck
                 id="btnradio2"
                 type="radio"
                 :button="{ color: 'primary', variant: 'outline' }"
                 name="btnradio"
                 autocomplete="off"
-                label="Radio 2" />
+                label="Radio 2"
+              />
               <CFormCheck
                 id="btnradio3"
                 type="radio"
                 :button="{ color: 'primary', variant: 'outline' }"
                 name="btnradio"
                 autocomplete="off"
-                label="Radio 3" />
+                label="Radio 3"
+              />
             </CButtonGroup>
           </DocsExample>
         </CCardBody>
@@ -142,7 +152,8 @@
           <DocsExample href="components/button-group.html#button-toolbar">
             <CButtonToolbar
               role="group"
-              aria-label="Toolbar with button groups">
+              aria-label="Toolbar with button groups"
+            >
               <CButtonGroup class="me-2" role="group" aria-label="First group">
                 <CButton color="primary">1</CButton>
                 <CButton color="primary">2</CButton>
@@ -168,7 +179,8 @@
             <CButtonToolbar
               class="mb-3"
               role="group"
-              aria-label="Toolbar with button groups">
+              aria-label="Toolbar with button groups"
+            >
               <CButtonGroup class="me-2" role="group" aria-label="First group">
                 <CButton color="secondary" variant="outline"> 1 </CButton>
                 <CButton color="secondary" variant="outline"> 2 </CButton>
@@ -180,13 +192,15 @@
                 <CFormInput
                   placeholder="Input group example"
                   aria-label="Input group example"
-                  aria-describedby="btnGroupAddon" />
+                  aria-describedby="btnGroupAddon"
+                />
               </CInputGroup>
             </CButtonToolbar>
             <CButtonToolbar
               class="justify-content-between"
               role="group"
-              aria-label="Toolbar with button groups">
+              aria-label="Toolbar with button groups"
+            >
               <CButtonGroup class="me-2" role="group" aria-label="First group">
                 <CButton color="secondary" variant="outline"> 1 </CButton>
                 <CButton color="secondary" variant="outline"> 2 </CButton>
@@ -198,7 +212,8 @@
                 <CFormInput
                   placeholder="Input group example"
                   aria-label="Input group example"
-                  aria-describedby="btnGroupAddon" />
+                  aria-describedby="btnGroupAddon"
+                />
               </CInputGroup>
             </CButtonToolbar>
           </DocsExample>
@@ -222,7 +237,8 @@
             <CButtonGroup
               size="lg"
               role="group"
-              aria-label="Large button group">
+              aria-label="Large button group"
+            >
               <CButton color="dark" variant="outline"> Left </CButton>
               <CButton color="dark" variant="outline"> Middle </CButton>
               <CButton color="dark" variant="outline"> Right </CButton>
@@ -237,7 +253,8 @@
             <CButtonGroup
               size="sm"
               role="group"
-              aria-label="Small button group">
+              aria-label="Small button group"
+            >
               <CButton color="dark" variant="outline"> Left </CButton>
               <CButton color="dark" variant="outline"> Middle </CButton>
               <CButton color="dark" variant="outline"> Right </CButton>
@@ -260,7 +277,8 @@
           <DocsExample href="components/button-group.html#nesting">
             <CButtonGroup
               role="group"
-              aria-label="Button group with nested dropdown">
+              aria-label="Button group with nested dropdown"
+            >
               <CButton color="primary">1</CButton>
               <CButton color="primary">2</CButton>
               <CDropdown variant="btn-group">
@@ -293,7 +311,8 @@
             <CButtonGroup
               vertical
               role="group"
-              aria-label="Vertical button group">
+              aria-label="Vertical button group"
+            >
               <CButton color="dark">Button</CButton>
               <CButton color="dark">Button</CButton>
               <CButton color="dark">Button</CButton>
@@ -307,7 +326,8 @@
             <CButtonGroup
               vertical
               role="group"
-              aria-label="Vertical button group">
+              aria-label="Vertical button group"
+            >
               <CButton color="primary">Button</CButton>
               <CButton color="primary">Button</CButton>
               <CDropdown variant="btn-group">
@@ -358,7 +378,8 @@
             <CButtonGroup
               vertical
               role="group"
-              aria-label="Vertical button group">
+              aria-label="Vertical button group"
+            >
               <CFormCheck
                 id="vbtnradio1"
                 type="radio"
@@ -367,7 +388,8 @@
                 autocomplete="off"
                 label="Radio
               1"
-                checked />
+                checked
+              />
               <CFormCheck
                 id="vbtnradio2"
                 type="radio"
@@ -375,7 +397,8 @@
                 name="vbtnradio"
                 autocomplete="off"
                 label="Radio
-              2" />
+              2"
+              />
               <CFormCheck
                 id="vbtnradio3"
                 type="radio"
@@ -383,7 +406,8 @@
                 name="vbtnradio"
                 autocomplete="off"
                 label="Radio
-              3" />
+              3"
+              />
             </CButtonGroup>
           </DocsExample>
         </CCardBody>
@@ -395,5 +419,5 @@
 <script>
 export default {
   name: 'ButtonGroups',
-};
+}
 </script>

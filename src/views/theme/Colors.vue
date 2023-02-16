@@ -2,10 +2,7 @@
   <CRow>
     <CCol>
       <CCard>
-        <CCardHeader>
-          <CIcon icon="cil-drop" />
-          Theme colors
-        </CCardHeader>
+        <CCardHeader> <CIcon icon="cil-drop" /> Theme colors </CCardHeader>
         <CCardBody>
           <CRow>
             <ColorTheme color="bg-primary">
@@ -34,10 +31,9 @@
 </template>
 
 <script>
-import ColorTheme from './ColorTheme.vue';
-
+import ColorTheme from './ColorTheme'
 export default {
   name: 'Colors',
   components: { ColorTheme },
-};
+}
 </script>

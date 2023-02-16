@@ -76,5 +76,5 @@
 <script>
 export default {
   name: 'Tooltips',
-};
+}
 </script>

@@ -10,7 +10,8 @@
             Progress components are built with two HTML elements, some CSS to
             set the width, and a few attributes. We don&#39;tuse
             <a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress"
+            >
               the HTML5 <code>&lt;progress&gt;</code> element
             </a>
             , ensuring you can stack progress bars, animate them, and place text
@@ -169,28 +170,32 @@
                 color="success"
                 variant="striped"
                 animated
-                :value="25" />
+                :value="25"
+              />
             </CProgress>
             <CProgress class="mb-3">
               <CProgressBar
                 color="info"
                 variant="striped"
                 animated
-                :value="50" />
+                :value="50"
+              />
             </CProgress>
             <CProgress class="mb-3">
               <CProgressBar
                 color="warning"
                 variant="striped"
                 animated
-                :value="75" />
+                :value="75"
+              />
             </CProgress>
             <CProgress class="mb-3">
               <CProgressBar
                 color="danger"
                 variant="striped"
                 animated
-                :value="100" />
+                :value="100"
+              />
             </CProgress>
           </DocsExample>
         </CCardBody>
@@ -202,5 +207,5 @@
 <script>
 export default {
   name: 'Progress',
-};
+}
 </script>

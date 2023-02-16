@@ -104,14 +104,16 @@
                 component="span"
                 size="sm"
                 variant="grow"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
             </CButton>
             <CButton disabled>
               <CSpinner
                 component="span"
                 size="sm"
                 variant="grow"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
               Loading...
             </CButton>
           </DocsExample>
@@ -124,5 +126,5 @@
 <script>
 export default {
   name: 'Spinners',
-};
+}
 </script>

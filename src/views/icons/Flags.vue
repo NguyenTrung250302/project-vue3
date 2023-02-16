@@ -4,7 +4,8 @@
       <DocsCallout
         name="CoreUI Flag Icons"
         href="components/icon"
-        content="CoreUI Flag Icons. CoreUI Icons package is delivered with more than 1500 icons in multiple formats SVG, PNG, and Webfonts. CoreUI Icons are beautifully crafted symbols for common actions and items. You can use them in your digital products for web or mobile app." />
+        content="CoreUI Flag Icons. CoreUI Icons package is delivered with more than 1500 icons in multiple formats SVG, PNG, and Webfonts. CoreUI Icons are beautifully crafted symbols for common actions and items. You can use them in your digital products for web or mobile app."
+      />
       <CCard>
         <CCardHeader>CoreUI Icons - Flag</CCardHeader>
         <CCardBody>
@@ -23,19 +24,18 @@
 </template>
 
 <script>
-import { flagSet } from '@coreui/icons';
-
+import { flagSet } from '@coreui/icons'
 export default {
   name: 'CoreUIIcons',
   setup() {
-    const toKebabCase = str =>
-      str.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase();
-    const icons = flagSet;
+    const toKebabCase = (str) =>
+      str.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase()
+    const icons = flagSet
 
     return {
       icons,
       toKebabCase,
-    };
+    }
   },
-};
+}
 </script>

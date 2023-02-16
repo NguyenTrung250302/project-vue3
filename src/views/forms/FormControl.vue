@@ -15,7 +15,8 @@
                 <CFormInput
                   id="exampleFormControlInput1"
                   type="email"
-                  placeholder="name@example.com" />
+                  placeholder="name@example.com"
+                />
               </div>
               <div class="mb-3">
                 <CFormLabel for="exampleFormControlTextarea1"
@@ -23,7 +24,8 @@
                 >
                 <CFormTextarea
                   id="exampleFormControlTextarea1"
-                  rows="3"></CFormTextarea>
+                  rows="3"
+                ></CFormTextarea>
               </div>
             </CForm>
           </DocsExample>
@@ -45,18 +47,21 @@
               type="text"
               size="lg"
               placeholder="Large input"
-              aria-label="lg input example" />
+              aria-label="lg input example"
+            />
             <br />
             <CFormInput
               type="text"
               placeholder="Default input"
-              aria-label="default input example" />
+              aria-label="default input example"
+            />
             <br />
             <CFormInput
               type="text"
               size="sm"
               placeholder="Small input"
-              aria-label="sm input example" />
+              aria-label="sm input example"
+            />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -76,14 +81,16 @@
               type="text"
               placeholder="Disabled input"
               aria-label="Disabled input example"
-              disabled />
+              disabled
+            />
             <br />
             <CFormInput
               type="text"
               placeholder="Disabled readonly input"
               aria-label="Disabled input example"
               disabled
-              readonly />
+              readonly
+            />
             <br />
           </DocsExample>
         </CCardBody>
@@ -106,7 +113,8 @@
               type="text"
               placeholder="Readonly input here..."
               aria-label="readonly input example"
-              readonly />
+              readonly
+            />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -134,7 +142,8 @@
                   type="text"
                   value="email@example.com"
                   readonly
-                  plain-text />
+                  plain-text
+                />
               </div>
             </CRow>
             <CRow class="mb-3">
@@ -157,7 +166,8 @@
                   type="text"
                   value="email@example.com"
                   readonly
-                  plain-text />
+                  plain-text
+                />
               </div>
               <div class="col-auto">
                 <CFormLabel for="inputPassword2" class="visually-hidden">
@@ -166,7 +176,8 @@
                 <CFormInput
                   id="inputPassword2"
                   type="password"
-                  placeholder="Password" />
+                  placeholder="Password"
+                />
               </div>
               <div class="col-auto">
                 <CButton type="submit" class="mb-3"> Confirm identity </CButton>
@@ -223,7 +234,8 @@
               id="exampleColorInput"
               type="color"
               value="#563d7c"
-              title="Choose your color" />
+              title="Choose your color"
+            />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -234,5 +246,5 @@
 <script>
 export default {
   name: 'FormControl',
-};
+}
 </script>

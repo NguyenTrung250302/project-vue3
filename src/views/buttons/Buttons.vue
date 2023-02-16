@@ -16,7 +16,8 @@
           <DocsExample href="components/button.html">
             <template
               v-for="state in ['normal', 'active', 'disabled']"
-              :key="state">
+              :key="state"
+            >
               <CRow class="align-items-center mb-3">
                 <CCol :xs="12" :xl="2" class="mb-3 mb-xl-0">{{
                   state.charAt(0).toUpperCase() + state.slice(1)
@@ -33,11 +34,13 @@
                       'light',
                       'dark',
                     ]"
-                    :key="color">
+                    :key="color"
+                  >
                     <CButton
                       :color="color"
                       :active="state === 'active' ? true : false"
-                      :disabled="state === 'disabled' ? true : false">
+                      :disabled="state === 'disabled' ? true : false"
+                    >
                       {{ color.charAt(0).toUpperCase() + color.slice(1) }}
                     </CButton>
                   </template>
@@ -61,7 +64,8 @@
           <DocsExample href="components/button.html">
             <template
               v-for="state in ['normal', 'active', 'disabled']"
-              :key="state">
+              :key="state"
+            >
               <CRow class="align-items-center mb-3">
                 <CCol :xs="12" :xl="2" class="mb-3 mb-xl-0">{{
                   state.charAt(0).toUpperCase() + state.slice(1)
@@ -79,11 +83,13 @@
                       'light',
                       'dark',
                     ]"
-                    :key="color">
+                    :key="color"
+                  >
                     <CButton
                       :color="color"
                       :active="state === 'active' ? true : false"
-                      :disabled="state === 'disabled' ? true : false">
+                      :disabled="state === 'disabled' ? true : false"
+                    >
                       <CIcon icon="cil-bell" class="me-2" />
                       {{ color.charAt(0).toUpperCase() + color.slice(1) }}
                     </CButton>
@@ -124,17 +130,20 @@
               component="input"
               type="button"
               color="primary"
-              value="Input" />
+              value="Input"
+            />
             <CButton
               component="input"
               type="submit"
               color="primary"
-              value="Submit" />
+              value="Submit"
+            />
             <CButton
               component="input"
               type="reset"
               color="primary"
-              value="Reset" />
+              value="Reset"
+            />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -153,7 +162,8 @@
           <DocsExample href="components/button.html#outline-buttons">
             <template
               v-for="state in ['normal', 'active', 'disabled']"
-              :key="state">
+              :key="state"
+            >
               <CRow class="align-items-center mb-3">
                 <CCol :xs="12" :xl="2" class="mb-3 mb-xl-0">{{
                   state.charAt(0).toUpperCase() + state.slice(1)
@@ -171,12 +181,14 @@
                       'light',
                       'dark',
                     ]"
-                    :key="color">
+                    :key="color"
+                  >
                     <CButton
                       :color="color"
                       :active="state === 'active' ? true : false"
                       :disabled="state === 'disabled' ? true : false"
-                      variant="outline">
+                      variant="outline"
+                    >
                       {{ color.charAt(0).toUpperCase() + color.slice(1) }}
                     </CButton>
                   </template>
@@ -201,7 +213,8 @@
           <DocsExample href="components/button.html#ghost-buttons">
             <template
               v-for="state in ['normal', 'active', 'disabled']"
-              :key="state">
+              :key="state"
+            >
               <CRow class="align-items-center mb-3">
                 <CCol :xs="12" :xl="2" class="mb-3 mb-xl-0">{{
                   state.charAt(0).toUpperCase() + state.slice(1)
@@ -218,12 +231,14 @@
                       'light',
                       'dark',
                     ]"
-                    :key="color">
+                    :key="color"
+                  >
                     <CButton
                       :color="color"
                       :active="state === 'active' ? true : false"
                       :disabled="state === 'disabled' ? true : false"
-                      variant="ghost">
+                      variant="ghost"
+                    >
                       <CIcon icon="cil-bell" class="me-2" />
                       {{ color.charAt(0).toUpperCase() + color.slice(1) }}
                     </CButton>
@@ -274,7 +289,8 @@
                 'light',
                 'dark',
               ]"
-              :key="color">
+              :key="color"
+            >
               <CButton :color="color" shape="rounded-pill">
                 {{ color.charAt(0).toUpperCase() + color.slice(1) }}
               </CButton>
@@ -301,7 +317,8 @@
                 'light',
                 'dark',
               ]"
-              :key="color">
+              :key="color"
+            >
               <CButton :color="color" shape="rounded-0">
                 {{ color.charAt(0).toUpperCase() + color.slice(1) }}
               </CButton>
@@ -350,7 +367,8 @@
               href="#"
               color="secondary"
               size="lg"
-              disabled>
+              disabled
+            >
               Link
             </CButton>
           </DocsExample>
@@ -420,5 +438,5 @@
 <script>
 export default {
   name: 'Buttons',
-};
+}
 </script>

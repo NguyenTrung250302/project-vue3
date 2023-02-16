@@ -91,5 +91,5 @@
 <script>
 export default {
   name: 'Badges',
-};
+}
 </script>

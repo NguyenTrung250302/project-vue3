@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import { CChartPolarArea } from '@coreui/vue-chartjs';
-
+import { CChartPolarArea } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartPolarAreaExample',
   components: { CChartPolarArea },
@@ -43,8 +42,8 @@ export default {
         options: {
           aspectRatio: 1.5,
         },
-      };
+      }
     },
   },
-};
+}
 </script>

@@ -7,10 +7,11 @@
         :values="[
           { title: 'friends', value: '89K' },
           { title: 'feeds', value: '459' },
-        ]">
-        <template #icon>
-          <CIcon icon="cib-facebook" height="52" class="my-4 text-white" />
-        </template>
+        ]"
+      >
+        <template #icon
+          ><CIcon icon="cib-facebook" height="52" class="my-4 text-white"
+        /></template>
         <template #chart>
           <CChart
             class="position-absolute w-100 h-100"
@@ -36,7 +37,8 @@
                 },
               ],
             }"
-            :options="options" />
+            :options="options"
+          />
         </template>
       </CWidgetStatsD>
     </CCol>
@@ -47,10 +49,11 @@
         :values="[
           { title: 'followers', value: '973k' },
           { title: 'tweets', value: '1.792' },
-        ]">
-        <template #icon>
-          <CIcon icon="cib-twitter" height="52" class="my-4 text-white" />
-        </template>
+        ]"
+      >
+        <template #icon
+          ><CIcon icon="cib-twitter" height="52" class="my-4 text-white"
+        /></template>
         <template #chart>
           <CChart
             class="position-absolute w-100 h-100"
@@ -76,7 +79,8 @@
                 },
               ],
             }"
-            :options="options" />
+            :options="options"
+          />
         </template>
       </CWidgetStatsD>
     </CCol>
@@ -87,10 +91,11 @@
         :values="[
           { title: 'contacts', value: '500' },
           { title: 'feeds', value: '1.292' },
-        ]">
-        <template #icon>
-          <CIcon icon="cib-linkedin" height="52" class="my-4 text-white" />
-        </template>
+        ]"
+      >
+        <template #icon
+          ><CIcon icon="cib-linkedin" height="52" class="my-4 text-white"
+        /></template>
         <template #chart>
           <CChart
             class="position-absolute w-100 h-100"
@@ -116,7 +121,8 @@
                 },
               ],
             }"
-            :options="options" />
+            :options="options"
+          />
         </template>
       </CWidgetStatsD>
     </CCol>
@@ -127,10 +133,11 @@
         :values="[
           { title: 'events', value: '12+' },
           { title: 'meetings', value: '4' },
-        ]">
-        <template #icon>
-          <CIcon icon="cil-calendar" height="52" class="my-4 text-white" />
-        </template>
+        ]"
+      >
+        <template #icon
+          ><CIcon icon="cil-calendar" height="52" class="my-4 text-white"
+        /></template>
         <template #chart>
           <CChart
             class="position-absolute w-100 h-100"
@@ -156,7 +163,8 @@
                 },
               ],
             }"
-            :options="options" />
+            :options="options"
+          />
         </template>
       </CWidgetStatsD>
     </CCol>
@@ -164,8 +172,7 @@
 </template>
 
 <script>
-import { CChart } from '@coreui/vue-chartjs';
-
+import { CChart } from '@coreui/vue-chartjs'
 export default {
   name: 'WidgetsStatsD',
   components: {
@@ -198,11 +205,11 @@ export default {
           display: false,
         },
       },
-    };
+    }
 
     return {
       options,
-    };
+    }
   },
-};
+}
 </script>

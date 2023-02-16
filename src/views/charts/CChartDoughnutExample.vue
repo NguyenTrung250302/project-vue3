@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import { CChartDoughnut } from '@coreui/vue-chartjs';
-
+import { CChartDoughnut } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartDoughnutExample',
   components: { CChartDoughnut },
@@ -18,8 +17,8 @@ export default {
             data: [40, 20, 80, 10],
           },
         ],
-      };
+      }
     },
   },
-};
+}
 </script>

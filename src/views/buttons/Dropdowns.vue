@@ -38,7 +38,8 @@
                 'light',
                 'dark',
               ]"
-              :key="color">
+              :key="color"
+            >
               <CDropdown variant="btn-group">
                 <CDropdownToggle :color="color">{{ color }}</CDropdownToggle>
                 <CDropdownMenu>
@@ -86,7 +87,8 @@
                 'light',
                 'dark',
               ]"
-              :key="color">
+              :key="color"
+            >
               <CDropdown variant="btn-group">
                 <CButton :color="color">{{ color }}</CButton>
                 <CDropdownToggle :color="color" split>{{
@@ -214,12 +216,14 @@
                   data-coreui-target="#navbarNavDarkDropdown"
                   aria-controls="navbarNavDarkDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
+                  aria-label="Toggle navigation"
+                >
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div
                   id="navbarNavDarkDropdown"
-                  class="collapse navbar-collapse">
+                  class="collapse navbar-collapse"
+                >
                   <ul class="navbar-nav">
                     <CDropdown dark component="li" variant="nav-item">
                       <CDropdownToggle>Dropdown</CDropdownToggle>
@@ -353,5 +357,5 @@
 <script>
 export default {
   name: 'Dropdowns',
-};
+}
 </script>

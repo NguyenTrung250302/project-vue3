@@ -41,7 +41,7 @@
     </CCol>
     <CCol :xs="12">
       <CCard class="mb-4">
-        <CCardHeader><strong>Card</strong> <small>Body</small></CCardHeader>
+        <CCardHeader> <strong>Card</strong> <small>Body</small> </CCardHeader>
         <CCardBody>
           <p class="text-medium-emphasis small">
             The main block of a card is the <code>&lt;CCardBody&gt;</code>. Use
@@ -81,8 +81,8 @@
               <CCardBody>
                 <CCardTitle>Card title</CCardTitle>
                 <CCardSubtitle class="mb-2 text-medium-emphasis"
-                  >Card subtitle
-                </CCardSubtitle>
+                  >Card subtitle</CCardSubtitle
+                >
                 <CCardText>
                   Some quick example text to build on the card title and make up
                   the bulk of the card&#39;s content.
@@ -97,7 +97,7 @@
     </CCol>
     <CCol :xs="12">
       <CCard class="mb-4">
-        <CCardHeader><strong>Card</strong> <small>Images</small></CCardHeader>
+        <CCardHeader> <strong>Card</strong> <small>Images</small> </CCardHeader>
         <CCardBody>
           <p class="text-medium-emphasis small">
             <code>.card-img-top</code> places a picture to the top of the card.
@@ -274,7 +274,7 @@
     </CCol>
     <CCol :xs="12">
       <CCard class="mb-4">
-        <CCardHeader><strong>Card</strong> <small>Body</small></CCardHeader>
+        <CCardHeader> <strong>Card</strong> <small>Body</small> </CCardHeader>
         <CCardBody>
           <p class="text-medium-emphasis small">
             Cards assume no specific <code>width</code> to start, so they&#39;ll
@@ -428,13 +428,13 @@
               <CCardHeader>
                 <CNav variant="tabs" class="card-header-tabs">
                   <CNavItem>
-                    <CNavLink href="#" active> Active</CNavLink>
+                    <CNavLink href="#" active> Active </CNavLink>
                   </CNavItem>
                   <CNavItem>
                     <CNavLink href="#">Link</CNavLink>
                   </CNavItem>
                   <CNavItem>
-                    <CNavLink href="#" disabled> Disabled</CNavLink>
+                    <CNavLink href="#" disabled> Disabled </CNavLink>
                   </CNavItem>
                 </CNav>
               </CCardHeader>
@@ -453,13 +453,13 @@
               <CCardHeader>
                 <CNav variant="pills" class="card-header-pills">
                   <CNavItem>
-                    <CNavLink href="#" active> Active</CNavLink>
+                    <CNavLink href="#" active> Active </CNavLink>
                   </CNavItem>
                   <CNavItem>
                     <CNavLink href="#">Link</CNavLink>
                   </CNavItem>
                   <CNavItem>
-                    <CNavLink href="#" disabled> Disabled</CNavLink>
+                    <CNavLink href="#" disabled> Disabled </CNavLink>
                   </CNavItem>
                 </CNav>
               </CCardHeader>
@@ -562,12 +562,14 @@
                   { color: 'light' },
                   { color: 'dark', textColor: 'white' },
                 ]"
-                :key="item">
+                :key="item"
+              >
                 <CCol :lg="4">
                   <CCard
                     class="mb-3"
                     :color="item.color"
-                    :text-color="item.textColor">
+                    :text-color="item.textColor"
+                  >
                     <CCardHeader>Header</CCardHeader>
                     <CCardBody>
                       <CCardTitle>{{ item.color }} card title</CCardTitle>
@@ -604,19 +606,21 @@
                 { color: 'light' },
                 { color: 'dark' },
               ]"
-              :key="item">
+              :key="item"
+            >
               <CCard
                 :text-color="item.textColor"
                 class="mb-3"
                 :class="'border-' + item.color"
-                style="max-width: 18rem">
+                style="max-width: 18rem"
+              >
                 <CCardHeader>Header</CCardHeader>
                 <CCardBody>
                   <CCardTitle>{{ item.color }} card title</CCardTitle>
                   <CCardText
                     >Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </CCardText>
+                    up the bulk of the card's content.</CCardText
+                  >
                 </CCardBody>
               </CCard>
             </template>
@@ -644,19 +648,21 @@
                 { color: 'light' },
                 { color: 'dark' },
               ]"
-              :key="item.color">
+              :key="item.color"
+            >
               <CCard
                 :text-color="item.textColor"
                 class="mb-3 border-top-3"
                 :class="'border-top-' + item.color"
-                style="max-width: 18rem">
+                style="max-width: 18rem"
+              >
                 <CCardHeader>Header</CCardHeader>
                 <CCardBody>
                   <CCardTitle>{{ item.color }} card title</CCardTitle>
                   <CCardText
                     >Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </CCardText>
+                    up the bulk of the card's content.</CCardText
+                  >
                 </CCardBody>
               </CCard>
             </template>
@@ -964,14 +970,13 @@
 </template>
 
 <script>
-import VueImg from '@/assets/images/vue.jpg';
-
+import VueImg from '@/assets/images/vue.jpg'
 export default {
   name: 'Cards',
   setup() {
     return {
       VueImg,
-    };
+    }
   },
-};
+}
 </script>

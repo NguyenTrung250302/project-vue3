@@ -1,5 +1,5 @@
-import { defineComponent, h, onMounted, ref, resolveComponent } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { defineComponent, h, onMounted, ref, resolveComponent } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 
 import {
   CBadge,
@@ -7,40 +7,40 @@ import {
   CNavItem,
   CNavGroup,
   CNavTitle,
-} from '@coreui/vue';
-import nav from '@/_nav.js';
+} from '@coreui/vue'
+import nav from '@/_nav.js'
 
-const normalizePath = path =>
+const normalizePath = (path) =>
   decodeURI(path)
     .replace(/#.*$/, '')
-    .replace(/(index)?\.(html)$/, '');
+    .replace(/(index)?\.(html)$/, '')
 
 const isActiveLink = (route, link) => {
   if (link === undefined) {
-    return false;
+    return false
   }
 
   if (route.hash === link) {
-    return true;
+    return true
   }
 
-  const currentPath = normalizePath(route.path);
-  const targetPath = normalizePath(link);
+  const currentPath = normalizePath(route.path)
+  const targetPath = normalizePath(link)
 
-  return currentPath === targetPath;
-};
+  return currentPath === targetPath
+}
 
 const isActiveItem = (route, item) => {
   if (isActiveLink(route, item.to)) {
-    return true;
+    return true
   }
 
   if (item.items) {
-    return item.items.some(child => isActiveItem(route, child));
+    return item.items.some((child) => isActiveItem(route, child))
   }
 
-  return false;
-};
+  return false
+}
 
 const AppSidebarNav = defineComponent({
   name: 'AppSidebarNav',
@@ -50,20 +50,20 @@ const AppSidebarNav = defineComponent({
     CNavTitle,
   },
   setup() {
-    const route = useRoute();
-    const firstRender = ref(true);
+    const route = useRoute()
+    const firstRender = ref(true)
 
     onMounted(() => {
-      firstRender.value = false;
-    });
+      firstRender.value = false
+    })
 
-    const renderItem = item => {
+    const renderItem = (item) => {
       if (item.items) {
         return h(
           CNavGroup,
           {
             ...(firstRender.value && {
-              visible: item.items.some(child => isActiveItem(route, child)),
+              visible: item.items.some((child) => isActiveItem(route, child)),
             }),
           },
           {
@@ -74,9 +74,9 @@ const AppSidebarNav = defineComponent({
               }),
               item.name,
             ],
-            default: () => item.items.map(child => renderItem(child)),
+            default: () => item.items.map((child) => renderItem(child)),
           },
-        );
+        )
       }
 
       return item.to
@@ -87,7 +87,7 @@ const AppSidebarNav = defineComponent({
               custom: true,
             },
             {
-              default: props =>
+              default: (props) =>
                 h(
                   resolveComponent(item.component),
                   {
@@ -125,17 +125,17 @@ const AppSidebarNav = defineComponent({
             {
               default: () => item.name,
             },
-          );
-    };
+          )
+    }
 
     return () =>
       h(
         CSidebarNav,
         {},
         {
-          default: () => nav.map(item => renderItem(item)),
+          default: () => nav.map((item) => renderItem(item)),
         },
-      );
+      )
   },
-});
-export { AppSidebarNav };
+})
+export { AppSidebarNav }

@@ -25,7 +25,8 @@
                   <CFormInput
                     type="password"
                     placeholder="Password"
-                    autocomplete="new-password" />
+                    autocomplete="new-password"
+                  />
                 </CInputGroup>
                 <CInputGroup class="mb-4">
                   <CInputGroupText>
@@ -34,7 +35,8 @@
                   <CFormInput
                     type="password"
                     placeholder="Repeat password"
-                    autocomplete="new-password" />
+                    autocomplete="new-password"
+                  />
                 </CInputGroup>
                 <div class="d-grid">
                   <CButton color="success">Create Account</CButton>
@@ -51,5 +53,5 @@
 <script>
 export default {
   name: 'Register',
-};
+}
 </script>

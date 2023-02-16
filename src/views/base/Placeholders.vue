@@ -33,9 +33,10 @@
                   role="img"
                   aria-label="Placeholder"
                   preserveAspectRatio="xMidYMid slice"
-                  focusable="false">
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#868e96"></rect>
+                  focusable="false"
+                >
+                  <title>Placeholder</title
+                  ><rect width="100%" height="100%" fill="#868e96"></rect>
                 </CCardImage>
                 <CCardBody>
                   <CCardTitle v-c-placeholder="{ animation: 'glow', xs: 7 }">
@@ -54,7 +55,8 @@
                     aria-hidden="true"
                     disabled
                     href="#"
-                    tabindex="-1"></CButton>
+                    tabindex="-1"
+                  ></CButton>
                 </CCardBody>
               </CCard>
             </div>
@@ -83,7 +85,8 @@
               aria-hidden="true"
               disabled
               href="#"
-              tabindex="-1"></CButton>
+              tabindex="-1"
+            ></CButton>
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -172,14 +175,13 @@
 </template>
 
 <script>
-import VueImg from '@/assets/images/vue.jpg';
-
+import VueImg from '@/assets/images/vue.jpg'
 export default {
   name: 'Placeholders',
   setup() {
     return {
       VueImg,
-    };
+    }
   },
-};
+}
 </script>
