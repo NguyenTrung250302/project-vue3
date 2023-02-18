@@ -9,6 +9,7 @@ import Chart from "../views/ChartView.vue";
 import Card from "../views/CardView.vue";
 import Blank from "../views/BlankView.vue";
 import NotFound from "../views/NotFound.vue";
+import BuildTapView from "../views/BuildTapView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -56,6 +57,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/blank",
     name: "Blank",
     component: Blank,
+  },
+    {
+    path: "/BuildTap",
+    name: "BuildTap",
+    component: BuildTapView,
   },
   { path: "/:pathMatch(.*)*", component: NotFound },
 ];

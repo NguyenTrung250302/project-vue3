@@ -225,7 +225,7 @@
         </router-link>
         <router-link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'Blank' ? activeClass : inactiveClass]"
+          :class="[$route.name === 'blank' ? activeClass : inactiveClass]"
           to="/blank"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -236,6 +236,16 @@
 
           <span class="mx-4">Blank</span>
         </router-link>
+        <!-- my page -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'BuildTap' ? activeClass : inactiveClass]"
+          to="/BuildTap"
+        >
+        <build-tap-logo />
+          <span class="mx-4">BuildTap</span>
+        </router-link>
+        <!--  -->
         <p class="pl-4 text-xs my-2 font-semibold mb-4 text-gray-400">About</p>
         <a
           target="_blank"
@@ -272,4 +282,14 @@ const activeClass = ref(
 const inactiveClass = ref(
   "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100"
 );
+</script>
+<!--  -->
+<script lang="ts">
+import BuildTapLogo from "@/components/MyArchive/BuildTapLogo.vue";
+
+export default {
+components: {
+  BuildTapLogo,
+},
+};
 </script>
