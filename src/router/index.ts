@@ -16,7 +16,9 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Login",
     component: Login,
-    meta: { layout: "empty" },
+    meta: {
+      layout: "empty",
+    },
   },
   {
     path: "/dashboard",
@@ -58,12 +60,18 @@ const routes: Array<RouteRecordRaw> = [
     name: "Blank",
     component: Blank,
   },
-    {
-    path: "/BuildTap",
-    name: "BuildTap",
+  {
+    path: "/BuildTab",
+    name: "BuildTab",
     component: BuildTapView,
+    meta: {
+      layout: "empty",
+    },
   },
-  { path: "/:pathMatch(.*)*", component: NotFound },
+  {
+    path: "/:pathMatch(.*)*",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
