@@ -64,9 +64,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/BuildTab",
     name: "BuildTab",
     component: BuildTapView,
-    meta: {
-      layout: "empty",
-    },
   },
   {
     path: "/:pathMatch(.*)*",
