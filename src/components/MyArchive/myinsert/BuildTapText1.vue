@@ -11,9 +11,7 @@ props: ['buildtaptext1'],
 <style scoped>
 p {
 width: 241px;
-height: 37px;
-/* font-family: 'Mulish'; */
-/* font-style: normal; */
+height: 20px;
 font-weight: 400;
 font-size: 11.3571px;
 line-height: 18px;

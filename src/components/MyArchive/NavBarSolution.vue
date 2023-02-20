@@ -36,9 +36,8 @@ export default {
 
 <style scoped>
 .solution-infor {
-position: relative;
-left: 297px;
-width: 460px;
+width: auto;
+padding: 0 450px;
 height: 66px;
 font-weight: 400;
 font-size: 14px;

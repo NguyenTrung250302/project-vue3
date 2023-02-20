@@ -2,12 +2,12 @@
   <div class="main-menu-solution">
     <!-- row1 -->
     <div class="block-menu">
-      <div class="block-inform">
-        <build-tap-icon-2 />
+      <div class="block-inform color">
+        <build-tap-icon-2 style="fill:rgba(255, 255, 255, 1)"/>
         <div class="block">
-          <build-tap-text buildtaptext="Facility Management" />
+          <build-tap-text buildtaptext="Facility Management" style="color: #fff;"/>
           <build-tap-text-1
-          buildtaptext1="Lĩnh vực quản lý - bảo trì - vận hành tài sản"/>
+          buildtaptext1="Lĩnh vực quản lý - bảo trì - vận hành tài sản" style="color: #fff;"/>
         <build-tap-logo-blur />
         </div>
       </div>
@@ -75,7 +75,9 @@
       </div>
     </div>
     <!--  -->
-    <div></div>
+    <div>
+      <contact-info />
+    </div>
   </div>
 </template>
 
@@ -89,6 +91,7 @@ import BuildTapIcon3 from './myicons/BuildTapIcon3.vue';
 import BuildTapIcon4 from './myicons/BuildTapIcon4.vue';
 import BuildTapIcon5 from './myicons/BuildTapIcon5.vue';
 import BuildTapIcon6 from './myicons/BuildTapIcon6.vue';
+import ContactInfo from '@/components/MyArchive/ContactInfo.vue';
 
 export default {
 components: {
@@ -101,6 +104,8 @@ BuildTapIcon3,
 BuildTapIcon4,
 BuildTapIcon5,
 BuildTapIcon6,
+ContactInfo,
+
 },
 };
 </script>
@@ -110,22 +115,24 @@ BuildTapIcon6,
   padding: 50px 0 0 0;
     width: auto;
     height: 1000px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 .block-inform {
     width: 284px;
     height: 238px;
     padding: 20px 20px 20px 20px;
     border-radius: 12px;
-    /* border: solid 1px; */
     box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.05);
 }
 .block-menu {
   display: flex;
   justify-content: space-between;
-  padding: 30px 40px;
+  padding: 30px 170px;
 }
 .block {
   padding-top: 80px;
+}
+.color {
+  background: linear-gradient(rgba(0, 111, 237, 1),rgb(37 99 235));
 }
 </style>

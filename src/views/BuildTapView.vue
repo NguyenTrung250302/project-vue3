@@ -16,3 +16,8 @@ export default {
   },
 };
 </script>
+
+<script setup lang="ts">
+import Breadcrumb from "../partials/Breadcrumb.vue";
+</script>
+
