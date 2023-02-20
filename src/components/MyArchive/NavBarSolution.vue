@@ -1,6 +1,7 @@
 <template>
   <div class="solution">
         <svg 
+        style="padding-top: 5px;"
         width="auto" 
         height="32" 
         viewBox="0 0 320 32" 

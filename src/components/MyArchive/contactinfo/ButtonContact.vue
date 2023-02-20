@@ -3,15 +3,13 @@
         <button>Your Name*</button>
         <button>Your Email*</button>
         <button class="button-message">Message...</button>
-      <button-submit />
+        <button class="button-submit">Submit</button>
     </div>
 </template>
 
 <script>
-import ButtonSubmit from '@/components/MyArchive/contactinfo/ButtonSubmit.vue';
 
 export default {
-  components: { ButtonSubmit },
 
 }
 </script>
@@ -32,9 +30,22 @@ backdrop-filter: blur(2px);
 border-radius: 8px;
 }
 .button-message {
-height: 130px;
+height: 135px;
 display: flex;
 flex-direction: row;
 align-items: flex-start;
+}
+.button-submit {
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 16px;
+gap: 8px;
+position: absolute;
+width: 150px;
+height: 34px;
+background: #006FED;
+border-radius: 50px;
 }
 </style>

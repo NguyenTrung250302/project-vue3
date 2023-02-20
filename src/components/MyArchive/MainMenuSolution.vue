@@ -3,12 +3,12 @@
     <!-- row1 -->
     <div class="block-menu">
       <div class="block-inform color">
-        <build-tap-icon-2 style="fill:rgba(255, 255, 255, 1)"/>
+        <build-tap-icon-2 style="background: wheat;"/>
         <div class="block">
           <build-tap-text buildtaptext="Facility Management" style="color: #fff;"/>
           <build-tap-text-1
           buildtaptext1="Lĩnh vực quản lý - bảo trì - vận hành tài sản" style="color: #fff;"/>
-        <build-tap-logo-blur />
+            <build-tap-logo-blur />
         </div>
       </div>
             <div class="block-inform">

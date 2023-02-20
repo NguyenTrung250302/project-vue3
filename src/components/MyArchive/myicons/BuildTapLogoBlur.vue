@@ -12,7 +12,7 @@
 
 <style scoped>
 .logo-blur1 {
- opacity: 0.07;
+ opacity: 0.08;
  position: relative;
  top: -138px;
  left: 155px;

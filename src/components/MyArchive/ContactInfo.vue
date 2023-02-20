@@ -26,17 +26,19 @@ export default {
 <style scoped>
 .contact-info {
     width: auto;
-    height: 430px;
+    height: 440px;
     margin-top: 60px;
     padding: 85px 170px;
     display: flex;
     justify-content: space-between;
     background-image: url(@/assets/331872598_752933712691324_5288812472693923275_n.png);
+    background-size: cover;
 }
 h1 {
 width: 371px;
 height: 40px;
-font-weight: 700;
+margin-bottom: 5px;
+font-weight: 500;
 font-size: 32px;
 line-height: 40px;
 color: #FFFFFF;
@@ -48,6 +50,6 @@ font-weight: 400;
 font-size: 14px;
 line-height: 22px;
 color: #FFFFFF;
-padding-bottom: 80px;
+padding-bottom: 70px;
 }
 </style>
