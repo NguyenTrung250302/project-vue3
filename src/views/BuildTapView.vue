@@ -2,7 +2,8 @@
   <div>
     <NavBarSolution />
     <MainMenuSolution />
-    <main-contact-info />
+    <main-contact-info style="margin-top: 90px;"/>
+    <reference-list />
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 import NavBarSolution from "@/components/MyArchive/NavBarSolution.vue";
 import MainMenuSolution from "@/components/MyArchive/MainMenuSolution.vue";
 import MainContactInfo from "@/components/MyArchive/ContactInfomation/MainContactInfo.vue";
+import ReferenceList from "@/components/MyArchive/ReferenceList/ReferenceList.vue";
 export default {
   components: {
     NavBarSolution,
     MainMenuSolution,
     MainContactInfo,
+    ReferenceList,
   },
 };
 </script>

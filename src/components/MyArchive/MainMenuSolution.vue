@@ -65,7 +65,6 @@
         <build-tap-logo-blur />
       </div>
     </div>
-    <!--  -->
   </div>
 </template>
 
