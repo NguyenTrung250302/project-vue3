@@ -4,7 +4,7 @@
     <h2>Giải đáp vấn đề và đề xuất giải pháp tốt nhất dành cho bạn</h2>
 
     <div class="row-contact">
-      <svg
+      <svg class="icon"
         width="21"
         height="21"
         viewBox="0 0 21 21"
@@ -23,7 +23,7 @@
     </div>
 
     <div class="row-contact">
-      <svg
+      <svg class="icon"
         width="23"
         height="23"
         viewBox="0 0 23 23"
@@ -42,7 +42,7 @@
     </div>
 
     <div class="row-contact">
-      <svg
+      <svg class="icon"
         width="22"
         height="18"
         viewBox="0 0 22 18"
@@ -107,5 +107,8 @@ h2 {
 }
 .info {
   margin-left: 10px;
+}
+.icon {
+  margin-top: 2px;
 }
 </style>

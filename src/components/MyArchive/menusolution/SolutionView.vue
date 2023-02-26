@@ -1,18 +1,19 @@
 <template>
   <div>
-    <p class="text1">{{ SolutionView.text1 }}</p>
-    <p class="text2">{{ SolutionView.text2 }}</p>
+    <p class="text1">{{ SolutionView }}</p>
+    <p class="text2">{{ SolutionView1 }}</p>
+    <build-tap-logo-blur />
   </div>
 </template>
 
 <script>
+import BuildTapLogoBlur from '../myicons/BuildTapLogoBlur.vue';
 export default {
 name: "solution-view",
-props: {
-    SolutionView: {
-        type: Object,
-    }
-}
+components: {
+  BuildTapLogoBlur
+},
+props: ['SolutionView','SolutionView1']
 }
 </script>
 

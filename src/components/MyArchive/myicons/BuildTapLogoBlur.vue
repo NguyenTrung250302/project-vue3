@@ -23,7 +23,7 @@
 div {
 position: relative;
 opacity: 0.06;
-bottom: 139px;
+bottom: 144px;
 left: 147px;
 }
 </style>
