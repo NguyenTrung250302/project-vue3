@@ -27,6 +27,7 @@
       <button-account />
     </div>
   </div>
+  <div class="horizontal-line"></div>
 </template>
 
 <script>
@@ -73,7 +74,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: auto;
-  height: 430px;
+  height: 420px;
   padding: 50px 160px;
 }
 .list-element {
@@ -84,5 +85,11 @@ export default {
 }
 .nav {
     margin-bottom: 40px;
+}
+.horizontal-line {
+  width: 1040px;
+  height: 1px;
+  background-color: rgba(220, 220, 220, 1);
+  margin: 0 auto;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <div class="footer">
-      <nav-bar-reference navbarReference="Contact us" style="margin-top: 15px"/>
+      <nav-bar-reference navbarReference="Contact us" style="margin-top: 20px"/>
       <p>Copyright© 2022 MaintainX. All rights reserved</p>
     </div>
-      <svg style="margin-top: 50px"
+      <svg style="margin-top: 40px"
         width="271"
         height="50"
         viewBox="0 0 271 50"
@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .main {
-  height: 100px;
+  height: auto;
   width: auto;  
   display: flex;
   justify-content: space-between;
@@ -58,6 +58,6 @@ p {
   font-weight: 400;
   font-size: 14px;
   color: #121212;
-  margin-top: 30px;
+  margin-top: 17px;
 }
 </style>
