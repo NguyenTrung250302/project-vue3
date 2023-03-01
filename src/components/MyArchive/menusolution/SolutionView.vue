@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'hovered': isHovered }">
     <p class="text1">{{ SolutionView }}</p>
     <p class="text2">{{ SolutionView1 }}</p>
     <build-tap-logo-blur />
@@ -13,7 +13,14 @@ name: "solution-view",
 components: {
   BuildTapLogoBlur
 },
-props: ['SolutionView','SolutionView1']
+props:{
+  SolutionView: String,
+  SolutionView1: String,
+  isHovered: {
+    type: Boolean,
+    default: false,
+  },
+} 
 }
 </script>
 

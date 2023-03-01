@@ -2,9 +2,10 @@
   <div class="main-menu-solution">
     <!-- row1 -->
     <div class="row">
-      <div class="block-solution">
+      <div class="block-solution" @mouseover="isHovered = true" @mouseleave="isHovered = false">
         <build-tap-icon />
         <solution-view
+          :is-hovered="isHovered"
           class="text-item"
           SolutionView="Facility Management"
           SolutionView1="Lĩnh vực quản lý - bảo trì - vận hành tài sản"
@@ -63,7 +64,7 @@
           class="text-item"
           SolutionView="Addin"
           SolutionView1="Cầu nối giúp các lập trình viên chuyển addin
-của họ đang chạy local thành chạy cloud"
+          của họ đang chạy local thành chạy cloud"
         />
       </div>
     </div>
@@ -93,9 +94,9 @@ export default {
   },
   data() {
     return {
-      hovered: false
-    }
-  }
+      isHovered: false,
+    };
+  },
 };
 </script>
 
@@ -113,9 +114,6 @@ export default {
   box-shadow: 5px 5px 5px 5px rgb(253, 246, 246);
   padding: 20px 20px;
 }
-.block-solution:hover {
-  background-color: rgb(75, 75, 241);
-}
 .text-item {
   margin-top: 65px;
 }
@@ -124,8 +122,12 @@ export default {
   justify-content: space-between;
   padding: 30px 160px;
 }
-.text-item.hovered {
-  color: #FFFFFF;
-  background-color: blue;
+/*  */
+  .block-solution:hover {
+    background-color: rgb(75, 75, 241);
+  }
+
+.block-solution:hover .hovered {
+  color: aliceblue;
 }
 </style>
