@@ -2,10 +2,10 @@
   <div class="main-menu-solution">
     <!-- row1 -->
     <div class="row">
-      <div class="block-solution" @mouseover="isHovered = true" @mouseleave="isHovered = false">
-        <build-tap-icon />
-        <solution-view
-          :is-hovered="isHovered"
+      <div class="block-solution" @mouseover="hovering = true" @mouseleave="hovering = false">
+        <build-tap-icon class="color"/>
+        <solution-view 
+          :hovering="hovering"
           class="text-item"
           SolutionView="Facility Management"
           SolutionView1="Lĩnh vực quản lý - bảo trì - vận hành tài sản"
@@ -123,11 +123,8 @@ export default {
   padding: 30px 160px;
 }
 /*  */
-  .block-solution:hover {
-    background-color: rgb(75, 75, 241);
-  }
-
-.block-solution:hover .hovered {
-  color: aliceblue;
+.block-solution:hover {
+  background-color: #006FED;
+  color: #FFFFFF;
 }
 </style>

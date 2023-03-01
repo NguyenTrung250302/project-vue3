@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'hovered': isHovered }">
+  <div :class="{ hovered: hovering }">
     <p class="text1">{{ SolutionView }}</p>
     <p class="text2">{{ SolutionView1 }}</p>
     <build-tap-logo-blur />
@@ -16,10 +16,7 @@ components: {
 props:{
   SolutionView: String,
   SolutionView1: String,
-  isHovered: {
-    type: Boolean,
-    default: false,
-  },
+  hovering: Boolean,
 } 
 }
 </script>
@@ -31,7 +28,7 @@ height: 29px;
 font-weight: 800;
 font-size: 22.7143px;
 line-height: 29px;
-color: #121212;
+/* color: #121212; */
 }
 .text2 {
 width: 241px;
@@ -39,6 +36,9 @@ height: 36px;
 font-weight: 400;
 font-size: 11.3571px;
 line-height: 18px;
-color: #6B6B6B;
+/* color: #6B6B6B; */
+}
+.hovered {
+  color: #FFFFFF;
 }
 </style>
