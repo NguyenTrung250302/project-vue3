@@ -20,8 +20,7 @@
       <p>BUILDTAB</p>
     </div>
     <div>
-      <svg
-      style="margin: 20px 0 0 15px;"
+      <svg class="button"
         width="204"
         height="34"
         viewBox="0 0 204 34"
@@ -56,5 +55,11 @@ p {
   letter-spacing: -0.03em;
   color: #121212;
   margin-left: 10px;
+}
+.button{
+margin: 20px 0 0 15px;
+}
+.button:hover {
+  cursor: pointer;
 }
 </style>

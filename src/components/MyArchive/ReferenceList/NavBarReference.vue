@@ -23,10 +23,17 @@ font-size: 15px;
 line-height: 20px;
 color: #121212;
 }
+p:hover {
+color: rgba(0, 111, 237, 1);
+cursor: pointer;
+}
 div {
     display: flex;
 }
 .icon {
 margin: 2px 0 0 3px;
+}
+.icon:hover {
+  fill: rgba(0, 111, 237, 1);
 }
 </style>

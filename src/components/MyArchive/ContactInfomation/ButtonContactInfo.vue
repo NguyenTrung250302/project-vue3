@@ -25,12 +25,14 @@ button {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
   border-radius: 8px;
+  cursor: default;
 }
 .button-message {
   height: 135px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  cursor: default;
 }
 .button-submit {
   display: flex;
@@ -44,5 +46,6 @@ button {
   height: 34px;
   background: #006fed;
   border-radius: 50px;
+  cursor: pointer;
 }
 </style>

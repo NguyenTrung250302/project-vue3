@@ -91,6 +91,11 @@ export default {
     BuildTapIcon5,
     BuildTapIcon6,
   },
+  data() {
+    return {
+      hovered: false
+    }
+  }
 };
 </script>
 
@@ -98,7 +103,7 @@ export default {
 .main-menu-solution {
   margin-top: 40px;
   width: 1336px;
-  /* height: 900px; */
+  height: auto;
 }
 .block-solution {
   width: 300px;
@@ -109,8 +114,7 @@ export default {
   padding: 20px 20px;
 }
 .block-solution:hover {
-  background-color: rgba(0, 111, 237, 1);
-  cursor: pointer;
+  background-color: rgb(75, 75, 241);
 }
 .text-item {
   margin-top: 65px;
@@ -119,5 +123,9 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 30px 160px;
+}
+.text-item.hovered {
+  color: #FFFFFF;
+  background-color: blue;
 }
 </style>

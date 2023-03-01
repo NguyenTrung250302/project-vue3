@@ -1,5 +1,6 @@
 <template>
   <div>
+    <header-solution />
     <NavBarSolution />
     <main-menu-solution />
     <main-contact-info style="margin-top: 90px;"/>
@@ -14,6 +15,7 @@ import MainMenuSolution from "@/components/MyArchive/menusolution/MainMenuSoluti
 import MainContactInfo from "@/components/MyArchive/ContactInfomation/MainContactInfo.vue";
 import ReferenceList from "@/components/MyArchive/ReferenceList/ReferenceList.vue";
 import FooterView from "@/components/MyArchive/FooterView.vue";
+import HeaderSolution from '@/components/MyArchive/HeaderSolution.vue';
 export default {
   components: {
     NavBarSolution,
@@ -21,6 +23,7 @@ export default {
     MainContactInfo,
     ReferenceList,
     FooterView,
+    HeaderSolution,
   },
 };
 </script>
