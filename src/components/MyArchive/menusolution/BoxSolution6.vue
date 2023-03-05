@@ -71,6 +71,6 @@ export default {
 position: absolute;
 right: 0;
 bottom: 0;
-opacity: 0.2;
+opacity: 0.1;
 } 
 </style>
