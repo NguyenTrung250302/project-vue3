@@ -3,12 +3,12 @@
     @mouseenter="hoverOn()"
     @mouseleave="hoverOut()"
     >
-      <build-tap-icon-5 :hoverIc="color"/>
+      <build-tap-icon-2 :hoverIc="color"/>
       <div class="box-text">
-      <solution-view :hoverFx="isHovering"
+      <text-solution :hoverFx="isHovering"
       class="text-block"
-      SolutionView="Online Meeting"
-      SolutionView1="Hệ thống họp online"
+      SolutionView="Docs"
+      SolutionView1="Hệ thống Data Management"
       />
       </div>
       <build-tap-logo-blur :hoverBlur="colorLogoBlur" class="logo-blur"/>
@@ -16,16 +16,15 @@
 </template>
 
 <script>
-import BuildTapIcon5 from '../myicons/BuildTapIcon5.vue';
-import BuildTapLogoBlur from '../myicons/BuildTapLogoBlur.vue';
-import SolutionView from './SolutionView.vue';
-
+import BuildTapIcon2 from "@/components/MyArchive/myicons/BuildTapIcon2.vue";
+import BuildTapLogoBlur from "@/components/MyArchive/myicons/BuildTapLogoBlur.vue";
+import TextSolution from './TextSolution.vue';
 
 export default {
   components: {
-    SolutionView,
     BuildTapLogoBlur,
-    BuildTapIcon5,
+    BuildTapIcon2,
+    TextSolution,
 
   },
   data() {

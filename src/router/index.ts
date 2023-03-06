@@ -9,8 +9,8 @@ import Chart from "../views/ChartView.vue";
 import Card from "../views/CardView.vue";
 import Blank from "../views/BlankView.vue";
 import NotFound from "../views/NotFound.vue";
-import BuildTapView from "../views/BuildTapView.vue";
-
+import BuildTapView from "../views/BuildTap/BuildTapView.vue";
+import BuildTapSystem from "@/views/BuildTap/BuildTapSystem.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -67,6 +67,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: "empty",
     },
+  },
+  {
+    path: "/System",
+    name: "System",
+    component: BuildTapSystem,
+    meta: {
+      layout: "empty",
+    }
   },
   {
     path: "/:pathMatch(.*)*",

@@ -2,14 +2,13 @@
   <div class="block" >
     <p :class="{ hover: hoverFx }" class="text1">{{ SolutionView }}</p>
     <p :class="{ hover: hoverFx }" class="text2">{{ SolutionView1 }}</p>
-    <!-- <build-tap-logo-blur /> -->
   </div>
   {{log(hoverFx)}}
 </template>
 
 <script>
 export default {
-name: "solution-view",
+name: "text-solution",
 components: {
 },
 data() {

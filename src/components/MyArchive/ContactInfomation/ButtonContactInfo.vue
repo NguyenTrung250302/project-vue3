@@ -1,6 +1,9 @@
 <template>
   <div>
-    <button>Your Name*</button>
+    <button>
+      Your name*
+      <input type="text" placeholder="" style="background: none">
+      </button>
     <button>Your Email*</button>
     <button class="button-message">Message...</button>
     <button class="button-submit">Submit</button>
@@ -25,14 +28,14 @@ button {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px);
   border-radius: 8px;
-  cursor: default;
+  cursor: text;
 }
 .button-message {
   height: 135px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  cursor: default;
+  cursor: text;
 }
 .button-submit {
   display: flex;

@@ -3,12 +3,13 @@
     @mouseenter="hoverOn()"
     @mouseleave="hoverOut()"
     >
-      <build-tap-icon-2 :hoverIc="color"/>
+      <build-tap-icon-6 :hoverIc="color"/>
       <div class="box-text">
-      <solution-view :hoverFx="isHovering"
+      <text-solution :hoverFx="isHovering"
       class="text-block"
-      SolutionView="Docs"
-      SolutionView1="Hệ thống Data Management"
+      SolutionView="Addin"
+      SolutionView1="Cầu nối giúp các lập trình viên chuyển addin
+      của họ đang chạy local thành chạy cloud"
       />
       </div>
       <build-tap-logo-blur :hoverBlur="colorLogoBlur" class="logo-blur"/>
@@ -16,18 +17,15 @@
 </template>
 
 <script>
-import BuildTapIcon2 from '../myicons/BuildTapIcon2.vue';
-
-import BuildTapLogoBlur from '../myicons/BuildTapLogoBlur.vue';
-import SolutionView from './SolutionView.vue';
-
+import BuildTapIcon6 from "@/components/MyArchive/myicons/BuildTapIcon6.vue";
+import BuildTapLogoBlur from "@/components/MyArchive/myicons/BuildTapLogoBlur.vue";
+import TextSolution from './TextSolution.vue';
 
 export default {
   components: {
-    SolutionView,
-
     BuildTapLogoBlur,
-    BuildTapIcon2,
+    BuildTapIcon6,
+    TextSolution,
 
   },
   data() {
