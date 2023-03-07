@@ -1,12 +1,14 @@
 <template>
   <div class="title-header">
-    <h1>SOLUTION</h1>
+      <h1>{{nameTitle}}</h1>
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+  components: { },
+  props:['nameTitle']
 };
 </script>
 
@@ -18,14 +20,13 @@ export default {
   background-size: cover;
   display: flex;
   align-items: center;
+  position: relative;
 }
 h1 {
-padding: 0 165px;
-top: 31.79%;
-bottom: 54.34%;
-font-weight: 500;
-font-size: 32px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
 line-height: 24px;
-color: #FFFFFF;
+padding-left: 165px;
 }
 </style>

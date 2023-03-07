@@ -33,10 +33,10 @@
         <nav-bar-reference navbarReference="Resources" />
       </li>
       <li>
-        <header-text headerText="About us" />
+        <p class="nav-item">About us</p>
       </li>
       <li>
-        <header-text headerText="Support" />
+        <p class="nav-item">Support</p>
       </li>
     </ul>
     <div class="button-header">
@@ -46,10 +46,9 @@
 </template>
 <script>
 import NavBarReference from "../ReferenceList/NavBarReference.vue";
-import HeaderText from "./HeaderText.vue";
 import HeaderButton from "@/components/MyArchive/headerSolution/HeaderButton.vue";
 export default {
-  components: { NavBarReference, HeaderText, HeaderButton },
+  components: { NavBarReference, HeaderButton },
 };
 </script>
 
@@ -67,6 +66,16 @@ export default {
   justify-content: space-between;
   width: 620px;
 }
-.button-header {
+.nav-item {
+  width: auto;
+height: 20px;
+font-weight: 700;
+font-size: 15px;
+line-height: 20px;
+color: #121212;
+}
+.nav-item:hover {
+  color: rgba(0, 111, 237, 1);
+cursor: pointer;
 }
 </style>

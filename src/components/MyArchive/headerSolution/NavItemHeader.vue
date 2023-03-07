@@ -1,6 +1,6 @@
 <template>
   <div class="nav-items">
-    <header-text headerText="Homepage" class="item-blur" />
+    <p class="head-line-blur">{{headLine1}}</p>
     <svg
       style="margin: 0 15px"
       width="7"
@@ -15,7 +15,7 @@
         fill-opacity="0.25"
       />
     </svg>
-    <header-text headerText="Homepage" class="item-blur" />
+    <p class="head-line-blur">{{headLine2}}</p>
     <svg
       style="margin: 0 15px"
       width="7"
@@ -29,14 +29,17 @@
         fill="#121212"
       />
     </svg>
-    <header-text headerText="Solutions" />
+    <p class="head-line3">{{headLine3}}</p>
   </div>
 </template>
 
 <script>
-import HeaderText from "./HeaderText.vue";
 export default {
-  components: { HeaderText },
+  props: [
+  'headLine1',
+  'headLine2',
+  'headLine3'
+  ],
 };
 </script>
 
@@ -51,5 +54,23 @@ export default {
 .item-blur {
   opacity: 0.25;
   pointer-events: none;
+}
+.head-line3 {
+  width: auto;
+height: 20px;
+font-weight: 700;
+font-size: 15px;
+line-height: 20px;
+color: #121212;
+}
+.head-line:hover {
+  color: rgba(0, 111, 237, 1);
+cursor: pointer;
+}
+.head-line-blur {
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+font-size: 15px;
+line-height: 20px;
 }
 </style>
