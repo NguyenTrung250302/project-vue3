@@ -1,9 +1,7 @@
 <template>
   <div>
     <nav-bar-header />
-    <title-header 
-    nameTitle="SYSTEM INTERGRATION"
-    />
+    <title-header nameTitle="SYSTEM INTERGRATION"/>
     <main-system />
     <main-contact-info />
     <reference-list />
