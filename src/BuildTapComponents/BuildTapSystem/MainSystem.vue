@@ -17,26 +17,30 @@
       Create, assign, and monitor Work Orders for yourself or your team quickly and easily with our user-friendly software. Clearly explain what needs to be done with comments on Work Orders and via real-time chat.
     </p>
     </div> 
-    <!--  -->
   </div>
+  <!--  -->
+    <card-frame />
 </template>
 
 <script>
 import NavItemHeader from "@/components/MyArchive/headerSolution/NavItemHeader.vue";
+import CardFrame from "@/BuildTapComponents/BuildTapSystem/CardFrame.vue";
 export default {
 components: {
   NavItemHeader,
+  CardFrame
 }
 }
 </script>
 
+
 <style scoped>
 .main-system {
     height: 575px;
-    width: 1350px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    background: linear-gradient(90deg, #FFFFFF 41.56%, rgba(255, 255, 255, 0) 69.91%), url('@/assets/photo5.png');
+    background: linear-gradient(90deg, #FFFFFF 41.56%, rgba(255, 255, 255, 0) 69.91%), url('@/assets/photo5.png') no-repeat 450px 0;
     background-size: 100% 100%;
 }
 .system-description {
@@ -46,7 +50,7 @@ components: {
   transform: translateY(-50%);
 }
 .paragraph {
-  padding-right: 70%;
+padding-right: 70%;
 font-weight: 400;
 font-size: 14px;
 line-height: 22px;
