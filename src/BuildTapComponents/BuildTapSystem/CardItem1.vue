@@ -1,27 +1,27 @@
 <template>
-  <div class="card-item">
-    <div class="card-hover">
-      <div class="card">
-        <h1>Dashboard</h1>
-        <svg
-          class="icon"
-          width="51"
-          height="5"
-          viewBox="0 0 51 5"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="0.5" width="50" height="5" rx="2.5" fill="#006FED" />
-        </svg>
-        <p>
-          Create, assign, and monitor Work Orders for yourself or your team
-          quickly and easily with our user-friendly software. Clearly explain
-          what needs to be done with comments on Work Orders and via real-time
-          chat.
-        </p>
+    <div class="card-item">
+      <div class="card-hover">
+        <div class="card">
+          <h1>Dashboard</h1>
+          <svg
+            class="icon"
+            width="51"
+            height="5"
+            viewBox="0 0 51 5"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="0.5" width="50" height="5" rx="2.5" fill="#006FED" />
+          </svg>
+          <p>
+            Create, assign, and monitor Work Orders for yourself or your team
+            quickly and easily with our user-friendly software. Clearly explain
+            what needs to be done with comments on Work Orders and via real-time
+            chat.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {};
 
 <style scoped>
 .card-item {
-  width: 675px;
+  width: 100%;
   height: 450px;
   position: relative;
   background-image: url("@/assets/photo2.png");

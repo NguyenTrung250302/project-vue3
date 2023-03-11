@@ -254,6 +254,24 @@
         <build-tap-logo />
           <span class="mx-4">TapSystem</span>
         </router-link>
+        <!-- Tap Resources -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'Resources' ? activeClass : inactiveClass]"
+          to="/Resources"
+        >
+        <build-tap-logo />
+          <span class="mx-4">TapResources</span>
+        </router-link>
+        <!-- Tap About Us -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'About' ? activeClass : inactiveClass]"
+          to="/About"
+        >
+        <build-tap-logo />
+          <span class="mx-4">About Us</span>
+        </router-link>
         <!--  -->
         <p class="pl-4 text-xs my-2 font-semibold mb-4 text-gray-400">About</p>
         <a

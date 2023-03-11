@@ -27,7 +27,7 @@ export default {};
 
 <style scoped>
 .card-item {
-  width: 675px;
+  width: 100%;
   height: 450px;
   position: relative;
   background-image: url("@/assets/photo4.png");

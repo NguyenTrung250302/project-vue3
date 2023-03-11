@@ -11,6 +11,8 @@ import Blank from "../views/BlankView.vue";
 import NotFound from "../views/NotFound.vue";
 import BuildTapView from "../views/BuildTap/BuildTapView.vue";
 import BuildTapSystem from "@/views/BuildTap/BuildTapSystem.vue";
+import BuildTapResources from "@/views/BuildTap/BuildTapResources.vue";
+import BuildTapAboutUs from "@/views/BuildTap/BuildTapAboutUs.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -72,6 +74,22 @@ const routes: Array<RouteRecordRaw> = [
     path: "/System",
     name: "System",
     component: BuildTapSystem,
+    meta: {
+      layout: "empty",
+    }
+  },
+  {
+    path: "/Resources",
+    name: "Resources",
+    component: BuildTapResources,
+    meta: {
+      layout: "empty",
+    }
+  },
+    {
+    path: "/About",
+    name: "About",
+    component: BuildTapAboutUs,
     meta: {
       layout: "empty",
     }

@@ -24,7 +24,7 @@ CardItem4
 
 <style scoped>
 .card-frame {
-    width: 1350px;
+    width: 100%;
     height: 900px;
     background-color: #ffffff;
     display: grid;
