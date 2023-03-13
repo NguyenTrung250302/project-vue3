@@ -1,10 +1,13 @@
 <template>
   <div class="main-tap-about-us">
+    <page-title pageTitle="About us" />
   </div>
 </template>
 
 <script>
+import PageTitle from '../PageTitle.vue'
 export default {
+  components: { PageTitle },
 
 }
 </script>
