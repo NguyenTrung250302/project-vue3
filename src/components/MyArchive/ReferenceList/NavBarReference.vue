@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ navbarReference }}</p>
+    <p @click="changeColor" :style="{color: textColor}">{{ navbarReference }}</p>
     <svg
       class="icon"
       width="16"
@@ -20,6 +20,16 @@
 <script>
 export default {
   props: ["navbarReference"],
+  data() {
+    return { 
+      textColor: 'black',
+    }
+  },
+    methods: {
+    changeColor() {
+      this.textColor = 'rgba(0, 111, 237, 1)';
+    }
+  }
 };
 </script>
 
@@ -33,7 +43,6 @@ p {
   color: #121212;
 }
 p:hover {
-  color: rgba(0, 111, 237, 1);
   cursor: pointer;
 }
 div {
@@ -41,8 +50,5 @@ div {
 }
 .icon {
   margin: 2px 0 0 3px;
-}
-.icon:hover {
-  fill: rgba(0, 111, 237, 1);
 }
 </style>
