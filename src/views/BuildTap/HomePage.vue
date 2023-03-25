@@ -19,24 +19,47 @@
       <div class="right">
         <div class="destop">
           <div class="background-destop">
-
+            <div class="icon-svg">
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!--  -->
+    <div class="introduce">
+      <div class="left-introduce"></div>
+      <div class="right-introduce">
+        <introduce-view />
+      </div>
+    </div>
+    <!--  -->
+    <main-contact-info />
+    <reference-list />
+    <footer-view />
   </div>
 </template>
 
 <script>
 import NavBarHeader from '@/components/MyArchive/headerSolution/NavBarHeader.vue';
+import IntroduceView from '@/BuildTapComponents/BuildTapHomePage/IntroduceView.vue';
+import MainContactInfo from '@/components/MyArchive/ContactInfomation/MainContactInfo.vue';
+import ReferenceList from '@/components/MyArchive/ReferenceList/ReferenceList.vue';
+import FooterView from '@/components/MyArchive/FooterView.vue';
 export default {
 components: {
-NavBarHeader
+NavBarHeader,
+IntroduceView,
+MainContactInfo,
+ReferenceList,
+FooterView
+
 }
 }
 </script>
 
-<style scoped>
+<style scop,
+MainContactInfoed
+Button>
 .container-introduce {
   width: 100%;
   height: 645px;
@@ -73,4 +96,28 @@ NavBarHeader
   left: 15px;
   border-radius: 5px;
 }
+.icon-svg {
+  position: absolute;
+  left: 1px;
+}
+.introduce {
+  width: 100%;
+  height: 370px;
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+.left-introduce{
+  position: relative;
+  background-image: url("@/assets/image-teamwork.png" );
+  background-size: cover;
+}
+.right-introduce {
+  background-image: url("@/assets/background-big.png");
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: top;
+}
+
 </style>

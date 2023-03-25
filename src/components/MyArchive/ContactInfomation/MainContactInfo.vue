@@ -21,7 +21,7 @@ export default {
 .main-contact {
   width: auto;
   height: 440px;
-  background-image: url(@/assets/331872598_752933712691324_5288812472693923275_n.png);
+  background-image: url("@/assets/background-big.png");
   background-size: cover;
   padding: 85px 160px;
   display: flex;
