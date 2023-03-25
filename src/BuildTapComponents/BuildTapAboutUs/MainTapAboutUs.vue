@@ -3,7 +3,7 @@
     <page-title pageTitle="About us" />
     <brand-introduction />
     <board-info />
-    <comment-user />
+    <slider-view />
   </div>
 </template>
 
@@ -11,9 +11,14 @@
 import PageTitle from "../PageTitle.vue";
 import BoardInfo from "./BoardInfo.vue";
 import BrandIntroduction from "./BrandIntroduction.vue";
-import CommentUser from "@/BuildTapComponents/BuildTapAboutUs/CommentUser.vue";
+import SliderView from "@/BuildTapComponents/BuildTapAboutUs/SliderView.vue";
 export default {
-  components: { PageTitle, BrandIntroduction, BoardInfo, CommentUser },
+  components: { 
+  PageTitle, 
+  BrandIntroduction, 
+  BoardInfo, 
+  SliderView 
+  },
 };
 </script>
 

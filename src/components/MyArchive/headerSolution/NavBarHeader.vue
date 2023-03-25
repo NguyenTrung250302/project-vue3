@@ -1,6 +1,7 @@
 <template>
   <div class="navbar-header">
     <div>
+      <a href="/homepage">
       <svg
         width="125"
         height="24"
@@ -21,26 +22,27 @@
           fill="#121212"
         />
       </svg>
+      </a>
     </div>
     <ul class="nav">
-      <li>
+      <a href="/solution">
         <nav-bar-reference navbarReference="Solutions" />
-      </li>
-      <li>
+      </a>
+      <a href="">
         <nav-bar-reference navbarReference="Service" />
-      </li>
-      <li>
+      </a>
+      <a href="/resources">
         <nav-bar-reference navbarReference="Resources" />
-      </li>
-      <li>
+      </a>
+      <a href="/about">
         <p class="nav-item">About us</p>
-      </li>
-      <li>
+      </a>
+      <a href="">
         <p class="nav-item">Support</p>
-      </li>
+      </a>
     </ul>
     <div class="button-header">
-        <header-button />
+    <header-button />
     </div>
   </div>
 </template>
@@ -67,7 +69,7 @@ export default {
   width: 620px;
 }
 .nav-item {
-  width: auto;
+width: auto;
 height: 20px;
 font-weight: 700;
 font-size: 15px;

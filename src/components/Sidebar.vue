@@ -55,10 +55,11 @@
 
       <nav class="mt-10">
         <p class="pl-4 text-xs font-semibold mb-4 text-gray-400">GENERAL</p>
+        <!--  -->
         <router-link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]"
-          to="/dashboard"
+          :class="[$route.name === 'HomePage' ? activeClass : inactiveClass]"
+          to="/homepage"
         >
           <svg
             class="w-5 h-5"
@@ -74,13 +75,64 @@
               d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
             ></path>
           </svg>
-
-          <span class="mx-4">Dashboard</span>
+          <span class="mx-4">Home Page</span>
         </router-link>
+        <!--  -->
         <p class="pl-4 my-2 text-xs font-semibold mb-4 text-gray-400">
           Examples
         </p>
+        <!--  -->
+        <!-- Tap Solution -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'Solution' ? activeClass : inactiveClass]"
+          to="/solution"
+        >
+        <build-tap-logo />
+          <span class="mx-4">BuildTab-Solution</span>
+        </router-link>
+        <!-- Tap System -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'System' ? activeClass : inactiveClass]"
+          to="/system"
+        >
+        <build-tap-logo />
+          <span class="mx-4">TapSystem</span>
+        </router-link>
+        <!-- Tap Resources -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'Resources' ? activeClass : inactiveClass]"
+          to="/resources"
+        >
+        <build-tap-logo />
+          <span class="mx-4">TapResources</span>
+        </router-link>
+        <!-- Tap About Us -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'About' ? activeClass : inactiveClass]"
+          to="/about"
+        >
+        <build-tap-logo />
+          <span class="mx-4">About Us</span>
+        </router-link>
+        <!--  -->
+        <router-link
+          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]"
+          to="/dashboard"
+        >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+            />
+          </svg>
 
+          <span class="mx-4">Dashboard</span>
+        </router-link>
+        <!--  -->
         <router-link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
           :class="[$route.name === 'UIElements' ? activeClass : inactiveClass]"
@@ -236,43 +288,6 @@
 
           <span class="mx-4">Blank</span>
         </router-link>
-        <!-- Tap Solution -->
-        <router-link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'BuildTap' ? activeClass : inactiveClass]"
-          to="/BuildTab"
-        >
-        <build-tap-logo />
-          <span class="mx-4">BuildTab-Solution</span>
-        </router-link>
-        <!-- Tap System -->
-        <router-link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'System' ? activeClass : inactiveClass]"
-          to="/System"
-        >
-        <build-tap-logo />
-          <span class="mx-4">TapSystem</span>
-        </router-link>
-        <!-- Tap Resources -->
-        <router-link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'Resources' ? activeClass : inactiveClass]"
-          to="/Resources"
-        >
-        <build-tap-logo />
-          <span class="mx-4">TapResources</span>
-        </router-link>
-        <!-- Tap About Us -->
-        <router-link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :class="[$route.name === 'About' ? activeClass : inactiveClass]"
-          to="/About"
-        >
-        <build-tap-logo />
-          <span class="mx-4">About Us</span>
-        </router-link>
-        <!--  -->
         <p class="pl-4 text-xs my-2 font-semibold mb-4 text-gray-400">About</p>
         <a
           target="_blank"
