@@ -6,8 +6,10 @@ import "./assets/tailwind.css";
 
 import App from "./App.vue";
 import router from "./router";
-const app = createApp(App);
-app.component("default-layout", DashboardLayout);
-app.component("empty-layout", EmptyLayout);
 
-app.use(router).use(VueApexCharts).mount("#app");
+createApp(App)
+  .component("default-layout", DashboardLayout)
+  .component("empty-layout", EmptyLayout)
+  .use(router)
+  .use(VueApexCharts)
+  .mount("#app");
