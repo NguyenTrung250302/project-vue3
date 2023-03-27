@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <a href="/">
+    <a href="/Login">
     <div class="button-login">
       <svg
         width="73"

@@ -6,7 +6,6 @@ import BuildTapResources from "@/views/BuildTap/BuildTapResources.vue";
 import BuildTapAboutUs from "@/views/BuildTap/BuildTapAboutUs.vue";
 import HomePage from "@/views/BuildTap/HomePage.vue";
 import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
