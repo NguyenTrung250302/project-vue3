@@ -72,7 +72,9 @@ p {
 .card {
   position: absolute;
   top: 50%;
-  left: 10%;
+  width: 100%;
+  height: auto;
   transform: translateY(-50%);
+  border: none;
 }
 </style>

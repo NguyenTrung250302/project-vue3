@@ -70,8 +70,11 @@ p {
   margin: 15px auto;
 }
 .card {
+  width: 100%;
+  height: auto;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  border: none;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-header">
     <div>
-      <a href="/homepage">
+      <a href="/MainPage">
         <svg
           width="125"
           height="24"
@@ -30,7 +30,7 @@
         <nav-bar-reference navbarReference="Solutions" />
       </a>
       <a href="/system">
-        <nav-bar-reference navbarReference="Service" />
+        <nav-bar-reference navbarReference="System" />
       </a>
       <a href="/resources">
         <nav-bar-reference navbarReference="Resources" />

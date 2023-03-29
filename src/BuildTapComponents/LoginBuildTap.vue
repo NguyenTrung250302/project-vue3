@@ -22,8 +22,8 @@
               <span style="color: red">*</span>
             </div>
             <div class="input_wrapper">
-              <img class="input_icon" src="/assets/icon-email.png">
-              <input class="input_input" type="text" placeholder="Enter email" name="email" >
+              <img  class="input_icon" src="@/assets/email.png">
+              <input class="input_input" type="text" placeholder="Username" name="email" >
             </div>
           </div>
           <!--  -->
@@ -33,10 +33,10 @@
               <span style="color: red">*</span>
             </div>
             <div class="input_wrapper">
-              <img class="input_icon" src="/assets/icon-password.png">
-              <input class="input_input" type="password" placeholder="Enter password" name="password" >
+              <img class="input_icon" src="@/assets/password.png">
+              <input class="input_input" type="password" placeholder="Password" name="password" >
               <a >
-                <img class="input_icon" src="/assets/icon-eye.png">
+                <img class="input_icon" src="@/assets/eye.png">
               </a>
             </div>
           </div>
@@ -46,7 +46,7 @@
             <a style="text-decoration: underline;" href="">Forgot password?</a>
           </div>
           <!-- button login -->
-          <a class="login-button" href="/homepage">
+          <a class="login-button" href="/MainPage">
           <div class="login-text">LOGIN</div>
           </a>
         </form>

@@ -2,20 +2,24 @@
   <div class="navigation-view">
     <h1>Why people love BuildTab</h1>
     <div class="list-item">
+      <arrow-left-icon class="left-icon"/>
       <feedback-item />
-
+      <feedback-item />
+      <feedback-item />
     </div>
-    <!-- <navigation-view /> -->
+    <navigation-view />
   </div>
 </template>
 
 <script>
 import feedbackItem from "@/BuildTapComponents/BuildTapAboutUs/feedbackItem.vue";
-// import NavigationView from "./NavigationView.vue";
+import NavigationView from "./NavigationView.vue";
+import ArrowLeftIcon from '@/components/MyArchive/myicons/ArrowLeftIcon.vue';
 export default {
   components: { 
     feedbackItem, 
-    // NavigationView
+    NavigationView,
+    ArrowLeftIcon
 },
 };
 </script>
@@ -27,6 +31,14 @@ export default {
 }
 .list-item {
   display: flex;
+  overflow: hidden;
+}
+.left-icon {
+  display: flex;
+  align-items: center;
+}
+.left-icon:hover {
+  cursor: pointer;
 }
 h1 {
   font-weight: 500;
