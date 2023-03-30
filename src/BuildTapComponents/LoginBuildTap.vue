@@ -86,10 +86,11 @@
             <a style="text-decoration: underline" href="">Forgot password?</a>
           </div>
           <!-- button login -->
-          <!-- <a  href="/MainPage" >
-            click
-          </a> -->
-            <button v-on:click.prevent="submitForm"  class="login-text">LOGIN</button>
+          <div class="login-button">
+          <button v-on:click.prevent="submitForm" class="login-text">
+            LOGIN
+          </button>
+          </div>
         </div>
         <!--  -->
       </div>
@@ -98,7 +99,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
@@ -129,23 +130,25 @@ export default {
         this.passwordError =
           "* Mật khẩu cần có chữ thường, hoa, số và ký tự đặc biệt !";
       } else {
-        this.callData()
+        this.callData();
         // this.$router.push('/MainPage')
       }
     },
-  callData: async function() {
-    const showdata = await axios.post('https://dev-crawler-api.trainery.live//master-caoanh/auth/login',{
-    "email":"ducdt1992@gmail.com",
-   "password":"123456"
-    })
-    console.log(showdata.status);
-    if(showdata.status === 200) {
-      this.$router.push('/MainPage')
-    }
-    else {
-      alert('error')
-    }
-  }
+    callData: async function () {
+      const showdata = await axios.post(
+        "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
+        {
+          email: "ducdt1992@gmail.com",
+          password: "123456",
+        }
+      );
+      console.log(showdata.status);
+      if (showdata.status === 200) {
+        this.$router.push("/MainPage");
+      } else {
+        alert("error");
+      }
+    },
   },
 };
 </script>
