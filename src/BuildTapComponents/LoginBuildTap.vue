@@ -15,7 +15,8 @@
           Vietnam.
         </p>
         <!--  -->
-        <form @submit.prevent="login">
+        <div>
+          <!-- username -->
           <div class="input_container">
             <div class="email input_label">
               Email
@@ -23,10 +24,10 @@
             </div>
             <div class="input_wrapper">
               <img  class="input_icon" src="@/assets/email.png">
-              <input class="input_input" type="text" placeholder="Username" name="email" >
+              <input class="input_input" type="email" placeholder="Username" v-model="username" v-bind:class="{'error-username': usernameError}" >
             </div>
           </div>
-          <!--  -->
+          <!-- password -->
           <div class="input_container">
             <div class="password input_label">
               Password 
@@ -34,37 +35,73 @@
             </div>
             <div class="input_wrapper">
               <img class="input_icon" src="@/assets/password.png">
-              <input class="input_input" type="password" placeholder="Password" name="password" >
+              <input class="input_input" type="password" placeholder="Password" v-model="password" v-bind:class="{'error-password': passwordError}">
               <a >
                 <img class="input_icon" src="@/assets/eye.png">
               </a>
             </div>
           </div>
-          <!--  -->
+          <!-- show password -->
+            <div></div>
+          <!-- button login -->
           <div class="login-features">
             <a href="">Remember me</a>
             <a style="text-decoration: underline;" href="">Forgot password?</a>
           </div>
+          <!-- show error -->
+          <p class="error-username style" v-if="usernameError">{{ usernameError }}</p>
+          <p class="error-password style" v-if="passwordError">{{ passwordError }}</p>
           <!-- button login -->
-          <a class="login-button" href="/MainPage">
-          <div class="login-text">LOGIN</div>
+          <a class="login-button" href="/MainPage" v-on:click.prevent="submitForm">
+          <button class="login-text">LOGIN</button>
           </a>
-        </form>
+        </div>
         <!--  -->
       </div>
     </div>
   </div>
-</template>
+</template>trung
 
-<script setup lang="ts">
-import { useRouter } from "vue-router";
+<script>
+export default {
+  data() {
+    return {
+      username: '',
+      password: '',
+      usernameError: '',
+      passwordError: ''
+    }
+  },
+  methods: {
+    submitForm() {
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
+          this.usernameError = '* Email không đúng định dạng !'
+        }
+        else {
+          this.usernameError = ''
+        }
 
-const router = useRouter();
-
-function login() {
-  router.push("/homepage");
+        if(this.password.length < 8) {
+            this.passwordError = '* Mật khẩu cần ít nhất 8 ký tự !';
+        }
+        else if (!(/[a-z]/.test(this.password) 
+        && /[A-Z]/.test(this.password) 
+        && /[0-9]/.test(this.password) 
+        && /[^a-zA-Z0-9]/.test(this.password))) {
+            this.passwordError = '* Mật khẩu cần có chữ thường, hoa, số và ký tự đặc biệt !'
+        }
+        else {
+            alert(`Đăng nhập thành công !`);
+        } 
+        // else {
+        //   return true;
+        // }
+        // return false;
+    }
+  }
 }
 </script>
+
 
 <style scoped>
 .container {
@@ -147,6 +184,11 @@ function login() {
     margin-top: 5px;
   display: flex;
   justify-content: space-between;
+  }
+  .style {
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
   }
 h1 {
   color: rgba(0, 111, 237, 1);
