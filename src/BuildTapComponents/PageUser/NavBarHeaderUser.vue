@@ -2,6 +2,7 @@
   <div class="container-header">
     <!-- logo build tap -->
     <div class="left">
+      <a href="/">
       <svg
         width="125"
         height="24"
@@ -22,6 +23,7 @@
           fill="#121212"
         />
       </svg>
+      </a>
       <div class="search">
         <img class="icon" src="@/assets/search-icon.png" />
         <input
@@ -68,8 +70,8 @@
             stroke-linejoin="round"
           />
         </svg>
-        <img class="icon" src="@/assets/avatar-trung.png" alt="" />
-        <button>
+        <img class="icon" src="@/assets/avatar-trung.png" />
+        <button @click="toggleSidebar">
           <svg
             data-v-18aef2c8=""
             width="16"
@@ -85,12 +87,29 @@
             ></path>
           </svg>
         </button>
+        <!-- sign out -->
+        <div
+          class="sidebar-btn"
+          :style="{ display: showSidebar ? 'block' : 'none' }"
+        >
+          <div class="box">
+            <button class="button-box">@trung2503</button>
+          </div>
+          <div class="box">
+            <button class="button-box">Setting</button>
+          </div>
+          <div class="box">
+            <button class="button-box" v-on:click="changeTap">sign out</button>
+          </div>
+        </div>
       </div>
-      <!-- sign out -->
-      <div class="btn-sign_out">
-      <button>sign out</button>
     </div>
-    </div>
+  </div>
+  <div class="info-user">
+    <nav>
+      github: 
+      <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">Trung Nguyen</a>
+    </nav>
   </div>
 </template>
 
@@ -99,8 +118,17 @@ export default {
   components: {},
   data() {
     return {
-      searchText: "",
+      showSidebar: false,
     };
+  },
+  methods: {
+    toggleSidebar() {
+      this.showSidebar = !this.showSidebar;
+    },
+    changeTap() {
+      this.$router.push("/login");
+      alert("Đã đăng xuất !");
+    },
   },
 };
 </script>
@@ -134,12 +162,44 @@ export default {
   align-items: center;
   margin: 0 0 0 15px;
 }
-.btn-sign_out {
-  background-color: aqua;
-  border-radius: 20%;
+.sidebar-btn {
+  width: 200px;
+  height: 180px;
+  box-shadow: 2px 2px 2px 2px rgb(228, 235, 235);
+  background-color: #ffff;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  border-radius: 2%;
+  z-index: 2;
 }
 input {
   border: none;
   outline: none;
+}
+.button-box {
+  margin: 0 10px;
+}
+.box {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.box:hover {
+  background-color: darkgray;
+  cursor: pointer;
+  border-radius: 2%;
+}
+.info-user {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 60px;
+  margin: 20px 30px;
+  border-top: solid 1px #333;
+  /* border-bottom: solid 1px #333; */
+}
+a {
+  font-weight: 500;
 }
 </style>

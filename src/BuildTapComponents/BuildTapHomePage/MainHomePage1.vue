@@ -54,7 +54,7 @@
   </div>
   <!--  -->
     <div>
-      <svg width="1440" height="556" viewBox="0 0 1440 556" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="1350" height="580" viewBox="0 0 1440 556" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1440" height="556" fill="white"/>
 <mask id="mask0_3644_82326" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="556">
 <rect width="1440" height="556" fill="white"/>

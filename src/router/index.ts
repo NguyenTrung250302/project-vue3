@@ -29,9 +29,9 @@ const routes: Array<RouteRecordRaw> = [
     path: "/MainPage",
     name: "MainPage",
     component: MainHomePage,
-    // meta: {
-    //   layout: "empty",
-    // },
+    meta: {
+      layout: "empty",
+    },
   },
   {
     path: "/solution",
