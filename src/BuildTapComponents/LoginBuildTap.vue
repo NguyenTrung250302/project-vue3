@@ -87,9 +87,9 @@
           </div>
           <!-- button login -->
           <div class="login-button">
-          <button v-on:click.prevent="submitForm" class="login-text">
-            LOGIN
-          </button>
+            <button v-on:click.prevent="submitForm" class="login-text">
+              LOGIN
+            </button>
           </div>
         </div>
         <!--  -->
@@ -103,8 +103,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      username: "",
-      password: "",
+      username: "trung2503@gmail.com",
+      password: "TrUng253@",
       usernameError: "",
       passwordError: "",
     };
@@ -119,21 +119,32 @@ export default {
 
       if (this.password.length < 8) {
         this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
-      } else if (
+      } 
+      else if (
         !(
           /[a-z]/.test(this.password) &&
           /[A-Z]/.test(this.password) &&
           /[0-9]/.test(this.password) &&
           /[^a-zA-Z0-9]/.test(this.password)
         )
-      ) {
-        this.passwordError =
-          "* Mật khẩu cần có chữ thường, hoa, số và ký tự đặc biệt !";
-      } else {
+      ) 
+      {
+        this.passwordError ="* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
+      } 
+      else if(
+        !(
+          this.username === 'trung2503@gmail.com' &&
+          this.password === 'TrUng253@' 
+        )
+      ){
+        this.passwordError = "* Mật khẩu hoặc Email không đúng !"
+        alert("Sai thông tin đăng nhập !")
+      }
+      else {
         this.callData();
-        // this.$router.push('/MainPage')
       }
     },
+    // --------------------------------------------------------------------
     callData: async function () {
       const showdata = await axios.post(
         "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
@@ -142,11 +153,17 @@ export default {
           password: "123456",
         }
       );
-      console.log(showdata.status);
-      if (showdata.status === 200) {
-        this.$router.push("/MainPage");
-      } else {
+      console.log(showdata);
+      if (
+        showdata.status === 200
+      )
+      {
+        alert("Đăng nhập thành công")
+        this.$router.push("/user");
+      } 
+      else {
         alert("error");
+        this.$router.push("/login")
       }
     },
   },

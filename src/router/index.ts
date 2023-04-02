@@ -7,6 +7,7 @@ import BuildTapAboutUs from "@/views/BuildTap/BuildTapAboutUs.vue";
 import HomePage from "@/views/BuildTap/HomePage.vue";
 import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
 import MainHomePage from "@/views/BuildTap/MainHomePage.vue";
+import PageUser from "@/views/BuildTap/PageUser.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -28,9 +29,9 @@ const routes: Array<RouteRecordRaw> = [
     path: "/MainPage",
     name: "MainPage",
     component: MainHomePage,
-    meta: {
-      layout: "empty",
-    },
+    // meta: {
+    //   layout: "empty",
+    // },
   },
   {
     path: "/solution",
@@ -63,6 +64,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: "empty",
     },
+  },
+  {
+    path: "/user",
+    name: "PageUser",
+    component: PageUser,
+    meta: {
+      layout: "empty"
+    }
   },
   {
     path: "/:pathMatch(.*)*",
