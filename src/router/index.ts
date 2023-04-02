@@ -8,10 +8,10 @@ import HomePage from "@/views/BuildTap/HomePage.vue";
 import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
 import MainHomePage from "@/views/BuildTap/MainHomePage.vue";
 import PageUser from "@/views/BuildTap/PageUser.vue";
+import FailedLoginUser from "@/BuildTapComponents/PageUser/FailedLoginUser.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "HomePage",
     component: HomePage,
     meta: {
       layout: "empty",
@@ -19,7 +19,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/login",
-    name: "Login",
     component: LoginBuildTap,
     meta: {
       layout: "empty",
@@ -27,7 +26,6 @@ const routes: Array<RouteRecordRaw> = [
   },
     {
     path: "/MainPage",
-    name: "MainPage",
     component: MainHomePage,
     meta: {
       layout: "empty",
@@ -35,7 +33,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/solution",
-    name: "Solution",
     component: BuildTapView,
     meta: {
       layout: "empty",
@@ -43,7 +40,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/system",
-    name: "System",
     component: BuildTapSystem,
     meta: {
       layout: "empty",
@@ -51,7 +47,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/resources",
-    name: "Resources",
     component: BuildTapResources,
     meta: {
       layout: "empty",
@@ -59,7 +54,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/about",
-    name: "About",
     component: BuildTapAboutUs,
     meta: {
       layout: "empty",
@@ -67,8 +61,14 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/user",
-    name: "PageUser",
     component: PageUser,
+    meta: {
+      layout: "empty"
+    }
+  },
+    {
+    path: "/failed",
+    component: FailedLoginUser,
     meta: {
       layout: "empty"
     }
@@ -76,6 +76,9 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/:pathMatch(.*)*",
     component: NotFound,
+    meta: {
+    layout: "empty"
+    }
   },
 ];
 

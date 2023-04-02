@@ -69,9 +69,9 @@
                 v-bind:class="{ 'error-password': passwordError }"
                 required
               />
-              <a>
+              <button>
                 <img class="input_icon" src="@/assets/eye.png" />
-              </a>
+              </button>
             </div>
             <!-- show error -->
             <p class="error-password style" v-if="passwordError">
@@ -82,8 +82,11 @@
           <div></div>
           <!-- more -->
           <div class="login-features">
-            <a href="">Remember me</a>
-            <a style="text-decoration: underline" href="">Forgot password?</a>
+            <!-- <a href="">Remember me</a> -->
+            <button v-on:click="isShowSave">Remember me</button>
+            <button style="text-decoration: underline" href="">
+              Forgot password?
+            </button>
           </div>
           <!-- button login -->
           <div class="login-button">
@@ -95,9 +98,15 @@
         <!--  -->
       </div>
     </div>
-  </div>
-  <div>
-    <nav></nav>
+    <!-- loading -->
+    <div class="background-loading" v-if="isLoading">
+      <img class="icon-loading" src="@/assets/loading.png" />
+      <p class="text-loading">Loading...</p>
+    </div>
+    <!-- failed login -->
+    <!-- <div class="">
+
+    </div> -->
   </div>
 </template>
 
@@ -110,9 +119,14 @@ export default {
       password: "TrUng253@",
       usernameError: "",
       passwordError: "",
+      isLoading: false,
+      failedLogin: false,
     };
   },
   methods: {
+    isShowSave() {
+      alert("Đã lưu thông tin !");
+    },
     submitForm() {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.usernameError = "* Email không đúng định dạng !";
@@ -122,28 +136,26 @@ export default {
 
       if (this.password.length < 8) {
         this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
-      } 
-      else if (
+      } else if (
         !(
           /[a-z]/.test(this.password) &&
           /[A-Z]/.test(this.password) &&
           /[0-9]/.test(this.password) &&
           /[^a-zA-Z0-9]/.test(this.password)
         )
-      ) 
-      {
-        this.passwordError ="* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
-      } 
-      else if(
+      ) {
+        this.passwordError =
+          "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
+      } else if (
         !(
-          this.username === 'trung2503@gmail.com' &&
-          this.password === 'TrUng253@' 
+          this.username === "trung2503@gmail.com" &&
+          this.password === "TrUng253@"
         )
-      ){
-        this.passwordError = "* Mật khẩu hoặc Email không đúng !"
-        alert("Sai thông tin đăng nhập !")
-      }
-      else {
+      ) {
+        this.passwordError = "* Mật khẩu hoặc Email không đúng !";
+        alert("Sai thông tin đăng nhập !");
+        this.$router.push("/failed")
+      } else {
         this.callData();
       }
     },
@@ -157,16 +169,19 @@ export default {
         }
       );
       console.log(showdata);
-      if (
-        showdata.status === 200
-      )
-      {
-        alert("Đăng nhập thành công")
-        this.$router.push("/user");
-      } 
+      if (showdata.status === 200) {
+        // hien thi man hinh loading
+        this.isLoading = true;
+        setTimeout(() => {
+          // ẩn chỉ số tải
+          this.isLoading = false;
+          this.$router.push("/user");
+        }, 3000);
+      }
+      // }
       else {
         alert("error");
-        this.$router.push("/login")
+        this.$router.push("/:pathMatch(.*)*")
       }
     },
   },
@@ -181,6 +196,7 @@ export default {
   background-color: #ffffff;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 .left {
   background-image: url("@/assets/image.png");
@@ -246,6 +262,15 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.login-button:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.login-button:hover button {
+  color: #006fed;
+  transition: all 0.4s;
+}
 .login-text {
   font-weight: bold;
   color: white;
@@ -261,6 +286,43 @@ export default {
   font-size: 13px;
   font-weight: 500;
 }
+.background-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.9;
+  background-size: 100% 100%;
+}
+.background-loading:hover {
+  cursor: wait;
+}
+.icon-loading {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.text-loading {
+  position: absolute;
+  font-weight: 700;
+  font-size: 18px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: #000;
+}
 h1 {
   color: rgba(0, 111, 237, 1);
   font-size: 45px;
@@ -275,8 +337,7 @@ p {
   font-size: 14px;
   font-weight: 300;
 }
-a {
+button {
   color: #ffffff;
-  font-size: 13.5px;
 }
 </style>

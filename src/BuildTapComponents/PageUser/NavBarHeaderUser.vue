@@ -99,7 +99,7 @@
             <button class="button-box">Setting</button>
           </div>
           <div class="box">
-            <button class="button-box" v-on:click="changeTap">sign out</button>
+            <button class="button-box" v-on:click="changeTap">Sign out</button>
           </div>
         </div>
       </div>
@@ -107,8 +107,15 @@
   </div>
   <div class="info-user">
     <nav>
-      github: 
-      <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">Trung Nguyen</a>
+      Github: 
+      <nav > 
+        <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">
+        Trung Nguyen
+        </a>
+        </nav>
+    </nav>
+    <nav>Email:
+      <nav style="text-decoration: underline"> nguyentrung250302@gmail.com</nav>
     </nav>
   </div>
 </template>
@@ -127,7 +134,7 @@ export default {
     },
     changeTap() {
       this.$router.push("/login");
-      alert("Đã đăng xuất !");
+      alert("Xác nhận đăng xuất !");
     },
   },
 };
@@ -186,20 +193,31 @@ input {
   align-items: center;
 }
 .box:hover {
-  background-color: darkgray;
+  background-color: rgb(153, 152, 152);
   cursor: pointer;
   border-radius: 2%;
+  transition: all .4s;
+}
+.box:hover button {
+  color: #ffff;
+  transition: all .4s;
 }
 .info-user {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   width: auto;
-  height: 60px;
-  margin: 20px 30px;
-  border-top: solid 1px #333;
-  /* border-bottom: solid 1px #333; */
+  height: 80px;
+  margin: 10px 30px 22px 30px;
+  border-top: solid 0.5px #333;
+  border-bottom: solid 0.5px #333;
 }
 a {
   font-weight: 500;
+  font-size: 16px;
+}
+nav {
+  font-weight: 500;
+  font-size: 16px;
 }
 </style>

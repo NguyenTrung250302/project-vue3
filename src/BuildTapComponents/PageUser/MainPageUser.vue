@@ -13,7 +13,10 @@
         </ul>
         </div>
     </div>
-    <nav style="font-size: 20px; display: flex; justify-content: center; margin-top: 10px;">SEE MORE</nav>
+    <nav style="font-size: 20px; display: flex; justify-content: center; margin-top: 10px;">
+    VIEW
+    <img style="width:30px; height:30px; margin: 0 5px" src="@/assets/eye-outline.png" alt="">
+    </nav>
     <ul>
         <li class="navbar">
             <a href="/MainPage">main page</a>
@@ -28,7 +31,7 @@
             <a href="/resources">resources</a>
         </li>
         <li class="navbar">
-            <a href="/about">about</a>
+            <a href="/about">about us</a>
         </li>
     </ul>
     <div class="background"></div>
@@ -67,6 +70,7 @@ components : {
 .navbar:hover {
     background-color: #b0f1f1;
     cursor: pointer;
+    transition: all .4s;
 }
 ul {
     display: flex;
