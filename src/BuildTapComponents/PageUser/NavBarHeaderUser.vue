@@ -95,7 +95,7 @@
           :style="{ display: showSidebar ? 'block' : 'none' }"
         >
           <div class="box">
-            <button class="button-box">@trung2503</button>
+            <button class="button-box">@my profile</button>
           </div>
           <div class="box">
             <button class="button-box">Setting</button>
@@ -109,10 +109,10 @@
   </div>
   <div class="info-user">
     <nav>
-      Github: 
+      recently visited: 
       <nav > 
         <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">
-        Trung Nguyen
+        github.com/NguyenTrung250302
         </a>
         </nav>
     </nav>

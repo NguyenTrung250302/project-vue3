@@ -2,9 +2,9 @@
     <div class="container-main">
         <img class="icon-avatar" src="@/assets/user_icon.png">
         <div>
-            <nav>Trung Nguyen</nav>
+            <nav>welcome back</nav>
         <ul>
-            <li>@trung2503</li>
+            <li>@my profile</li>
             <li>User ID: 13262948</li>
             <img 
             style="width: 20px; height: 20px;" 
@@ -19,19 +19,19 @@
     </nav>
     <ul>
         <li class="navbar">
-            <a href="/MainPage">main page</a>
+            <button v-on:click="viewMainPage">main page</button>
         </li>
         <li class="navbar">
-            <a href="/solution">solution</a>
+            <button v-on:click="viewSolution">solution</button>
         </li>
         <li class="navbar">
-            <a href="/system">system</a>
+            <button v-on:click="viewSystem">system</button>
         </li>
         <li class="navbar">
-            <a href="/resources">resources</a>
+            <button v-on:click="viewResources">resources</button>
         </li>
         <li class="navbar">
-            <a href="/about">about us</a>
+            <button v-on:click="viewAboutUS">about us</button>
         </li>
     </ul>
     <div class="background"></div>
@@ -40,6 +40,23 @@
 <script>
 export default {
 components : {
+},
+methods: {
+    viewMainPage(){
+        this.$router.push("/mainpage")
+    },
+    viewSolution(){
+        this.$router.push("/solution")
+    },
+    viewSystem(){
+        this.$router.push("/system")
+    },
+        viewResources(){
+        this.$router.push("/resources")
+    },
+        viewAboutUS(){
+        this.$router.push("/about")
+    },
 }
 }
 </script>
