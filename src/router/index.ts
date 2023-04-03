@@ -8,7 +8,6 @@ import HomePage from "@/views/BuildTap/HomePage.vue";
 import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
 import MainHomePage from "@/views/BuildTap/MainHomePage.vue";
 import PageUser from "@/views/BuildTap/PageUser.vue";
-import FailedLoginUser from "@/BuildTapComponents/PageUser/FailedLoginUser.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -62,13 +61,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/user",
     component: PageUser,
-    meta: {
-      layout: "empty"
-    }
-  },
-    {
-    path: "/failed",
-    component: FailedLoginUser,
     meta: {
       layout: "empty"
     }

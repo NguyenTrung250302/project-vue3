@@ -25,7 +25,7 @@
           />
         </svg>
         <h1>Welcome back</h1>
-        <p>
+        <p style="color: #ffff">
           The leading provider of 3D digitization technology solutions in
           Vietnam.
         </p>
@@ -74,17 +74,17 @@
               </button>
             </div>
             <!-- show error -->
-            <p class="error-password style" v-if="passwordError">
+            <p class="error-password color" v-if="passwordError">
               {{ passwordError }}
             </p>
           </div>
           <!-- show password -->
-          <div></div>
           <!-- more -->
           <div class="login-features">
-            <!-- <a href="">Remember me</a> -->
-            <button v-on:click="isShowSave">Remember me</button>
-            <button style="text-decoration: underline" href="">
+            <button style="color: #ffff" v-on:click="isShowSave">
+              Remember me
+            </button>
+            <button style="text-decoration: underline; color: #ffff">
               Forgot password?
             </button>
           </div>
@@ -102,11 +102,20 @@
     <div class="background-loading" v-if="isLoading">
       <img class="icon-loading" src="@/assets/loading.png" />
       <p class="text-loading">Loading...</p>
+      <!-- <p>Dang nhap thanh cong</p> -->
     </div>
-    <!-- failed login -->
-    <!-- <div class="">
-
-    </div> -->
+    <!-- failed -->
+    <div class="background-failed" v-if="failedLogin">
+      <div class="box-message">
+        <h2 class="message-failed notification">Đăng nhập thất bại</h2>
+        <span class="message-failed note">Đã xảy ra lỗi không mong muốn.</span>
+        <span class="message-failed note">Vui lòng đăng nhập lại !</span>
+        <div class="btn-failed">
+          <button v-on:click="changeState">Ok</button>
+        </div>
+      </div>
+    </div>
+    <!--  -->
   </div>
 </template>
 
@@ -115,8 +124,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      username: "trung2503@gmail.com",
-      password: "TrUng253@",
+      username: "",
+      password: "",
       usernameError: "",
       passwordError: "",
       isLoading: false,
@@ -126,6 +135,9 @@ export default {
   methods: {
     isShowSave() {
       alert("Đã lưu thông tin !");
+    },
+    changeState() {
+      this.failedLogin = !this.failedLogin;
     },
     submitForm() {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
@@ -146,15 +158,13 @@ export default {
       ) {
         this.passwordError =
           "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
-      } else if (
-        !(
-          this.username === "trung2503@gmail.com" &&
-          this.password === "TrUng253@"
-        )
-      ) {
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.passwordError = "* Mật khẩu hoặc Email không đúng !";
-        alert("Sai thông tin đăng nhập !");
-        this.$router.push("/failed")
+        this.isLoading = true;
+        setTimeout(() => {
+          this.isLoading = false;
+          this.failedLogin = true;
+        }, 2000);
       } else {
         this.callData();
       }
@@ -181,7 +191,7 @@ export default {
       // }
       else {
         alert("error");
-        this.$router.push("/:pathMatch(.*)*")
+        this.$router.push("/:pathMatch(.*)*");
       }
     },
   },
@@ -286,15 +296,15 @@ export default {
   font-size: 13px;
   font-weight: 500;
 }
+/* loading */
 .background-loading {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(139, 214, 236);
   opacity: 0.9;
-  background-size: 100% 100%;
 }
 .background-loading:hover {
   cursor: wait;
@@ -323,21 +333,65 @@ export default {
   margin: auto;
   color: #000;
 }
+/* failed */
+.background-failed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(139, 214, 236);
+}
+.box-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5%;
+  width: 300px;
+  height: 180px;
+  background-color: #ffffff;
+}
+.message-failed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notification {
+  font-weight: 500;
+  font-size: 30px;
+}
+.note {
+  font-size: 15px;
+}
+.btn-failed {
+  position: absolute;
+  height: 50px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  color: #006fed;
+  border-top: solid 0.5px rgb(199, 213, 214);
+}
+.error-password {
+  font-size: 13px;
+  font-weight: 500;
+}
+.color {
+  color: red;
+}
+p {
+  margin: 10px 0;
+}
 h1 {
   color: rgba(0, 111, 237, 1);
   font-size: 45px;
   font-weight: 500;
   line-height: 40px;
   margin-top: 15px;
-}
-p {
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  font-weight: 300;
-}
-button {
-  color: #ffffff;
 }
 </style>

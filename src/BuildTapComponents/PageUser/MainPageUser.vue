@@ -1,6 +1,6 @@
 <template>
     <div class="container-main">
-        <img class="icon-avatar" src="@/assets/avatar-trung.png">
+        <img class="icon-avatar" src="@/assets/user_icon.png">
         <div>
             <nav>Trung Nguyen</nav>
         <ul>
