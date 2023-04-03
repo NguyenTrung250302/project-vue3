@@ -99,19 +99,24 @@
       </div>
     </div>
     <!-- loading -->
-    <div class="background-loading" v-if="isLoading">
-      <img class="icon-loading" src="@/assets/loading.png" />
-      <p class="text-loading">Loading...</p>
+    <div class="background-message" v-if="successMessage">
+      <div class="box-message">
+        <h1 class="success">Chúc mừng</h1>
+        <h2 class="message success">Đăng nhập thành công !</h2>
+        <div class="btn-message">
+        <button v-on:click="stateSuccess">Ok</button>
+        </div>
+      </div>
       <!-- <p>Dang nhap thanh cong</p> -->
     </div>
     <!-- failed -->
-    <div class="background-failed" v-if="failedLogin">
+    <div class="background-message" v-if="failedLogin">
       <div class="box-message">
-        <h2 class="message-failed notification">Đăng nhập thất bại</h2>
-        <span class="message-failed note">Đã xảy ra lỗi không mong muốn.</span>
-        <span class="message-failed note">Vui lòng đăng nhập lại !</span>
-        <div class="btn-failed">
-          <button v-on:click="changeState">Ok</button>
+        <h2 class="message notification">Đăng nhập thất bại</h2>
+        <span class="message note">Đã xảy ra lỗi không mong muốn.</span>
+        <span class="message note">Vui lòng đăng nhập lại !</span>
+        <div class="btn-message">
+          <button v-on:click="stateFailed">Ok</button>
         </div>
       </div>
     </div>
@@ -128,16 +133,13 @@ export default {
       password: "",
       usernameError: "",
       passwordError: "",
-      isLoading: false,
+      successMessage: false,
       failedLogin: false,
     };
   },
   methods: {
     isShowSave() {
       alert("Đã lưu thông tin !");
-    },
-    changeState() {
-      this.failedLogin = !this.failedLogin;
     },
     submitForm() {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
@@ -160,11 +162,7 @@ export default {
           "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.passwordError = "* Mật khẩu hoặc Email không đúng !";
-        this.isLoading = true;
-        setTimeout(() => {
-          this.isLoading = false;
           this.failedLogin = true;
-        }, 2000);
       } else {
         this.callData();
       }
@@ -173,27 +171,26 @@ export default {
     callData: async function () {
       const showdata = await axios.post(
         "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
-        {
-          email: "ducdt1992@gmail.com",
-          password: "123456",
-        }
+        // {
+        //   email: "ducdt1992@gmail.com",
+        //   password: "123456",
+        // }
       );
       console.log(showdata);
       if (showdata.status === 200) {
-        // hien thi man hinh loading
-        this.isLoading = true;
-        setTimeout(() => {
-          // ẩn chỉ số tải
-          this.isLoading = false;
-          this.$router.push("/user");
-        }, 3000);
+        this.successMessage = true
       }
       // }
       else {
-        alert("error");
-        this.$router.push("/:pathMatch(.*)*");
+        this.$router.push("/errorLogin");
       }
     },
+    stateFailed() {
+      this.failedLogin = !this.failedLogin
+    },
+    stateSuccess() {
+      this.$router.push("/user")
+    }
   },
 };
 </script>
@@ -296,45 +293,8 @@ export default {
   font-size: 13px;
   font-weight: 500;
 }
-/* loading */
-.background-loading {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgb(139, 214, 236);
-  opacity: 0.9;
-}
-.background-loading:hover {
-  cursor: wait;
-}
-.icon-loading {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-}
-.text-loading {
-  position: absolute;
-  font-weight: 700;
-  font-size: 18px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  color: #000;
-}
-/* failed */
-.background-failed {
+/* message */
+.background-message {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -352,7 +312,7 @@ export default {
   height: 180px;
   background-color: #ffffff;
 }
-.message-failed {
+.message {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -364,7 +324,7 @@ export default {
 .note {
   font-size: 15px;
 }
-.btn-failed {
+.btn-message {
   position: absolute;
   height: 50px;
   bottom: 0px;
@@ -377,6 +337,15 @@ export default {
   color: #006fed;
   border-top: solid 0.5px rgb(199, 213, 214);
 }
+.success {
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c1c1e;
+}
+/*  */
 .error-password {
   font-size: 13px;
   font-weight: 500;

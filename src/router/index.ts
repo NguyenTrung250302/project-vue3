@@ -66,7 +66,7 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
-    path: "/:pathMatch(.*)*",
+    path: "/errorLogin",
     component: NotFound,
     meta: {
     layout: "empty"
