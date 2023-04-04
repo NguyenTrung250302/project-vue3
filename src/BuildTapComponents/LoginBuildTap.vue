@@ -164,27 +164,33 @@ export default {
         this.passwordError = "* Mật khẩu hoặc Email không đúng !";
           this.failedLogin = true;
       } else {
-        this.callData();
+        this.postData();
       }
     },
     // --------------------------------------------------------------------
-    callData: async function () {
-      const showdata = await axios.post(
+    postData: async function () {
+      if( this.username && this.password ){
+        try {
+        const response = await axios.post(
         "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
-        // {
-        //   email: "ducdt1992@gmail.com",
-        //   password: "123456",
-        // }
-      );
-      console.log(showdata);
-      if (showdata.status === 200) {
-        this.successMessage = true
+        {
+        username: this.username,
+        password: this.password
+        })
+        if(response) {
+          this.successMessage = true
+        }
+        else{
+          this.$router.push("/errorLogin")
+        }
+        }
+        catch (error) {
+          console.log(error)
+        }
       }
-      // }
-      else {
-        this.$router.push("/errorLogin");
-      }
+
     },
+    // state login
     stateFailed() {
       this.failedLogin = !this.failedLogin
     },
