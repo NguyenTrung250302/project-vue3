@@ -142,34 +142,34 @@ export default {
       alert("Đã lưu thông tin !");
     },
     submitForm() {
-      // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-      //   this.usernameError = "* Email không đúng định dạng !";
-      // } else {
-      //   this.usernameError = "";
-      // }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
+        this.usernameError = "* Email không đúng định dạng !";
+      } else {
+        this.usernameError = "";
+      }
 
-      // if (this.password.length < 8) {
-      //   this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
-      // }
-      //  else if (
-      //   !(
-      //     /[a-z]/.test(this.password) &&
-      //     /[A-Z]/.test(this.password) &&
-      //     /[0-9]/.test(this.password) &&
-      //     /[^a-zA-Z0-9]/.test(this.password)
-      //   )
-      // )
-      //  {
-      //   this.passwordError =
-      //     "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
-      // }
-      //  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-      //   this.passwordError = "* Mật khẩu hoặc Email không đúng !";
-      //     this.failedLogin = true;
-      // } else {
-      //   this.postData();
-      // }
-      this.postData();
+      if (this.password.length < 8) {
+        this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
+      }
+       else if (
+        !(
+          /[a-z]/.test(this.password) &&
+          /[A-Z]/.test(this.password) &&
+          /[0-9]/.test(this.password) &&
+          /[^a-zA-Z0-9]/.test(this.password)
+        )
+      )
+       {
+        this.passwordError =
+          "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
+      }
+       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
+        this.passwordError = "* Mật khẩu hoặc Email không đúng !";
+          this.failedLogin = true;
+      } else {
+        this.postData();
+      }
+      // this.postData();
     },
     // --------------------------------------------------------------------
     postData: async function () {
