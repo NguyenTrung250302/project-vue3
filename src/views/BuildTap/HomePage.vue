@@ -59,7 +59,6 @@
       </div>
     </div>
     <!--  -->
-    <test-api />
     <main-contact-info />
     <reference-list />
     <footer-view />
@@ -72,7 +71,6 @@ import IntroduceView from "@/BuildTapComponents/BuildTapHomePage/IntroduceView.v
 import MainContactInfo from "@/components/MyArchive/ContactInfomation/MainContactInfo.vue";
 import ReferenceList from "@/components/MyArchive/ReferenceList/ReferenceList.vue";
 import FooterView from "@/components/MyArchive/FooterView.vue";
-import TestApi from './TestApi.vue';
 
 export default {
   components: {
@@ -81,7 +79,6 @@ export default {
     MainContactInfo,
     ReferenceList,
     FooterView,
-    TestApi
   },
 };
 </script>

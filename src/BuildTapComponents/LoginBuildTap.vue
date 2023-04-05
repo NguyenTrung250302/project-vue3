@@ -98,11 +98,11 @@
         <!--  -->
       </div>
     </div>
-    <!-- loading -->
+    <!-- success login -->
     <div class="background-message" v-if="successMessage">
       <div class="box-message">
-        <h1 class="success">Chúc mừng</h1>
-        <h2 class="message success">Đăng nhập thành công !</h2>
+        <h1 class="success">CHÚC MỪNG !</h1>
+        <h2 class="message success">Đăng nhập thành công</h2>
         <div class="btn-message">
         <button v-on:click="stateSuccess">Ok</button>
         </div>
@@ -113,8 +113,8 @@
     <div class="background-message" v-if="failedLogin">
       <div class="box-message">
         <h2 class="message notification">Đăng nhập thất bại</h2>
-        <span class="message note">Đã xảy ra lỗi không mong muốn.</span>
-        <span class="message note">Vui lòng đăng nhập lại !</span>
+        <span class="message note">Bạn đã nhập sai thông tin quá 5 lần !</span>
+        <span class="message note">Vui lòng kiểm tra lại thông tin đăng nhập.</span>
         <div class="btn-message">
           <button v-on:click="stateFailed">Ok</button>
         </div>
@@ -135,6 +135,7 @@ export default {
       passwordError: "",
       successMessage: false,
       failedLogin: false,
+      count : 0
     };
   },
   methods: {
@@ -142,12 +143,13 @@ export default {
       alert("Đã lưu thông tin !");
     },
     submitForm() {
+      this.count ++
+      // 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-        this.usernameError = "* Email không đúng định dạng !";
+        this.usernameError = "* Vui lòng nhập email đúng định dạng !";
       } else {
         this.usernameError = "";
       }
-
       if (this.password.length < 8) {
         this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
       }
@@ -163,13 +165,14 @@ export default {
         this.passwordError =
           "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
       }
-       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-        this.passwordError = "* Mật khẩu hoặc Email không đúng !";
-          this.failedLogin = true;
-      } else {
+      else if(this.count === 5) {
+        this.failedLogin = true
+        this.passwordError = "* Tên người dùng hoặc mật khẩu không đúng !"
+        this.count = 0
+      }
+       else {
         this.postData();
       }
-      // this.postData();
     },
     // --------------------------------------------------------------------
     postData: async function () {
@@ -185,6 +188,7 @@ export default {
           }
           else {
             console.log('error')
+            this.passwordError = "sai thong tin"
             this.$router.push("/errorLogin")
           }
     },
@@ -194,7 +198,7 @@ export default {
     },
     stateSuccess() {
       this.$router.push("/user")
-    }
+    },
   },
 };
 </script>
