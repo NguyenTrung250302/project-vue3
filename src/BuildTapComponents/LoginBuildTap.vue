@@ -142,53 +142,51 @@ export default {
       alert("Đã lưu thông tin !");
     },
     submitForm() {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-        this.usernameError = "* Email không đúng định dạng !";
-      } else {
-        this.usernameError = "";
-      }
+      // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
+      //   this.usernameError = "* Email không đúng định dạng !";
+      // } else {
+      //   this.usernameError = "";
+      // }
 
-      if (this.password.length < 8) {
-        this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
-      } else if (
-        !(
-          /[a-z]/.test(this.password) &&
-          /[A-Z]/.test(this.password) &&
-          /[0-9]/.test(this.password) &&
-          /[^a-zA-Z0-9]/.test(this.password)
-        )
-      ) {
-        this.passwordError =
-          "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-        this.passwordError = "* Mật khẩu hoặc Email không đúng !";
-          this.failedLogin = true;
-      } else {
-        this.postData();
-      }
+      // if (this.password.length < 8) {
+      //   this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
+      // }
+      //  else if (
+      //   !(
+      //     /[a-z]/.test(this.password) &&
+      //     /[A-Z]/.test(this.password) &&
+      //     /[0-9]/.test(this.password) &&
+      //     /[^a-zA-Z0-9]/.test(this.password)
+      //   )
+      // )
+      //  {
+      //   this.passwordError =
+      //     "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
+      // }
+      //  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
+      //   this.passwordError = "* Mật khẩu hoặc Email không đúng !";
+      //     this.failedLogin = true;
+      // } else {
+      //   this.postData();
+      // }
+      this.postData();
     },
     // --------------------------------------------------------------------
     postData: async function () {
-      if( this.username && this.password ){
-        try {
         const response = await axios.post(
         "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
         {
-        username: this.username,
-        password: this.password
+            email: this.username,
+            password: this.password
         })
-        if(response) {
-          this.successMessage = true
-        }
-        else{
-          this.$router.push("/errorLogin")
-        }
-        }
-        catch (error) {
-          console.log(error)
-        }
-      }
-
+          if(response.status === 200){
+            console.log(response)
+            this.successMessage = true
+          }
+          else {
+            console.log('error')
+            this.$router.push("/errorLogin")
+          }
     },
     // state login
     stateFailed() {
