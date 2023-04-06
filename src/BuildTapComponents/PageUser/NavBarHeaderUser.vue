@@ -109,7 +109,7 @@
   </div>
   <div class="info-user">
     <nav>
-      recently visited: 
+      visited recently:
       <nav > 
         <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">
         github.com/NguyenTrung250302

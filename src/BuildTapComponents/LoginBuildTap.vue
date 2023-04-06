@@ -90,7 +90,7 @@
           </div>
           <!-- button login -->
           <div class="login-button">
-            <button v-on:click.prevent="submitForm" class="login-text">
+            <button v-on:click.prevent="submitForm" :disabled="disabled" class="login-text">
               LOGIN
             </button>
           </div>
@@ -112,8 +112,8 @@
     <!-- failed -->
     <div class="background-message" v-if="failedLogin">
       <div class="box-message">
-        <h2 class="message notification">Đăng nhập thất bại</h2>
-        <span class="message note">Bạn đã nhập sai thông tin quá 5 lần !</span>
+        <h2 class="message notification">CẢNH BÁO</h2>
+        <span class="message note">Thông tin đăng nhập không tồn tại</span>
         <span class="message note">Vui lòng kiểm tra lại thông tin đăng nhập.</span>
         <div class="btn-message">
           <button v-on:click="stateFailed">Ok</button>
@@ -135,7 +135,9 @@ export default {
       passwordError: "",
       successMessage: false,
       failedLogin: false,
-      count : 0
+      const : 0,
+      disabled: false,
+      error: null
     };
   },
   methods: {
@@ -143,10 +145,9 @@ export default {
       alert("Đã lưu thông tin !");
     },
     submitForm() {
-      this.count ++
       // 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
-        this.usernameError = "* Vui lòng nhập email đúng định dạng !";
+        this.usernameError = "Email không đúng định dạng !";
       } else {
         this.usernameError = "";
       }
@@ -165,11 +166,6 @@ export default {
         this.passwordError =
           "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
       }
-      else if(this.count === 5) {
-        this.failedLogin = true
-        this.passwordError = "* Tên người dùng hoặc mật khẩu không đúng !"
-        this.count = 0
-      }
        else {
         this.postData();
       }
@@ -182,15 +178,25 @@ export default {
             email: this.username,
             password: this.password
         })
-          if(response.status === 200){
-            console.log(response)
-            this.successMessage = true
-          }
-          else {
-            console.log('error')
-            this.passwordError = "sai thong tin"
-            this.$router.push("/errorLogin")
-          }
+          .then(response => {
+            if(response.status === 200) {
+              console.log(response.status)
+              this.successMessage = true
+            }
+
+          })
+          .catch(error => {
+            this.const++
+            if(error.response.status === 401 && this.const === 3) {
+              this.failedLogin = true
+              this.disabled = true
+              this.passwordError = 
+              "* Bạn đã bị giới hạn đăng nhập do nhập sai thông tin quá nhiều lần !"
+            }
+            else {
+              this.passwordError = "* Thông tin tài khoản hoặc mật khẩu không đúng !"
+            }
+          })
     },
     // state login
     stateFailed() {
@@ -279,7 +285,6 @@ export default {
 }
 .login-button:hover {
   background-color: #ffffff;
-  cursor: pointer;
   transition: all 0.4s;
 }
 .login-button:hover button {
@@ -326,7 +331,7 @@ export default {
   justify-content: center;
 }
 .notification {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 30px;
 }
 .note {
