@@ -112,9 +112,9 @@
     <!-- failed -->
     <div class="background-message" v-if="failedLogin">
       <div class="box-message">
-        <h2 class="message notification">CẢNH BÁO</h2>
-        <span class="message note">Thông tin đăng nhập không tồn tại</span>
-        <span class="message note">Vui lòng kiểm tra lại thông tin đăng nhập.</span>
+        <h2 class="message notification">ĐĂNG NHẬP THẤT BẠI</h2>
+        <span class="message note">Đã xảy ra lỗi trong quá trình đăng nhập</span>
+        <span class="message note">Vui lòng đăng nhập lại.</span>
         <div class="btn-message">
           <button v-on:click="stateFailed">Ok</button>
         </div>
@@ -148,6 +148,7 @@ export default {
       // 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.usernameError = "Email không đúng định dạng !";
+        return
       } else {
         this.usernameError = "";
       }
@@ -187,14 +188,20 @@ export default {
           })
           .catch(error => {
             this.const++
-            if(error.response.status === 401 && this.const === 3) {
-              this.failedLogin = true
-              this.disabled = true
-              this.passwordError = 
-              "* Bạn đã bị giới hạn đăng nhập do nhập sai thông tin quá nhiều lần !"
+            console.log(this.const)
+            if(error.response.status === 401 || error.response.status === 422) {
+            this.failedLogin = true
+            this.passwordError = "* Thông tin đăng nhập không đúng !"
+            }
+            else if(error.response.status === 500) {
+              alert("Máy chủ gặp sự cố, hiện không phải hồi !")
             }
             else {
-              this.passwordError = "* Thông tin tài khoản hoặc mật khẩu không đúng !"
+            // 
+            }
+            if(this.const >= 3) {
+            this.disabled = true
+            this.passwordError = "* CẢNH BÁO ! Bạn đã bị giới hạn đăng nhập do nhập sai thông tin quá nhiều lần."
             }
           })
     },
@@ -321,8 +328,8 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 5%;
-  width: 300px;
-  height: 180px;
+  width: 360px;
+  height: 200px;
   background-color: #ffffff;
 }
 .message {
@@ -336,6 +343,7 @@ export default {
 }
 .note {
   font-size: 15px;
+  margin-top: 10px;
 }
 .btn-message {
   position: absolute;
@@ -375,5 +383,8 @@ h1 {
   font-weight: 500;
   line-height: 40px;
   margin-top: 15px;
+}
+h2 {
+  margin-top: 20px;
 }
 </style>

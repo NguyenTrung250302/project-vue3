@@ -107,19 +107,6 @@
       </div>
     </div>
   </div>
-  <div class="info-user">
-    <nav>
-      visited recently:
-      <nav > 
-        <a style="text-decoration: underline" href="https://github.com/NguyenTrung250302">
-        github.com/NguyenTrung250302
-        </a>
-        </nav>
-    </nav>
-    <nav>Status:
-      <nav style="text-decoration: underline"> last active 1' ago</nav>
-    </nav>
-  </div>
 </template>
 
 <script>
