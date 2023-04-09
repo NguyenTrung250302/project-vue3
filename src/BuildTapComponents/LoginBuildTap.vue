@@ -140,12 +140,15 @@ export default {
       error: null
     };
   },
+  mounted() {
+    // 
+  },
+  // 
   methods: {
     isShowSave() {
       alert("Đã lưu thông tin !");
     },
     submitForm() {
-      // 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.usernameError = "Email không đúng định dạng !";
         return
@@ -181,8 +184,9 @@ export default {
         })
           .then(response => {
             if(response.status === 200) {
-              console.log(response.status)
+              console.log(response)
               this.successMessage = true
+              localStorage.setItem('LoginInfo', JSON.stringify(response.data.data))
             }
 
           })
@@ -210,7 +214,7 @@ export default {
       this.failedLogin = !this.failedLogin
     },
     stateSuccess() {
-      this.$router.push("/user")
+      this.$router.push("/")
     },
   },
 };

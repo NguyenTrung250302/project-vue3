@@ -41,26 +41,52 @@
         </p>
       </a>
       <a href="">
-        <p class="nav-item">
-          Support
-        </p>
+        <p class="nav-item">Support</p>
       </a>
     </ul>
     <!--  -->
     <div class="button-header">
-      <header-button />
+      <header-button v-if="showButton" />
     </div>
   </div>
 </template>
 <script>
 import NavBarReference from "../ReferenceList/NavBarReference.vue";
 import HeaderButton from "@/components/MyArchive/headerSolution/HeaderButton.vue";
+import axios from "axios";
 export default {
   components: { NavBarReference, HeaderButton },
   data() {
     return {
       textColor: "black",
+      isShow: false,
     };
+  },
+  mounted() {
+    const userInfo = localStorage.getItem("LoginInfo");
+    const parseUserInfo = JSON.parse(userInfo);
+    console.log(userInfo, typeof userInfo);
+    console.log(parseUserInfo);
+    if (
+      parseUserInfo.accessToken !== null ||
+      parseUserInfo.accessToken !== undefined
+    ) {
+      // this.isShow = false;
+
+      const callApi = async () => {
+        await axios.post(
+          "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
+          {},
+          {
+            headers: { "refresh-token": parseUserInfo.refreshToken },
+          }
+        );
+      };
+      callApi();
+    } else {
+      // this.isShow = true;
+      //
+    }
   },
   methods: {
     changeColor() {
