@@ -83,7 +83,7 @@ export default {
 };
 </script>
 
-<style scop, MainContactInfoed Button>
+<style scoped>
 .container-introduce {
   width: 100%;
   height: 645px;

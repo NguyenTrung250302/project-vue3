@@ -90,7 +90,11 @@
           </div>
           <!-- button login -->
           <div class="login-button">
-            <button v-on:click.prevent="submitForm" :disabled="disabled" class="login-text">
+            <button
+              v-on:click.prevent="submitForm"
+              :disabled="disabled"
+              class="login-text"
+            >
               LOGIN
             </button>
           </div>
@@ -104,7 +108,7 @@
         <h1 class="success">CHÚC MỪNG !</h1>
         <h2 class="message success">Đăng nhập thành công</h2>
         <div class="btn-message">
-        <button v-on:click="stateSuccess">Ok</button>
+          <button v-on:click="stateSuccess">Ok</button>
         </div>
       </div>
       <!-- <p>Dang nhap thanh cong</p> -->
@@ -113,7 +117,9 @@
     <div class="background-message" v-if="failedLogin">
       <div class="box-message">
         <h2 class="message notification">ĐĂNG NHẬP THẤT BẠI</h2>
-        <span class="message note">Đã xảy ra lỗi trong quá trình đăng nhập</span>
+        <span class="message note"
+          >Đã xảy ra lỗi trong quá trình đăng nhập</span
+        >
         <span class="message note">Vui lòng đăng nhập lại.</span>
         <div class="btn-message">
           <button v-on:click="stateFailed">Ok</button>
@@ -135,86 +141,90 @@ export default {
       passwordError: "",
       successMessage: false,
       failedLogin: false,
-      const : 0,
+      const: 0,
       disabled: false,
-      error: null
+      error: null,
     };
   },
   mounted() {
-    // 
+    //
   },
-  // 
+  //
   methods: {
-    isShowSave() {
-      alert("Đã lưu thông tin !");
-    },
     submitForm() {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.username)) {
         this.usernameError = "Email không đúng định dạng !";
-        return
+        return;
       } else {
         this.usernameError = "";
       }
       if (this.password.length < 8) {
         this.passwordError = "* Vui lòng nhập mật khẩu dài ít nhất 8 ký tự !";
-      }
-       else if (
+      } else if (
         !(
           /[a-z]/.test(this.password) &&
           /[A-Z]/.test(this.password) &&
           /[0-9]/.test(this.password) &&
           /[^a-zA-Z0-9]/.test(this.password)
         )
-      )
-       {
+      ) {
         this.passwordError =
           "* Mật khẩu cần có chữ hoa, thường, số và ký tự đặc biệt !";
-      }
-       else {
+      } else {
         this.postData();
       }
     },
     // --------------------------------------------------------------------
     postData: async function () {
-        const response = await axios.post(
-        "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
-        {
+      const response = await axios
+        .post(
+          "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
+          {
             email: this.username,
-            password: this.password
+            password: this.password,
+          }
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            console.log(response);
+            this.successMessage = true;
+            // luu thong tin username
+            localStorage.setItem('saveUsername', this.username);
+            // localStorage.setItem('key', 'value'); :Để lưu trữ dữ liệu vào LocalStorage, bạn sử dụng phương thức setItem():
+            // Lưu thông tin token
+            localStorage.setItem(
+              "LoginInfo",
+              JSON.stringify(response.data.data)
+            );
+          }
         })
-          .then(response => {
-            if(response.status === 200) {
-              console.log(response)
-              this.successMessage = true
-              localStorage.setItem('LoginInfo', JSON.stringify(response.data.data))
-            }
-
-          })
-          .catch(error => {
-            this.const++
-            console.log(this.const)
-            if(error.response.status === 401 || error.response.status === 422) {
-            this.failedLogin = true
-            this.passwordError = "* Thông tin đăng nhập không đúng !"
-            }
-            else if(error.response.status === 500) {
-              alert("Máy chủ gặp sự cố, hiện không phải hồi !")
-            }
-            else {
-            // 
-            }
-            if(this.const >= 3) {
-            this.disabled = true
-            this.passwordError = "* CẢNH BÁO ! Bạn đã bị giới hạn đăng nhập do nhập sai thông tin quá nhiều lần."
-            }
-          })
+        .catch((error) => {
+          this.const++;
+          console.log(this.const);
+          if (error.response.status === 401 || error.response.status === 422) {
+            this.failedLogin = true;
+            this.passwordError = "* Thông tin đăng nhập không đúng !";
+          } else if (error.response.status === 500) {
+            alert("Máy chủ gặp sự cố, hiện không phải hồi !");
+          } else {
+            //
+          }
+          if (this.const >= 3) {
+            this.disabled = true;
+            this.passwordError =
+              "* CẢNH BÁO ! Bạn đã bị giới hạn đăng nhập do nhập sai thông tin quá nhiều lần.";
+          }
+        });
     },
     // state login
     stateFailed() {
-      this.failedLogin = !this.failedLogin
+      this.failedLogin = !this.failedLogin;
     },
     stateSuccess() {
-      this.$router.push("/")
+      this.$router.push("/user");
+    },
+    isShowSave() {
+      alert("Đã lưu thông tin !");
     },
   },
 };

@@ -46,7 +46,12 @@
     </ul>
     <!--  -->
     <div class="button-header">
-      <header-button v-if="showButton" />
+      <header-button v-if="isShow" />
+      <!-- logged -->
+      <div class="logged">
+      <p class="hello" v-if="logged">Xin chào, {{ username }}!</p>
+      <button class="btn-sign_out" @click="signOut">sign out</button>
+      </div>
     </div>
   </div>
 </template>
@@ -59,21 +64,22 @@ export default {
   data() {
     return {
       textColor: "black",
-      isShow: false,
+      isShow: true,
+      logged: false,
+      username: ""
     };
   },
   mounted() {
     const userInfo = localStorage.getItem("LoginInfo");
     const parseUserInfo = JSON.parse(userInfo);
-    console.log(userInfo, typeof userInfo);
     console.log(parseUserInfo);
+    // console.log(userInfo, typeof userInfo);
     if (
-      parseUserInfo.accessToken !== null ||
+      (parseUserInfo && parseUserInfo.accessToken !== null) ||
       parseUserInfo.accessToken !== undefined
     ) {
-      // this.isShow = false;
-
       const callApi = async () => {
+        // call Api
         await axios.post(
           "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
           {},
@@ -83,22 +89,32 @@ export default {
         );
       };
       callApi();
+      this.isShow = false;
     } else {
-      // this.isShow = true;
       //
     }
+    // Hiển thị tên user sau khi đã đăng nhập
+    if (this.isShow === false) {
+      this.logged = true;
+    }
+    // lay thong tin username
+    this.username = localStorage.getItem('saveUsername');
   },
   methods: {
     changeColor() {
       this.textColor = "rgba(0, 111, 237, 1)";
     },
+    signOut() {
+      this.$router.push("/login")
+      alert("Xác nhận đăng xuất !")
+    }
   },
 };
 </script>
 
 <style scoped>
 .navbar-header {
-  height: 60px;
+  height: 70px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -117,5 +133,23 @@ export default {
   font-size: 15px;
   line-height: 20px;
   color: #121212;
+}
+.logged {
+  /* display: flex; */
+}
+.hello {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 5px;
+  
+}
+.btn-sign_out {
+border: solid 2px #006FED;
+border-radius: 20%;
+color: #006FED;
+font-size: 17px;
+font-weight: 500;
+display: flex;
+margin: 0 auto;
 }
 </style>
