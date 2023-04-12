@@ -70,16 +70,20 @@ export default {
     };
   },
   mounted() {
+    // Lấy thông tin người dùng từ localStorage và chuyển đổi thành đối tượng JavaScript
     const userInfo = localStorage.getItem("LoginInfo");
     const parseUserInfo = JSON.parse(userInfo);
     console.log(parseUserInfo);
     // console.log(userInfo, typeof userInfo);
-    if (
-      parseUserInfo && parseUserInfo.accessToken !== null ||
+    if 
+    // Kiểm tra xem accessToken của người dùng có hợp lệ hay không(có tồn tại trước đó hay không)
+    (
+      parseUserInfo && 
+      parseUserInfo.accessToken !== null ||
       parseUserInfo.accessToken !== undefined
     ) {
       const callApi = async () => {
-        // call Api
+        // call Api 
         try {
         const response = await axios.post(
           "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
@@ -88,21 +92,25 @@ export default {
             headers: { "refresh-token": parseUserInfo.refreshToken },
           }
         );
-        // 
+        
+        // tạo một biến newAccessToken lưu token mới được refresh
         const newAccessToken = response.data.accessToken;
+
+        // cập nhật lại accessToken, lưu và chuyển đổi thành đối tượng javascript
         parseUserInfo.accessToken = newAccessToken;
         localStorage.setItem("LoginInfo", JSON.stringify(parseUserInfo));
       }
       catch (error) {
-        console.log(error);
+        console.error(error);
       }
       };
-      //
+      // 
       callApi();
       this.isShow = false;
     } else {
       this.isShow = true;
     }
+
     // Hiển thị tên user sau khi đã đăng nhập
     if (this.isShow === false) {
       this.logged = true;

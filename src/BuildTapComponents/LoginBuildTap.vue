@@ -186,7 +186,8 @@ export default {
         )
         .then((response) => {
           if (response.status === 200) {
-            console.log(response);
+            console.log(response.status);
+            this.getUserData();
             this.successMessage = true;
             // localStorage.setItem('key', 'value'); :Để lưu trữ dữ liệu vào LocalStorage, bạn sử dụng phương thức setItem():
             // Lưu thông tin token
@@ -194,6 +195,7 @@ export default {
               "LoginInfo",
               JSON.stringify(response.data.data)
             );
+            // call API user
           }
         })
         .catch((error) => {
@@ -214,6 +216,32 @@ export default {
           }
         });
     },
+
+    // lay thong tin profile user
+    getUserData: async function () {
+      const loginInfo = JSON.parse(localStorage.getItem("LoginInfo"));
+      if (loginInfo && loginInfo.token) {
+        // kiểm tra loginInfo có null hay không, và có thuộc tính 'token' hay không
+        const token = loginInfo.token;
+        const config = {
+          headers: { Authorization: `Bearer ${token}` },
+        };
+        const response = await axios
+          .get(
+            "https://dev-crawler-api.trainery.live//master-caoanh/users",
+            config
+          )
+          .then((response) => {
+            console.log(response.data);
+            // Lưu thông tin user vào state hoặc hiển thị trên trang
+          })
+          .catch((error) => {
+            console.log(error);
+            // Xử lý lỗi nếu có
+          });
+      }
+    },
+
     // state login
     stateFailed() {
       this.failedLogin = !this.failedLogin;
