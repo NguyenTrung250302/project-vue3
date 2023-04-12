@@ -48,9 +48,9 @@
     <div class="button-header">
       <header-button v-if="isShow" />
       <!-- logged -->
-      <div class="logged">
-      <p class="hello" v-if="logged">Xin chào, {{ username }}!</p>
-      <button class="btn-sign_out" @click="signOut">sign out</button>
+      <div class="logged" v-if="logged">
+        <p class="hello">Xin chào, {{ username }}!</p>
+        <button class="btn-sign_out" @click="signOut">sign out</button>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ export default {
       textColor: "black",
       isShow: true,
       logged: false,
-      username: ""
+      username: "",
     };
   },
   mounted() {
@@ -75,39 +75,48 @@ export default {
     console.log(parseUserInfo);
     // console.log(userInfo, typeof userInfo);
     if (
-      (parseUserInfo && parseUserInfo.accessToken !== null) ||
+      parseUserInfo && parseUserInfo.accessToken !== null ||
       parseUserInfo.accessToken !== undefined
     ) {
       const callApi = async () => {
         // call Api
-        await axios.post(
+        try {
+        const response = await axios.post(
           "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
           {},
           {
             headers: { "refresh-token": parseUserInfo.refreshToken },
           }
         );
+        // 
+        const newAccessToken = response.data.accessToken;
+        parseUserInfo.accessToken = newAccessToken;
+        localStorage.setItem("LoginInfo", JSON.stringify(parseUserInfo));
+      }
+      catch (error) {
+        console.log(error);
+      }
       };
+      //
       callApi();
       this.isShow = false;
     } else {
-      //
+      this.isShow = true;
     }
     // Hiển thị tên user sau khi đã đăng nhập
     if (this.isShow === false) {
       this.logged = true;
     }
-    // lay thong tin username
-    this.username = localStorage.getItem('saveUsername');
   },
   methods: {
     changeColor() {
       this.textColor = "rgba(0, 111, 237, 1)";
     },
     signOut() {
-      this.$router.push("/login")
-      alert("Xác nhận đăng xuất !")
-    }
+      localStorage.removeItem("LoginInfo");
+      this.$router.push("/login");
+      alert("Xác nhận đăng xuất !");
+    },
   },
 };
 </script>
@@ -135,21 +144,23 @@ export default {
   color: #121212;
 }
 .logged {
-  /* display: flex; */
 }
 .hello {
   font-size: 16px;
   font-weight: 500;
   margin: 0 5px;
-  
 }
 .btn-sign_out {
-border: solid 2px #006FED;
-border-radius: 20%;
-color: #006FED;
-font-size: 17px;
-font-weight: 500;
-display: flex;
-margin: 0 auto;
+  border: solid 2px #006fed;
+  border-radius: 30%;
+  color: #006fed;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80px;
+  height: 30px;
+  align-items: center;
 }
 </style>

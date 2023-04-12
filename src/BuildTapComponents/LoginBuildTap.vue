@@ -188,8 +188,6 @@ export default {
           if (response.status === 200) {
             console.log(response);
             this.successMessage = true;
-            // luu thong tin username
-            localStorage.setItem('saveUsername', this.username);
             // localStorage.setItem('key', 'value'); :Để lưu trữ dữ liệu vào LocalStorage, bạn sử dụng phương thức setItem():
             // Lưu thông tin token
             localStorage.setItem(
@@ -221,7 +219,7 @@ export default {
       this.failedLogin = !this.failedLogin;
     },
     stateSuccess() {
-      this.$router.push("/user");
+      this.$router.push("/");
     },
     isShowSave() {
       alert("Đã lưu thông tin !");
