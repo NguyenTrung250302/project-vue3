@@ -69,22 +69,17 @@ export default {
       username: "",
     };
   },
-  mounted() {
-    // Lấy thông tin người dùng từ localStorage và chuyển đổi thành đối tượng JavaScript
-    const userInfo = localStorage.getItem("LoginInfo");
-    const parseUserInfo = JSON.parse(userInfo);
-    console.log(parseUserInfo);
-    // console.log(userInfo, typeof userInfo);
-    if 
-    // Kiểm tra xem accessToken của người dùng có hợp lệ hay không(có tồn tại trước đó hay không)
-    (
-      parseUserInfo && 
-      parseUserInfo.accessToken !== null ||
-      parseUserInfo.accessToken !== undefined
-    ) {
-      const callApi = async () => {
-        // call Api 
-        try {
+mounted() {
+  const userInfo = localStorage.getItem("LoginInfo");
+  const parseUserInfo = JSON.parse(userInfo);
+  console.log(parseUserInfo)
+  if (
+    parseUserInfo &&
+    parseUserInfo.accessToken &&
+    parseUserInfo.refreshToken
+  ) {
+    const callApi = async () => {
+      try {
         const response = await axios.post(
           "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
           {},
@@ -92,25 +87,30 @@ export default {
             headers: { "refresh-token": parseUserInfo.refreshToken },
           }
         );
-        
-        // tạo một biến newAccessToken lưu token mới được refresh
-        const newAccessToken = response.data.accessToken;
+        console.log("return token data after server request:",response.data)
 
-        // cập nhật lại accessToken, lưu và chuyển đổi thành đối tượng javascript
-        parseUserInfo.accessToken = newAccessToken;
-        localStorage.setItem("LoginInfo", JSON.stringify(parseUserInfo));
-      }
-      catch (error) {
+        // tạo một Object lưu trữ accessToken và refresh token mới nhất được trả về từ api
+        const newTokenObj = {
+          accessToken: response.data.data.accessToken,
+          refreshToken: parseUserInfo.refreshToken,
+        };
+
+        //  khởi tạo 1 Object lưu trữ token và một array các Object token
+        const tokenArray = JSON.parse(localStorage.getItem("TokenArray")) || [];
+        tokenArray.push(newTokenObj);
+
+        // Cập nhật localStorage với array object's token 
+        localStorage.setItem("TokenArray", JSON.stringify(tokenArray));
+        console.log("token array:",tokenArray)
+      } catch (error) {
         console.error(error);
       }
-      };
-      // 
-      callApi();
-      this.isShow = false;
-    } else {
-      this.isShow = true;
-    }
-
+    };
+    callApi();
+    this.isShow = false;
+  } else {
+    this.isShow = true;
+  }
     // Hiển thị tên user sau khi đã đăng nhập
     if (this.isShow === false) {
       this.logged = true;
