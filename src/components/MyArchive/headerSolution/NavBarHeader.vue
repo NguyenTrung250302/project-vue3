@@ -49,7 +49,7 @@
       <header-button v-if="isShow" />
       <!-- logged -->
       <div class="logged" v-if="logged">
-        <p class="hello">Xin chào, {{ username }}!</p>
+        <p class="hello">Xin chào, {{ userData.fullName }}!</p>
         <button class="btn-sign_out" @click="signOut">sign out</button>
       </div>
     </div>
@@ -66,13 +66,13 @@ export default {
       textColor: "black",
       isShow: true,
       logged: false,
-      username: "",
+      userData: "",
     };
   },
 mounted() {
   const userInfo = localStorage.getItem("LoginInfo");
   const parseUserInfo = JSON.parse(userInfo);
-  console.log(parseUserInfo)
+  console.log("token user login:",parseUserInfo)
   if (
     parseUserInfo &&
     parseUserInfo.accessToken &&
@@ -87,7 +87,7 @@ mounted() {
             headers: { "refresh-token": parseUserInfo.refreshToken },
           }
         );
-        console.log("return token data after server request:",response.data)
+        console.log("return token data after server request:",response.data.data)
 
         // tạo một Object lưu trữ accessToken và refresh token mới nhất được trả về từ api
         const newTokenObj = {
@@ -102,7 +102,9 @@ mounted() {
         // Cập nhật localStorage với array object's token 
         localStorage.setItem("TokenArray", JSON.stringify(tokenArray));
         console.log("token array:",tokenArray)
-      } catch (error) {
+      }
+      // error
+       catch (error) {
         console.error(error);
       }
     };
@@ -115,6 +117,22 @@ mounted() {
     if (this.isShow === false) {
       this.logged = true;
     }
+
+    // call API user
+    const tokenLogin = localStorage.getItem("TokenLogin");
+    const UserTokenLogin = JSON.parse(tokenLogin);
+    axios.get('https://dev-crawler-api.trainery.live//master-caoanh/users', {
+      headers: {
+        Authorization: `Bearer ${UserTokenLogin}`
+      }
+    })
+    .then(responseUser => {
+      this.userData = responseUser.data.data
+      console.log("data user:",this.userData)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   },
   methods: {
     changeColor() {
@@ -122,6 +140,7 @@ mounted() {
     },
     signOut() {
       localStorage.removeItem("LoginInfo");
+      localStorage.removeItem("TokenArray");
       this.$router.push("/login");
       alert("Xác nhận đăng xuất !");
     },

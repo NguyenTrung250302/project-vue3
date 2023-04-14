@@ -186,7 +186,7 @@ export default {
         )
         .then((responseLogin) => {
           if (responseLogin.status === 200) {
-            console.log(responseLogin.status);
+            console.log("data login:",responseLogin.data.data);
             this.successMessage = true;
             // localStorage.setItem('key', 'value'); :Để lưu trữ dữ liệu vào LocalStorage, bạn sử dụng phương thức setItem():
             // Lưu thông tin token
@@ -194,7 +194,12 @@ export default {
               "LoginInfo",
               JSON.stringify(responseLogin.data.data)
             );
-            // call API user
+            // Lưu thông tin token login
+             localStorage.setItem(
+              "TokenLogin",
+              JSON.stringify(responseLogin.data.data.accessToken)
+            );
+            console.log("token login:",responseLogin.data.data.accessToken)
           }
         })
         .catch((error) => {
