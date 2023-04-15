@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-header">
     <div>
-      <a href="/MainPage">
+      <a href="/">
         <svg
           width="125"
           height="24"
@@ -141,6 +141,7 @@ mounted() {
     signOut() {
       localStorage.removeItem("LoginInfo");
       localStorage.removeItem("TokenArray");
+      localStorage.removeItem("UserTokenLogin");
       this.$router.push("/login");
       alert("Xác nhận đăng xuất !");
     },

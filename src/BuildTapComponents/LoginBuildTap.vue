@@ -225,7 +225,7 @@ export default {
       this.failedLogin = !this.failedLogin;
     },
     stateSuccess() {
-      this.$router.push("/");
+      this.$router.push("/profile");
     },
     isShowSave() {
       alert("Đã lưu thông tin !");
