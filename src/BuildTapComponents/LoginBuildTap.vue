@@ -194,7 +194,7 @@ export default {
               "LoginInfo",
               JSON.stringify(responseLogin.data.data)
             );
-            // Lưu thông tin token login
+            // Lưu thông tin token login voi key: "TokenLogin"
              localStorage.setItem(
               "TokenLogin",
               JSON.stringify(responseLogin.data.data.accessToken)

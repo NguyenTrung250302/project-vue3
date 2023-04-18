@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="navbar-header">
     <div>
       <a href="/">

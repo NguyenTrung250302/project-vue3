@@ -22,7 +22,7 @@ props:{
 },
  methods:{
   log(hoverFx){
-      console.log('aaaa', hoverFx)
+      console.log('', hoverFx)
   }
 }
 }
