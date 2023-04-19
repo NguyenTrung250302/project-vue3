@@ -1,6 +1,6 @@
 <template>
-  <div class="avatar-container">
-    
+  <div class="avatar-header">
+    <img src="@/assets/avatar-user.png" alt="">
   </div>
 </template>
 
@@ -10,10 +10,10 @@ export default {
 };
 </script>
 
-<style>
-.avatar-container {
-  width: 45px;
-  height: 45px;
+<style scoped>
+.avatar-header {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid black;
