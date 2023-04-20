@@ -2,7 +2,7 @@
   <div class="edit-avatar">
     <!-- show avatar -->
     <div class="avatar-wrapper">
-      <img :src="imageUrl" />
+      <img :src="imageUrl" :key="imageUrl" />
     </div>
     <!-- handle -->
     <form @submit.prevent="submitForm" class="handle">
@@ -26,6 +26,49 @@ export default {
       fullName: "",
     };
   },
+  // refresh token
+  mounted() {
+    const token = JSON.parse(localStorage.getItem("TokenLogin"));
+    const refreshToken = JSON.parse(localStorage.getItem("RefreshToken"));
+
+    if (token) {
+      // Check if token is expired
+      const tokenExpiration = new Date(token.expiresIn);
+      if (new Date() >= tokenExpiration) {
+        // Token expired, try to refresh
+        if (refreshToken) {
+          axios
+            .post(
+              "https://dev-crawler-api.trainery.live/master-caoanh/auth/token",{},
+              {
+                refreshToken: refreshToken,
+              }
+            )
+            .then((response) => {
+              const newToken = response.data.data.accessToken;
+              const newRefreshToken = response.data.data.refreshToken;
+              localStorage.setItem("TokenLogin", JSON.stringify(newToken));
+              localStorage.setItem(
+                "RefreshToken",
+                JSON.stringify(newRefreshToken)
+              );
+            })
+            .catch((error) => {
+              // Refresh token failed, redirect to login page
+              console.error(error);
+              window.location.href = "/login";
+            });
+        } else {
+          // No refresh token available, redirect to login page
+          window.location.href = "/login";
+        }
+      }
+    } else {
+      // No token available, redirect to login page
+      window.location.href = "/login";
+    }
+  },
+  //
   methods: {
     handleFileChange(event) {
       // Nhận tệp hình ảnh đã chọn
@@ -38,8 +81,9 @@ export default {
       // Tạo một đối tượng FormData để giữ tệp hình ảnh đã chọn
       const formData = new FormData();
       formData.append("file", this.selectedFile);
-      // 
-      const accessToken = localStorage.getItem(`accessToken`)
+      // accessToken login
+      // const token = JSON.parse(localStorage.getItem("TokenLogin"));
+      // console.log("Token đã lưu trữ:", token);
       try {
         // Gửi yêu cầu POST tới API tải lên hình ảnh
         const response = await axios.post(
@@ -48,11 +92,11 @@ export default {
           {
             headers: {
               "Content-Type": "multipart/form-data",
-              Authorization: `Bearer ${accessToken}`,
+              Authorization: `Bearer ${this.newToken}`,
             },
           }
         );
-        console.log("data returned after posting:",response.data);
+        console.log("data returned after posting:", response.data);
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
         const avatarUrl = response.data.url;
@@ -69,15 +113,17 @@ export default {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
+              Authorization: `Bearer ${this.newToken}`,
             },
           }
         );
-        console.log(updateResponse.data);
+        console.log("data after executing put:", updateResponse.data);
+        this.imageUrl = avatarUrl;
+        alert("update successfully");
 
         // Đặt lại giá trị biểu mẫu
         this.selectedFile = null;
-        this.imageUrl = null;
+        this.imageUrl = avatarUrl;
         this.phoneNumber = "";
         this.displayName = "";
         this.fullName = "";
@@ -93,6 +139,10 @@ export default {
 </script>
 
 <style scoped>
+.edit-avatar {
+  height: 500px;
+  width: 100%;
+}
 .avatar-wrapper {
   width: 200px;
   height: 200px;
@@ -112,7 +162,7 @@ button {
   margin: 5px 10px;
 }
 .handle {
-display:  flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 </style>
