@@ -10,7 +10,8 @@
     <!-- list-tap -->
     <nav>
       <ul class="list-tap">
-        <li><router-link to="/">home page</router-link></li>
+        <li><router-link to="/news">news</router-link></li>
+        <li><router-link to="/">home</router-link></li>
         <li><router-link to="/solution">solution</router-link></li>
         <li><router-link to="/system">system</router-link></li>
         <li><router-link to="/about">about</router-link></li>
@@ -49,6 +50,18 @@ UserAvatar
   width: 400px;
 }
 li {
+  width: 150px;
   font-weight: 500;
+  border: solid 1px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  margin:  0 5px;
+  transition: background-color 0.5s ease;
+}
+li:hover {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 1px 1px 2px 2px #333;
 }
 </style>

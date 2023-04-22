@@ -8,6 +8,7 @@ import BuildTapAboutUs from "@/views/BuildTap/BuildTapAboutUs.vue";
 import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
 import MainHomePage from "@/views/BuildTap/MainHomePage.vue";
 import PageProfile from "@/views/BuildTap/PageProfile.vue";
+import NewsListTap from "@/views/BuildTap/NewsListTap.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -64,6 +65,13 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       layout: "empty"
     }
+  },
+  {
+    path: "/news",
+    component: NewsListTap,
+    meta: {
+      layout: "empty",
+    },
   },
   {
     path: "/errorLogin",

@@ -28,45 +28,7 @@ export default {
   },
   // refresh token
   mounted() {
-    const token = JSON.parse(localStorage.getItem("TokenLogin"));
-    const refreshToken = JSON.parse(localStorage.getItem("RefreshToken"));
-
-    if (token) {
-      // Check if token is expired
-      const tokenExpiration = new Date(token.expiresIn);
-      if (new Date() >= tokenExpiration) {
-        // Token expired, try to refresh
-        if (refreshToken) {
-          axios
-            .post(
-              "https://dev-crawler-api.trainery.live/master-caoanh/auth/token",{},
-              {
-                refreshToken: refreshToken,
-              }
-            )
-            .then((response) => {
-              const newToken = response.data.data.accessToken;
-              const newRefreshToken = response.data.data.refreshToken;
-              localStorage.setItem("TokenLogin", JSON.stringify(newToken));
-              localStorage.setItem(
-                "RefreshToken",
-                JSON.stringify(newRefreshToken)
-              );
-            })
-            .catch((error) => {
-              // Refresh token failed, redirect to login page
-              console.error(error);
-              window.location.href = "/login";
-            });
-        } else {
-          // No refresh token available, redirect to login page
-          window.location.href = "/login";
-        }
-      }
-    } else {
-      // No token available, redirect to login page
-      window.location.href = "/login";
-    }
+    // 
   },
   //
   methods: {
@@ -82,8 +44,8 @@ export default {
       const formData = new FormData();
       formData.append("file", this.selectedFile);
       // accessToken login
-      // const token = JSON.parse(localStorage.getItem("TokenLogin"));
-      // console.log("Token đã lưu trữ:", token);
+      const token = JSON.parse(localStorage.getItem("TokenLogin"));
+      console.log("Token đã lưu trữ:", token);
       try {
         // Gửi yêu cầu POST tới API tải lên hình ảnh
         const response = await axios.post(
@@ -92,7 +54,7 @@ export default {
           {
             headers: {
               "Content-Type": "multipart/form-data",
-              Authorization: `Bearer ${this.newToken}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -113,7 +75,7 @@ export default {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${this.newToken}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -158,8 +120,16 @@ export default {
   object-fit: cover;
 }
 button {
+  width: 150px;
   border: solid 1px;
+  border-radius: 5px;
   margin: 5px 10px;
+   transition: background-color 0.5s ease;
+}
+button:hover {
+  color: #fff;
+  background-color: #333;
+  box-shadow: 1px 1px 2px 2px #333;
 }
 .handle {
   display: flex;
