@@ -70,8 +70,7 @@ export default {
     };
   },
 mounted() {
-  const userInfo = localStorage.getItem("LoginInfo");
-  const parseUserInfo = JSON.parse(userInfo);
+  const parseUserInfo = JSON.parse(localStorage.getItem("LoginInfo"));
   console.log("token user login:",parseUserInfo)
   if (
     parseUserInfo &&

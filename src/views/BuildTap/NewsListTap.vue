@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="toggleId">show data:</button>
-    <ul v-show="clickedId">
+    <ul v-show="clicked">
       <li v-for="(news, index) in newsList" :key="index">
         {{ news.title }}
       </li>
@@ -10,25 +10,23 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   data() {
     return {
       newsList: [],
-      clickedId: false,
+      clicked: false,
     }
   },
   methods: {
     toggleId() {
-      this.clickedId = !this.clickedId
+      this.clicked = !this.clicked
     },
   },
   mounted() {
-    // Lấy token từ local storage
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('accessToken')
 
-    // Gọi API để lấy danh sách tin tức nóng
     axios.get('https://dev-crawler-api.trainery.live//master-caoanh/news/hot-news?pagination=5',
      { 
       headers: {
@@ -36,7 +34,6 @@ export default {
      }
      })
       .then(response => {
-        // Lưu danh sách tin tức nóng vào state của component
         this.newsList = response.data.data
         console.log(response.data.data)
       })
