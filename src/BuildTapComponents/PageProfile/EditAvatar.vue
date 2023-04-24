@@ -30,40 +30,9 @@ export default {
   created() {
     // data Token login info
     this.dataToken = JSON.parse(localStorage.getItem("LoginInfo"));
-    console.log("data tokenLogin:", this.dataToken);
+    console.log("authentication token:", this.dataToken);
   },
   methods: {
-    async checkAndRefreshToken() {
-      // Lấy giá trị token đã lưu trong localStorage
-      this.dataToken = JSON.parse(localStorage.getItem("LoginInfo"));
-
-      // Kiểm tra token đã hết hạn chưa bằng cách so sánh thời gian hết hạn với thời gian hiện tại
-      let tokenExpiredTime = new Date(this.dataToken.expiredTime);
-      let currentTime = new Date();
-      if (tokenExpiredTime.getTime() <= currentTime.getTime()) {
-        try {
-          // Nếu token đã hết hạn, thực hiện refresh token bằng API refresh-token
-          const responseData = await axios.post(
-            "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
-            {},
-            {
-              headers: { "refresh-token": this.dataToken.refreshToken },
-            }
-          );
-          // Lưu token mới nhận được vào localStorage
-          localStorage.setItem(
-            "LoginInfo",
-            JSON.stringify(responseData.data.data)
-          );
-          console.log("token refresh:", responseData.data.data);
-
-          // Thay đổi giá trị biến token thành token mới để auth cho các API
-          this.dataToken = responseData.data.data;
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    },
     // xu ly su kien
     handleFileChange(event) {
       // Nhận tệp hình ảnh đã chọn
@@ -73,9 +42,6 @@ export default {
       this.imageUrl = URL.createObjectURL(this.selectedFile);
     },
     async submitForm() {
-      // Kiểm tra và refresh token nếu token đã hết hạn
-      await this.checkAndRefreshToken();
-
       // Tạo một đối tượng FormData để giữ tệp hình ảnh đã chọn
       const formData = new FormData();
       formData.append("file", this.selectedFile);
@@ -116,6 +82,7 @@ export default {
         // Thay đổi giá trị biến imageUrl thành URL của ảnh đã cập nhật
         this.imageUrl = avatarUrl;
         alert("update successfully");
+
         // Đặt lại giá trị biểu mẫu
         this.selectedFile = null;
         this.imageUrl = null;
@@ -124,8 +91,33 @@ export default {
         this.fullName = "";
       } catch (error) {
         console.error(error);
+        if (error.response && error.response.status === 401) {
+          // Refresh token và cập nhật lại giá trị token vào localStorage
+          const refreshResponse = await axios.post(
+            "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
+            {},
+            {
+              headers: { "refresh-token": this.dataToken.refreshToken },
+            }
+          );
+          console.log("new token refresh:", refreshResponse.data.data);
+
+          // Lưu trữ mã thông báo mới và cập nhật vào localStorage
+          const newAccessToken = refreshResponse.data.data.accessToken;
+          const newRefreshToken = refreshResponse.data.data.refreshToken;
+          const newLoginInfo = JSON.stringify({
+            accessToken: newAccessToken,
+            refreshToken: newRefreshToken,
+          });
+          localStorage.setItem("LoginInfo", newLoginInfo);
+
+          // Cập nhật giá trị token cũ với thông tin mã thông báo mới
+          this.dataToken.accessToken = newAccessToken;
+          this.dataToken.refreshToken = newRefreshToken;
+        }
       }
     },
+    //
     showFileInput() {
       this.$refs.fileInput.click();
     },
