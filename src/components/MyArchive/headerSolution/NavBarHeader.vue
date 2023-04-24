@@ -1,4 +1,4 @@
-<template> 
+<template>
   <div class="navbar-header">
     <div>
       <a href="/">
@@ -69,49 +69,44 @@ export default {
       userData: "",
     };
   },
-mounted() {
-  const parseUserInfo = JSON.parse(localStorage.getItem("LoginInfo"));
-  console.log("token user login:",parseUserInfo)
-  if (
-    parseUserInfo &&
-    parseUserInfo.accessToken &&
-    parseUserInfo.refreshToken
-  ) {
-    const callApi = async () => {
-      try {
-        const response = await axios.post(
-          "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
-          {},
-          {
-            headers: { "refresh-token": parseUserInfo.refreshToken },
+  mounted() {
+    const parseUserInfo = JSON.parse(localStorage.getItem("LoginInfo"));
+    console.log("token user login:", parseUserInfo);
+    if (
+      parseUserInfo &&
+      parseUserInfo.accessToken &&
+      parseUserInfo.refreshToken
+    ) {
+      const callApi = async () => {
+        try {
+          const response = await axios.post(
+            "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
+            {},
+            {
+              headers: { "refresh-token": parseUserInfo.refreshToken },
+            }
+          );
+          console.log("return token data after server request:",response.data.data);
+
+          let newAccessTokenHome = response.data.data.accessToken;
+          let newRefreshTokenHome = response.data.data.refreshToken;
+          let newToken = JSON.stringify({
+            accessToken: newAccessTokenHome,
+            refreshToken: newRefreshTokenHome,
+          });
+          localStorage.setItem("LoginInfo", newToken);
+        } catch (error) {
+          console.error(error);
+          if(error.response && error.updateResponse.status === 401) {
+            this.callApi();
           }
-        );
-        console.log("return token data after server request:",response.data.data)
-
-        // tạo một Object lưu trữ accessToken và refresh token mới nhất được trả về từ api
-        const newTokenObj = {
-          accessToken: response.data.data.accessToken,
-          refreshToken: parseUserInfo.refreshToken,
-        };
-
-        //  khởi tạo 1 Object lưu trữ token và một array các Object token
-        const tokenArray = JSON.parse(localStorage.getItem("TokenArray")) || [];
-        tokenArray.push(newTokenObj);
-
-        // Cập nhật localStorage với array object's token 
-        localStorage.setItem("TokenArray", JSON.stringify(tokenArray));
-        console.log("token array:",tokenArray)
-      }
-      // error
-       catch (error) {
-        console.error(error);
-      }
-    };
-    callApi();
-    this.isShow = false;
-  } else {
-    this.isShow = true;
-  }
+        }
+      };
+      callApi();
+      this.isShow = false;
+    } else {
+      this.isShow = true;
+    }
     // Hiển thị tên user sau khi đã đăng nhập
     if (this.isShow === false) {
       this.logged = true;
@@ -120,18 +115,19 @@ mounted() {
     // call API user
     const tokenLogin = localStorage.getItem("TokenLogin");
     const UserTokenLogin = JSON.parse(tokenLogin);
-    axios.get('https://dev-crawler-api.trainery.live//master-caoanh/users', {
-      headers: {
-        Authorization: `Bearer ${UserTokenLogin}`
-      }
-    })
-    .then(responseUser => {
-      this.userData = responseUser.data.data
-      console.log("data user:",this.userData)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    axios
+      .get("https://dev-crawler-api.trainery.live//master-caoanh/users", {
+        headers: {
+          Authorization: `Bearer ${UserTokenLogin}`,
+        },
+      })
+      .then((responseUser) => {
+        this.userData = responseUser.data.data;
+        console.log("data user:", this.userData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
   methods: {
     changeColor() {

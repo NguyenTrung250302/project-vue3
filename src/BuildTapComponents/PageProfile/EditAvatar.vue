@@ -7,8 +7,9 @@
     <!-- handle -->
     <form @submit.prevent="submitForm" class="handle">
       <input type="file" ref="fileInput" hidden @change="handleFileChange" />
-      <button type="button" @click="showFileInput">Choose file</button>
-      <button type="submit">Update profile</button>
+      <button type="button" @click="showFileInput">Choose avatar</button>
+      <!--  -->
+      <button type="submit">Update</button>
     </form>
   </div>
 </template>
@@ -48,19 +49,23 @@ export default {
 
       try {
         // Gửi yêu cầu POST tới API tải lên hình ảnh
-        const response = await axios.post(
+        const upLoadResponse = await axios.post(
           "https://dev-crawler-api.trainery.live//assets",
           formData,
           {
             headers: {
               "Content-Type": "multipart/form-data",
+              Authorization: `Bearer ${this.dataToken.accessToken}`,
             },
           }
         );
-        console.log("data returned after posting:", response.data);
+        console.log(
+          "data returned after posting:",
+          upLoadResponse.data.data.path
+        );
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
-        const avatarUrl = response.data.url;
+        const avatarUrl = upLoadResponse.data.data.path;
 
         // Gửi yêu cầu PUT để cập nhật thông tin hồ sơ của người dùng
         const updateResponse = await axios.put(
@@ -84,14 +89,14 @@ export default {
         alert("update successfully");
 
         // Đặt lại giá trị biểu mẫu
-        this.selectedFile = null;
-        this.imageUrl = null;
+        this.selectedFile = avatarUrl;
+        this.imageUrl = avatarUrl;
         this.phoneNumber = "";
         this.displayName = "";
         this.fullName = "";
       } catch (error) {
         console.error(error);
-        if (error.response && error.response.status === 401) {
+        if (error.updateResponse && error.updateResponse.status === 401) {
           // Refresh token và cập nhật lại giá trị token vào localStorage
           const refreshResponse = await axios.post(
             "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
@@ -103,9 +108,9 @@ export default {
           console.log("new token refresh:", refreshResponse.data.data);
 
           // Lưu trữ mã thông báo mới và cập nhật vào localStorage
-          const newAccessToken = refreshResponse.data.data.accessToken;
-          const newRefreshToken = refreshResponse.data.data.refreshToken;
-          const newLoginInfo = JSON.stringify({
+          let newAccessToken = refreshResponse.data.data.accessToken;
+          let newRefreshToken = refreshResponse.data.data.refreshToken;
+          let newLoginInfo = JSON.stringify({
             accessToken: newAccessToken,
             refreshToken: newRefreshToken,
           });
@@ -114,6 +119,8 @@ export default {
           // Cập nhật giá trị token cũ với thông tin mã thông báo mới
           this.dataToken.accessToken = newAccessToken;
           this.dataToken.refreshToken = newRefreshToken;
+          //
+          this.submitForm();
         }
       }
     },
@@ -138,11 +145,24 @@ export default {
   overflow: hidden;
   margin: 20px auto;
 }
-
 .avatar-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.handle {
+  display: block;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form-upload {
+  display: flex;
+  justify-content: space-evenly;
+}
+.upload-info-user {
 }
 button {
   width: 150px;
@@ -156,8 +176,7 @@ button:hover {
   background-color: #333;
   box-shadow: 1px 1px 2px 2px #333;
 }
-.handle {
-  display: flex;
-  justify-content: center;
+label {
+  width: 150px;
 }
 </style>
