@@ -100,10 +100,28 @@ export default {
           localStorage.setItem("LoginInfo", newToken);
         } catch (error) {
           console.error(error);
-          this.isShow = true
+          this.isShow = true;
         }
       };
       callApi();
+      // call API user
+      axios
+        .get("https://dev-crawler-api.trainery.live//master-caoanh/users", {
+          headers: {
+            Authorization: `Bearer ${parseUserInfo.accessToken}`,
+          },
+        })
+        .then((responseUser) => {
+          this.userData = responseUser.data.data;
+          console.log("data user:", this.userData);
+        })
+        .catch((error) => {
+          console.log(error);
+          if(error.responseUser && error.responseUser.status === 401) {
+            this.callApi();
+          }
+        });
+        // 
       this.isShow = false;
     } else {
       this.isShow = true;
@@ -112,21 +130,6 @@ export default {
     if (this.isShow === false) {
       this.logged = true;
     }
-
-    // call API user
-    axios
-      .get("https://dev-crawler-api.trainery.live//master-caoanh/users", {
-        headers: {
-          Authorization: `Bearer ${parseUserInfo.accessToken}`,
-        },
-      })
-      .then((responseUser) => {
-        this.userData = responseUser.data.data;
-        console.log("data user:", this.userData);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   },
   methods: {
     changeColor() {
