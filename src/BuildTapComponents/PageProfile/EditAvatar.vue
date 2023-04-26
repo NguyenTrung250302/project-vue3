@@ -6,9 +6,27 @@
     </div>
     <!-- handle -->
     <form @submit.prevent="submitForm" class="handle">
-      <input type="file" ref="fileInput" hidden @change="handleFileChange" />
-      <button type="button" @click="showFileInput">Choose avatar</button>
-      <!--  -->
+      <div class="upload-info">
+        <!-- upload file avatar -->
+        <input type="file" ref="fileInput" hidden @change="handleFileChange" />
+        <button type="button" @click="showFileInput">Choose avatar</button>
+        <!-- info user -->
+        <div class="info-user">
+          <div>
+            <!-- <label for="phone-number-input">Phone Number:</label> -->
+            <input type="tel" id="phone-number-input" v-model="phoneNumber" placeholder="phone"/>
+          </div>
+          <div>
+            <!-- <label for="full-name-input">Full Name:</label> -->
+            <input type="text" id="full-name-input" v-model="fullName" placeholder="full name"/>
+          </div>
+          <div>
+            <!-- <label for="display-name-input">Display Name:</label> -->
+            <input type="text" id="display-name-input" v-model="displayName" placeholder="display name"/>
+          </div>
+        </div>
+      </div>
+      <!-- update -->
       <button type="submit">Update</button>
     </form>
   </div>
@@ -59,10 +77,7 @@ export default {
             },
           }
         );
-        console.log(
-          "data returned after posting:",
-          upLoadResponse.data.data.path
-        );
+        console.log("data returned after posting:",upLoadResponse.data.data.path);
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
         const avatarUrl = upLoadResponse.data.data.path;
@@ -89,7 +104,7 @@ export default {
         alert("update successfully");
 
         // Đặt lại giá trị biểu mẫu
-        this.selectedFile = avatarUrl;
+        this.selectedFile = null;
         this.imageUrl = avatarUrl;
         this.phoneNumber = "";
         this.displayName = "";
@@ -110,11 +125,11 @@ export default {
           // Lưu trữ mã thông báo mới và cập nhật vào localStorage
           let newAccessToken = refreshResponse.data.data.accessToken;
           let newRefreshToken = refreshResponse.data.data.refreshToken;
-          let newLoginInfo = JSON.stringify({
+          let newTokenInfo = JSON.stringify({
             accessToken: newAccessToken,
             refreshToken: newRefreshToken,
           });
-          localStorage.setItem("LoginInfo", newLoginInfo);
+          localStorage.setItem("LoginInfo", newTokenInfo);
 
           // Cập nhật giá trị token cũ với thông tin mã thông báo mới
           this.dataToken.accessToken = newAccessToken;
@@ -143,32 +158,18 @@ export default {
   border: solid 2px #333;
   border-radius: 50%;
   overflow: hidden;
-  margin: 20px auto;
+  /* margin: 20px auto; */
 }
 .avatar-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.handle {
-  display: block;
-  margin: 0 auto;
-}
-.form {
-  display: flex;
-  justify-content: space-evenly;
-}
-.form-upload {
-  display: flex;
-  justify-content: space-evenly;
-}
-.upload-info-user {
-}
 button {
   width: 150px;
   border: solid 1px;
   border-radius: 5px;
-  margin: 5px 10px;
+  /* margin: 5px 10px; */
   transition: background-color 0.5s ease;
 }
 button:hover {
@@ -176,7 +177,7 @@ button:hover {
   background-color: #333;
   box-shadow: 1px 1px 2px 2px #333;
 }
-label {
-  width: 150px;
+input {
+  border: 1px solid #333;
 }
 </style>

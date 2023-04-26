@@ -86,7 +86,10 @@ export default {
               headers: { "refresh-token": parseUserInfo.refreshToken },
             }
           );
-          console.log("return token data after server request:",response.data.data);
+          console.log(
+            "return new token data after refresh token:",
+            response.data.data
+          );
 
           let newAccessTokenHome = response.data.data.accessToken;
           let newRefreshTokenHome = response.data.data.refreshToken;
@@ -97,9 +100,7 @@ export default {
           localStorage.setItem("LoginInfo", newToken);
         } catch (error) {
           console.error(error);
-          if(error.response && error.updateResponse.status === 401) {
-            this.callApi();
-          }
+          this.isShow = true
         }
       };
       callApi();
@@ -113,12 +114,10 @@ export default {
     }
 
     // call API user
-    const tokenLogin = localStorage.getItem("TokenLogin");
-    const UserTokenLogin = JSON.parse(tokenLogin);
     axios
       .get("https://dev-crawler-api.trainery.live//master-caoanh/users", {
         headers: {
-          Authorization: `Bearer ${UserTokenLogin}`,
+          Authorization: `Bearer ${parseUserInfo.accessToken}`,
         },
       })
       .then((responseUser) => {
@@ -135,8 +134,6 @@ export default {
     },
     signOut() {
       localStorage.removeItem("LoginInfo");
-      localStorage.removeItem("TokenArray");
-      localStorage.removeItem("UserTokenLogin");
       this.$router.push("/login");
       alert("Xác nhận đăng xuất !");
     },
