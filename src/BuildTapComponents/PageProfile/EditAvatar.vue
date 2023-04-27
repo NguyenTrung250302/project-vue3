@@ -43,7 +43,8 @@
     </form>
     <!-- show avatar -->
     <div class="avatar-wrapper">
-      <img :src="imageUrl" :key="imageUrl" />
+      <img v-if="imageUrlShow" :src="imageUrl" :key="imageUrl" />
+      <img v-else src="@/assets/default_avatar.png">
     </div>
   </div>
 </template>
@@ -55,17 +56,22 @@ export default {
   data() {
     return {
       selectedFile: null,
-      imageUrl: null,
       dataToken: null,
       phoneNumber: "",
       displayName: "",
-      fullName: "", 
+      fullName: "",
+      imageUrl: null,
+      imageUrlShow: true,
     };
   },
   created() {
     // data Token login info
     this.dataToken = JSON.parse(localStorage.getItem("LoginInfo"));
     console.log("authentication token:", this.dataToken);
+    // 
+    if(this.imageUrl === null) {
+      this.imageUrlShow = false
+    }
   },
   methods: {
     // xu ly su kien
