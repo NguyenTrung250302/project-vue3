@@ -60,7 +60,7 @@ li {
   transition: background-color 0.5s ease;
 }
 li:hover {
-  background-color: #333;
+  background-color: rgb(104, 181, 184);
   color: #fff;
   box-shadow: 1px 1px 2px 2px #333;
 }

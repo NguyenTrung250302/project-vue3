@@ -1,34 +1,50 @@
 <template>
   <div class="edit-avatar">
-    <!-- show avatar -->
-    <div class="avatar-wrapper">
-      <img :src="imageUrl" :key="imageUrl" />
-    </div>
     <!-- handle -->
-    <form @submit.prevent="submitForm" class="handle">
+    <form @submit.prevent="submitForm">
       <div class="upload-info">
         <!-- upload file avatar -->
         <input type="file" ref="fileInput" hidden @change="handleFileChange" />
         <button type="button" @click="showFileInput">Choose avatar</button>
         <!-- info user -->
         <div class="info-user">
-          <div>
-            <!-- <label for="phone-number-input">Phone Number:</label> -->
-            <input type="tel" id="phone-number-input" v-model="phoneNumber" placeholder="phone"/>
+          <h1>CHANGE YOUR INFO ?</h1>
+          <div class="info">
+            <input
+              type="tel"
+              id="phone-number-input"
+              v-model="phoneNumber"
+              placeholder="phone number"
+            />
+            <p>{{phoneNumber}}</p>
           </div>
-          <div>
-            <!-- <label for="full-name-input">Full Name:</label> -->
-            <input type="text" id="full-name-input" v-model="fullName" placeholder="full name"/>
+          <div class="info">
+            <input
+              type="text"
+              id="full-name-input"
+              v-model="fullName"
+              placeholder="full name"
+            />
+            <p>{{fullName}}</p>
           </div>
-          <div>
-            <!-- <label for="display-name-input">Display Name:</label> -->
-            <input type="text" id="display-name-input" v-model="displayName" placeholder="display name"/>
+          <div class="info">
+            <input
+              type="text"
+              id="display-name-input"
+              v-model="displayName"
+              placeholder="display name"
+            />
+            <p>{{displayName}}</p>
           </div>
         </div>
-      </div>
       <!-- update -->
       <button type="submit">Update</button>
+      </div>
     </form>
+    <!-- show avatar -->
+    <div class="avatar-wrapper">
+      <img :src="imageUrl" :key="imageUrl" />
+    </div>
   </div>
 </template>
 
@@ -43,7 +59,7 @@ export default {
       dataToken: null,
       phoneNumber: "",
       displayName: "",
-      fullName: "",
+      fullName: "", 
     };
   },
   created() {
@@ -66,7 +82,7 @@ export default {
       formData.append("file", this.selectedFile);
 
       try {
-        // Gửi yêu cầu POST tới API tải lên hình ảnh
+        // Gửi yêu cầu POST tới API/assets tải lên hình ảnh
         const upLoadResponse = await axios.post(
           "https://dev-crawler-api.trainery.live//assets",
           formData,
@@ -77,12 +93,15 @@ export default {
             },
           }
         );
-        console.log("data returned after posting:",upLoadResponse.data.data.path);
+        console.log(
+          "data returned after posting:",
+          upLoadResponse.data.data.path
+        );
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
         const avatarUrl = upLoadResponse.data.data.path;
 
-        // Gửi yêu cầu PUT để cập nhật thông tin hồ sơ của người dùng
+        // Gửi yêu cầu PUT toi API/users để cập nhật thông tin hồ sơ của người dùng
         const updateResponse = await axios.put(
           "https://dev-crawler-api.trainery.live//master-caoanh/users",
           {
@@ -106,12 +125,12 @@ export default {
         // Đặt lại giá trị biểu mẫu
         this.selectedFile = null;
         this.imageUrl = avatarUrl;
-        this.phoneNumber = "";
-        this.displayName = "";
-        this.fullName = "";
+        this.phoneNumber = updateResponse.data.data.phoneNumber;
+        this.displayName = updateResponse.data.data.displayName;
+        this.fullName = updateResponse.data.data.fullName;
       } catch (error) {
-        console.error(error);
-        if (error.updateResponse && error.updateResponse.status === 401) {
+        console.error(error.response);
+        if (error.response && error.response.status === 401) {
           // Refresh token và cập nhật lại giá trị token vào localStorage
           const refreshResponse = await axios.post(
             "https://dev-crawler-api.trainery.live//master-caoanh/auth/refresh-token",
@@ -151,14 +170,19 @@ export default {
 .edit-avatar {
   height: 500px;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url("@/assets/background-droplets.png");
+  background-position: center left 24%;
 }
 .avatar-wrapper {
-  width: 200px;
-  height: 200px;
+  width: 350px;
+  height: 350px;
   border: solid 2px #333;
   border-radius: 50%;
   overflow: hidden;
-  /* margin: 20px auto; */
+  background-color: #fff;
 }
 .avatar-wrapper img {
   width: 100%;
@@ -169,15 +193,50 @@ button {
   width: 150px;
   border: solid 1px;
   border-radius: 5px;
-  /* margin: 5px 10px; */
+  background-color: #fff;
   transition: background-color 0.5s ease;
+  margin: 30px 200px;
+  font-size: 20px;
 }
 button:hover {
   color: #fff;
-  background-color: #333;
+  background-color: rgb(104, 181, 184);
   box-shadow: 1px 1px 2px 2px #333;
 }
+.info {
+display: flex;
+justify-content: center;
+}
 input {
-  border: 1px solid #333;
+  border: 1px solid ;
+  background-color: #fff;
+  margin: 5px 5px;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+input:hover {
+   color: #ffffff;
+  background-color: rgb(91, 169, 172);
+  box-shadow: 1px 1px 2px 2px #333;
+}
+h1 {
+  margin: 10px 15px;
+  color: #fff;
+  background-color: rgb(104, 181, 184);
+  height: 25px;
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+p {
+  width: 250px;
+  height: 35px;
+  background-color: rgb(104, 181, 184);
+  box-shadow: 1px 1px 1px 1px silver;
+  margin: 6px 10px;
+  text-align: center;
+  border-radius: 5px;
 }
 </style>

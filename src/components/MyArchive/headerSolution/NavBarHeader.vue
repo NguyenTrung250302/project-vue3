@@ -101,6 +101,7 @@ export default {
         } catch (error) {
           console.error(error);
           this.isShow = true;
+          this.logged = false;
         }
       };
       callApi();
