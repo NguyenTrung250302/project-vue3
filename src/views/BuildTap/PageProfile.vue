@@ -15,7 +15,6 @@ export default {
     NavigationHeaderProfile,
     EditAvatar,
     FooterView
-
   },
 };
 </script>

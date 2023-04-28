@@ -49,7 +49,7 @@
       <header-button v-if="isShow" />
       <!-- logged -->
       <div class="logged" v-if="logged">
-        <p class="hello">Xin chào, {{ userData.fullName }}!</p>
+        <p class="hello">Xin chào, {{ userData.displayName }}!</p>
         <button class="btn-sign_out" @click="signOut">sign out</button>
       </div>
     </div>
@@ -167,24 +167,27 @@ export default {
   line-height: 20px;
   color: #121212;
 }
-.logged {
-}
 .hello {
   font-size: 16px;
   font-weight: 500;
   margin: 0 5px;
 }
 .btn-sign_out {
-  border: solid 2px #006fed;
+  border: solid 2px;
   border-radius: 30%;
   color: #006fed;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 80px;
+  width: 150px;
   height: 30px;
   align-items: center;
+  transition: background-color 0.5s ease;
+}
+.btn-sign_out:hover {
+  color: #fff;
+  background-color: #006fed;
 }
 </style>

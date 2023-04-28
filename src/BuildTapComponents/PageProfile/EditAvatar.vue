@@ -43,8 +43,7 @@
     </form>
     <!-- show avatar -->
     <div class="avatar-wrapper">
-      <img v-if="imageUrlShow" :src="imageUrl" :key="imageUrl" />
-      <img v-else src="@/assets/default_avatar.png">
+      <img :src="imageUrl" :key="imageUrl" />
     </div>
   </div>
 </template>
@@ -61,17 +60,12 @@ export default {
       displayName: "",
       fullName: "",
       imageUrl: null,
-      imageUrlShow: true,
     };
   },
   created() {
     // data Token login info
     this.dataToken = JSON.parse(localStorage.getItem("LoginInfo"));
     console.log("authentication token:", this.dataToken);
-    // 
-    if(this.imageUrl === null) {
-      this.imageUrlShow = false
-    }
   },
   methods: {
     // xu ly su kien
@@ -106,6 +100,9 @@ export default {
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
         const avatarUrl = upLoadResponse.data.data.path;
+
+        // save the selector image
+        localStorage.setItem("avatarUrl", avatarUrl);
 
         // Gửi yêu cầu PUT toi API/users để cập nhật thông tin hồ sơ của người dùng
         const updateResponse = await axios.put(
