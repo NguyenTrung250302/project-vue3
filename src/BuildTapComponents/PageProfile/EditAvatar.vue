@@ -16,7 +16,7 @@
               v-model="phoneNumber"
               placeholder="phone number"
             />
-            <p>{{phoneNumber}}</p>
+            <p>{{ phoneNumber }}</p>
           </div>
           <div class="info">
             <input
@@ -25,7 +25,7 @@
               v-model="fullName"
               placeholder="full name"
             />
-            <p>{{fullName}}</p>
+            <p>{{ fullName }}</p>
           </div>
           <div class="info">
             <input
@@ -34,11 +34,11 @@
               v-model="displayName"
               placeholder="display name"
             />
-            <p>{{displayName}}</p>
+            <p>{{ displayName }}</p>
           </div>
         </div>
-      <!-- update -->
-      <button type="submit">Update</button>
+        <!-- update -->
+        <button type="submit">Update</button>
       </div>
     </form>
     <!-- show avatar -->
@@ -102,7 +102,10 @@ export default {
         const avatarUrl = upLoadResponse.data.data.path;
 
         // save the selector image
-        localStorage.setItem("avatarUrl", avatarUrl);
+        localStorage.setItem("avatarPath", avatarUrl);
+
+        // emit event to parent component
+        this.$emit("avatarUpdated", avatarUrl);
 
         // Gửi yêu cầu PUT toi API/users để cập nhật thông tin hồ sơ của người dùng
         const updateResponse = await axios.put(
@@ -121,6 +124,7 @@ export default {
           }
         );
         console.log("data after executing put:", updateResponse.data);
+
         // Thay đổi giá trị biến imageUrl thành URL của ảnh đã cập nhật
         this.imageUrl = avatarUrl;
         alert("update successfully");
@@ -207,18 +211,18 @@ button:hover {
   box-shadow: 1px 1px 2px 2px #333;
 }
 .info {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 input {
-  border: 1px solid ;
+  border: 1px solid;
   background-color: #fff;
   margin: 5px 5px;
   border-radius: 5px;
   transition: background-color 0.5s ease;
 }
 input:hover {
-   color: #ffffff;
+  color: #ffffff;
   background-color: rgb(91, 169, 172);
   box-shadow: 1px 1px 2px 2px #333;
 }
