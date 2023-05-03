@@ -1,7 +1,7 @@
 <template>
   <div class="container-profile">
-    <nav-bar-header-avatar :avatarPath="avatarPath"/>
-    <edit-avatar @avatar-updated="avatarUpdated"/>
+    <nav-bar-header-avatar />
+    <edit-avatar />
     <footer-view />
   </div>
 </template>
@@ -16,15 +16,5 @@ export default {
     EditAvatar,
     FooterView
   },
-  data() {
-    return {
-      avatarPath:  localStorage.getItem("avatarPath") ?? ""
-    }
-  },
-  methods: {
-    avatarUpdated(avatarPath) {
-      this.avatarPath = avatarPath
-    }
-  }
 };
 </script>

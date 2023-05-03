@@ -35,7 +35,8 @@ export default {
      })
       .then(response => {
         this.newsList = response.data.data
-        console.log(response.data.data)
+        console.log("array data:",response.data.data)
+        console.log("obj:",response.data.data[0])
       })
       .catch(error => {
         console.error(error)

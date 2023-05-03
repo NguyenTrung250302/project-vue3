@@ -65,7 +65,7 @@ export default {
   created() {
     // data Token login info
     this.dataToken = JSON.parse(localStorage.getItem("LoginInfo"));
-    console.log("authentication token:", this.dataToken);
+    console.log("authentication token:", this.dataToken.accessToken);
   },
   methods: {
     // xu ly su kien
@@ -100,12 +100,8 @@ export default {
 
         // Đặt avatarUrl thành URL của hình ảnh đã tải lên
         const avatarUrl = upLoadResponse.data.data.path;
-
         // save the selector image
         localStorage.setItem("avatarPath", avatarUrl);
-
-        // emit event to parent component
-        this.$emit("avatarUpdated", avatarUrl);
 
         // Gửi yêu cầu PUT toi API/users để cập nhật thông tin hồ sơ của người dùng
         const updateResponse = await axios.put(
@@ -127,7 +123,6 @@ export default {
 
         // Thay đổi giá trị biến imageUrl thành URL của ảnh đã cập nhật
         this.imageUrl = avatarUrl;
-        alert("update successfully");
 
         // Đặt lại giá trị biểu mẫu
         this.selectedFile = null;

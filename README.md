@@ -17,3 +17,5 @@ $ npm run serve
 # Compiles and minifies for production
 $ npm run build
 ```
+<!-- fallback version on chrome -->
+<!-- google-chrome --disable-site-isolation-trials --disable-web-security --user-data-dir="~/tmp" -->
