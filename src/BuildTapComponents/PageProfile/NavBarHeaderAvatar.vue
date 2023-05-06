@@ -34,7 +34,7 @@
       </nav>
       <!-- avatar user -->
       <div class="avatar-header">
-        <img :src="avatarPath"  alt="avatar" />
+        <img :src="avatarUrl"  alt="avatar" />
       </div>
     </header>
   </div>
@@ -43,11 +43,12 @@
 <script>
 
 export default {
-data() {
-  return {
-    avatarPath: localStorage.getItem("avatarPath") || require("@/assets/default_avatar.png")
+props: {
+    avatarUrl: {
+      type: String,
+      required: true
+    }
   }
-}
 };
 </script>
 

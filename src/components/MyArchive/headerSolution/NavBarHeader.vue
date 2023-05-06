@@ -124,7 +124,8 @@ export default {
         });
         // 
       this.isShow = false;
-    } else {
+    }
+     else {
       this.isShow = true;
     }
     // Hiển thị tên user sau khi đã đăng nhập

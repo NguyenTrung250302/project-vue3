@@ -176,7 +176,7 @@ export default {
     },
     // --------------------------------------------------------------------
     postData: async function () {
-      const responseLogin = await axios
+      const response = await axios
         .post(
           "https://dev-crawler-api.trainery.live//master-caoanh/auth/login",
           {
@@ -184,28 +184,28 @@ export default {
             password: this.password,
           }
         )
-        .then((responseLogin) => {
-          if (responseLogin.status === 200) {
+        .then((response) => {
+          if (response.status === 200) {
             this.successMessage = true;
             // localStorage.setItem('key', 'value'); :Để lưu trữ dữ liệu vào LocalStorage, bạn sử dụng phương thức setItem():
             // Lưu thông tin token
             localStorage.setItem(
               "LoginInfo",
-              JSON.stringify(this.responseLogin.data.data)
+              JSON.stringify(response.data.data)
             );
-            console.log("data token login:",responseLogin.data.data)
+            console.log("data token login:",response.data.data)
             // Lưu thông tin token login voi key: "TokenLogin"
              localStorage.setItem(
               "TokenLogin",
-              JSON.stringify(responseLogin.data.data.accessToken)
+              JSON.stringify(response.data.data.accessToken)
             );
-            console.log("token login:",responseLogin.data.data.accessToken)
+            console.log("token login:",response.data.data.accessToken)
           }
         })
         .catch((error) => {
           this.const++;
           console.log(this.const);
-          if (error.response.status === 401 || error.response.status === 422) {
+          if (error.response.status === 401 || error.response.status === 422 || null) {
             this.failedLogin = true;
             this.passwordError = "* Thông tin đăng nhập không đúng !";
           } else if (error.response.status === 500) {
