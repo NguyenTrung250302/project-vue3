@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      avatarUrl:  localStorage.getItem("avatarUrl") ?? ""
+      avatarUrl:  localStorage.getItem("avatarUrl") ?? require("@/assets/default_avatar.png")
     }
   },
   methods: {
