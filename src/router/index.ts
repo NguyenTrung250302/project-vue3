@@ -9,6 +9,11 @@ import LoginBuildTap from "@/BuildTapComponents/LoginBuildTap.vue";
 import MainHomePage from "@/views/BuildTap/MainHomePage.vue";
 import PageProfile from "@/views/BuildTap/PageProfile.vue";
 import NewsListTap from "@/views/BuildTap/NewsListTap.vue";
+import NewsLetter1 from "@/BuildTapComponents/BuildTapNews/NewsLetter1.vue";
+import NewsLetter2 from "@/BuildTapComponents/BuildTapNews/NewsLetter2.vue";
+import NewsLetter3 from "@/BuildTapComponents/BuildTapNews/NewsLetter3.vue";
+import NewsLetter4 from "@/BuildTapComponents/BuildTapNews/NewsLetter4.vue";
+import NewsLetter5 from "@/BuildTapComponents/BuildTapNews/NewsLetter5.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -24,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
       layout: "empty",
     },
   },
-    {
+  {
     path: "/MainPage",
     component: MainHomePage,
     meta: {
@@ -63,8 +68,8 @@ const routes: Array<RouteRecordRaw> = [
     path: "/profile",
     component: PageProfile,
     meta: {
-      layout: "empty"
-    }
+      layout: "empty",
+    },
   },
   {
     path: "/news",
@@ -77,8 +82,43 @@ const routes: Array<RouteRecordRaw> = [
     path: "/errorLogin",
     component: NotFound,
     meta: {
-    layout: "empty"
-    }
+      layout: "empty",
+    },
+  },
+  {
+    path: "/news1",
+    component: NewsLetter1,
+    meta: {
+      layout: "empty",
+    },
+  },
+    {
+    path: "/news2",
+    component: NewsLetter2,
+    meta: {
+      layout: "empty",
+    },
+  },
+    {
+    path: "/news3",
+    component: NewsLetter3,
+    meta: {
+      layout: "empty",
+    },
+  },
+    {
+    path: "/news4",
+    component: NewsLetter4,
+    meta: {
+      layout: "empty",
+    },
+  },
+    {
+    path: "/news5",
+    component: NewsLetter5,
+    meta: {
+      layout: "empty",
+    },
   },
 ];
 

@@ -59,7 +59,7 @@ export default {
       phoneNumber: "",
       displayName: "",
       fullName: "",
-      imageUrl: null,
+      imageUrl: "",
     };
   },
   created() {
