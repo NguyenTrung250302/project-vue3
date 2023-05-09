@@ -1,6 +1,9 @@
 <template>
   <div class="container-sidebar">
     <div class="newsletter">
+      <h1>XEM CHI TIẾT TẠI ĐÂY !</h1>
+    </div>
+    <div class="newsletter">
       <a @:click="changeTapNews1">{{
         newsList.length > 0 ? newsList[0].title : "Loading..."
       }}</a>
@@ -15,7 +18,7 @@
       }}</a>
       <img
         :src="newsList.length > 0 ? newsList[1].thumbnail : ''"
-        alt="img 1"
+        alt="img 2"
       />
     </div>
     <div class="newsletter">
@@ -24,7 +27,7 @@
       }}</a>
       <img
         :src="newsList.length > 0 ? newsList[2].thumbnail : ''"
-        alt="img 1"
+        alt="img 3"
       />
     </div>
     <div class="newsletter">
@@ -33,7 +36,7 @@
       }}</a>
       <img
         :src="newsList.length > 0 ? newsList[3].thumbnail : ''"
-        alt="img 1"
+        alt="img 4"
       />
     </div>
     <div class="newsletter">
@@ -42,7 +45,7 @@
       }}</a>
       <img
         :src="newsList.length > 0 ? newsList[4].thumbnail : ''"
-        alt="img 1"
+        alt="img 5"
       />
     </div>
   </div>
@@ -102,5 +105,21 @@ export default {
 </script>
 
 <style scoped>
-
+.newsletter {
+  width: 450px;
+  margin: 30px auto;
+}
+a {
+  font-weight: 700;
+  font-size: 20px;
+}
+a:hover {
+  color: rgb(0, 89, 255);
+  cursor: pointer;
+}
+h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: cadetblue;
+}
 </style>
