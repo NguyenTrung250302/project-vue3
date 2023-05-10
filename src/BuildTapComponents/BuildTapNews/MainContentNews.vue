@@ -11,12 +11,17 @@
       <img class="img-child" src="@/assets/tuvi-thay-cao-anh.png" alt="loading">
       <img class="img-child" src="@/assets/chungnhan.png" alt="loading">
     </div>
-    <div class="info">
+    <div>
+      <img src="@/assets/beside_logo.webp" alt="loading">
       <ul>
-        <li>Email:</li>
-        <li>Hotline:</li>
-        <li>Website:</li>
-        <li>Facebook:</li>
+        <li>Email:thaycaoanh@gmail.com</li>
+        <li>Hotline: 0904.710.481 hoặc 0989.461.985</li>
+        <li>Website:
+          <a href="https://thaycaoanh.com/">https://thaycaoanh.com/</a>
+        </li>
+        <li>Facebook:
+          <a target="blank" rel="nofollow" href="https://www.facebook.com/thaycaoanh10481">https://www.facebook.com/thaycaoanh10481</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -46,5 +51,11 @@ margin: 20px auto;
   margin: 0 auto;
   width: 50%;
   height: 500px;
+}
+li {
+  font-weight: 500;
+}
+a:hover {
+  color: rgb(0, 68, 255);
 }
 </style>

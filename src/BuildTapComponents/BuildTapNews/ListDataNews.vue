@@ -92,13 +92,10 @@ export default {
       .then((response) => {
         this.newsList = response.data.data;
         console.log("array data news:", this.newsList);
-        console.log("title news:", this.newsList[0].title);
-        console.log("caption news:", this.newsList[0].caption);
-        console.log("url img news:", this.newsList[0].thumbnail);
-        console.log("url news:", this.newsList[0].url);
       })
       .catch((error) => {
         console.error(error);
+        alert("đã có lỗi trong quá trình tải dữ liệu vui lòng refresh lại trang hoặc liên hệ hỗ trợ !");
       });
   },
 };
@@ -107,7 +104,8 @@ export default {
 <style scoped>
 .newsletter {
   width: 450px;
-  margin: 30px auto;
+  margin: 35px auto;
+  border-bottom: solid 1px silver;
 }
 a {
   font-weight: 700;
@@ -118,6 +116,7 @@ a:hover {
   cursor: pointer;
 }
 h1 {
+  margin: 0 auto;
   font-weight: 700;
   font-size: 30px;
   color: cadetblue;
